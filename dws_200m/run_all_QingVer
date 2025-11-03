@@ -7,7 +7,8 @@
 ##SBATCH --nodelist=no63,no64,no65,no66,no67,no68
 ##SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
-#SBATCH --output=/export/lv1/user/svanleeuwen/home/setups/run_all.stdout
+#SBATCH --time=1-1:00:00
+#SBATCH --output=/export/lv9/user/qzhan/home/run_all.stdout
 #SBATCH --job-name="run_all"
 
 module load clustershell/1.8
@@ -31,10 +32,10 @@ $MACHINEFILE -i link_machinefile -o machinefile -n new_hosts
 echo "after construction machinefile"
 cp machinefile machinefile_keep
 
-export GETMDIR=$HOME/home/getm-git/code
+export GETMDIR=$HOME/home/getm-git/
 export runid=dws_200m
 
-cd $HOME/home/setups/$runid/
+cd $HOME/home/GETM_ERSEM_SETUPS/$runid/
 
 rm *.stderr
 rm *.stdout
@@ -329,8 +330,8 @@ if [ $BASE_4 == "1" ]; then
 
      echo "linking bdy_2d.nc and bdy_3d.nc"
      rm bdy_*d.nc 
-     ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$yy.2d.nc bdy_2d.nc 
-     ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$yy.3d.nc bdy_3d.nc
+     ln -sf ../../../model_input_files/boundaries/bdy_dws_200m_$yy.2d.nc bdy_2d.nc 
+     ln -sf ../../../model_input_files/boundaries/bdy_dws_200m_$yy.3d.nc bdy_3d.nc
      echo "done linking bdy files"
 
      for mm in $months ; do
