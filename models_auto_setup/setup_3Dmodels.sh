@@ -30,6 +30,7 @@ cd "$HOME/home/GOTM_SOURCES" || exit 1
 git clone "https://$GIT_USERNAME:$GIT_TOKEN@github.com/jvdmolen/gotm_coupled_bfm_2016.git"
 cd gotm_coupled_bfm_2016 || exit 1
 git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126
+git submodule update --init --recursive
 
 # --- STEP (3): Clone GETM ---
 echo "Cloning GETM..."
@@ -52,6 +53,54 @@ echo "==========================================="
 echo " Steps 1–4 completed: repositories cloned. "
 echo " Next steps: setup environment + compilation."
 echo "==========================================="
+
+# --- STEP (5): Set up directory structure
+# Such as home/GETM_ERSEM_SETUPS/dws_200m/
+mkdir "$HOME/home/GETM_ERSEM_SETUPS/"
+mkdir "$HOME/home/GETM_ERSEM_SETUPS/Input"
+
+# --- STEP (6): Add settings .sh file: "getm.sh", and modify .bashrc to source shell file in order to set up compilation env
+# --- "getm.sh" file can be found in the github repository: https://github.com/NIOZ-QingZ/3D_models_WaddenSea.git
+
+# --- STEP (7): Compile BFM+GOTM
+# --- to run test 1D model
+# --- To refer Bass's document: "Bass_compile_GOTM_HPC.rtf"
+mkdir -p $HOME/home/build/gotm && cd $HOME/home/build/gotm
+cmake $GOTMDIR -DFABM_BASE=$FABMDIR
+make install
+# This will produce a GOTM executable at $HOME/local/gotm/bin/gotm
+# ls $HOME/local/gotm/bin
+
+rsync -av /export/lv1/user/jvandermolen/home/gotm-cases/nov2024_bfm2016/OysterGrounds .
+
+cd /export/lv1/user/jvandermolen/home/gotm-cases/nov2024_bfm2016/OysterGrounds
+grep -r jvandermolen . # find paths that include jvandermolen, change it to your user
+nano gotmrun.nml
+nano run_gotm_laplace
+sbatch ./run_gotm_laplace
+squeue
+ls log*
+tail -F log.out
+
+
+# --- STEP (8): Copy 3D setup from Sonja's directory 
+# --- 8.1 copy dir: "dws_200m" from "/export/lv1/user/svanleeuwen/home/setups/"
+cp -r "/export/lv1/user/svanleeuwen/home/setups/dws_200m" "$HOME/home/GETM_ERSEM_SETUPS/"
+
+# --- 8.2 copy file: "dws_200m_info.txt" from "/export/lv1/user/svanleeuwen/home/setups/"; info about "TO DO"
+cp "/export/lv1/user/svanleeuwen/home/setups/dws_200m_info.txt" "$HOME/home/GETM_ERSEM_SETUPS/dws_200m_info.txt"
+
+# --- 8.3 copy file: "move_files" from Johan's folder (any NS usecase), change:
+#         line 19: #SBATCH --output=/export/lv9/user/qzhan/move_files.stdout  
+# --- 8.4 Modify file: "run_getm_laplace_getmiow_Sonja"; change paths and command for "sbatch ./move_files"
+
+
+# --- STEP (9): Make some modifications/additions to use BFM
+# --- 9.1 Prepare a porosity map based on SIBES&SUBES dataset. An example of such a file is in "/export/lv1/user/jvandermolen/home/GETM_ERSEM_SETUPS/north_west_european_shelf_bfm_jan2025/nwes/Input/Ben_Sedprop.nc"
+# --- download SIBES mud_percentage dataset (https://doi.org/10.25850/nioz/7b.b.ug)
+# --- download tiff image from Franken (BelowMurkyWaters_Silt)
+
+# --- STEP (10): Compile 3D.
 
 
 # Run the script by:
