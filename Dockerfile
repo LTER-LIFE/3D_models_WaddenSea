@@ -149,6 +149,34 @@ RUN sed -i \
 
 ## Because of the commands above, you will get stukt by 
 # make install # to make a GOTM executable, because you changed the CMake dependencies
+
+#####
+# Error logs:
+44%] Building Fortran object gotmlib/CMakeFiles/gotm.dir/gotm.F90.o
+/opt/home/GOTM_SOURCES/gotm_coupled_bfm_2016/src/gotm/gotm.F90:100:7:
+
+    use bio,only:init_var_bio,init_bio,do_bio,end_bio,bio_calc, &
+       1
+Fatal Error: Can't open module file 'bio.mod' for reading at (1): No such file or directory
+compilation terminated.
+gotmlib/CMakeFiles/gotm.dir/build.make:62: recipe for target 'gotmlib/CMakeFiles/gotm.dir/gotm.F90.o' failed
+make[2]: *** [gotmlib/CMakeFiles/gotm.dir/gotm.F90.o] Error 1
+CMakeFiles/Makefile2:3145: recipe for target 'gotmlib/CMakeFiles/gotm.dir/all' failed
+make[1]: *** [gotmlib/CMakeFiles/gotm.dir/all] Error 2
+Makefile:129: recipe for target 'all' failed
+make: *** [all] Error 2
+root@1bd5cfb4f2e1:/opt/build/gotm# make --version
+GNU Make 4.1
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+###########
+
+### Things to try:
+# 1. GNU Make version: on HPC it is 3.82. In docker: 4.1
 #######################################################################
 #######################################################################
 
