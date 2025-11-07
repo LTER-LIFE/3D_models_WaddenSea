@@ -137,46 +137,12 @@ RUN mkdir -p $ImageHome/home/BFM_SOURCES \
     git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/fabm-model/fabm.git" && \
     cd fabm && git checkout -b master_20200610 e1f1f08e42d84f8324f5114924b67ad567719334
 
+RUN mkdir -p $ImageHome/build/gotm && cd $ImageHome/build/gotm && \
+	# Create  files in build/gotm 
+	cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=/opt/gotm_exe && \ 
+	# Create gotm executable (Run as many parallel compilation jobs as the CPU cores)	
+	make -j$(nproc) && make install
 
-#######################################################################
-#######################################################################
-# mkdir -p $HOME/build/gotm && cd $HOME/build/gotm
-# cmake $GOTMDIR -DFABM_BASE=$FABMDIR # Create  files in build/gotm
-
-# Patch broken CMake dependencies in GOTM-BFM coupling
-RUN sed -i \
-    -e 's/add_dependencies(global_mod util)/# add_dependencies(global_mod util)/' \
-    -e 's/add_dependencies(gotm bio)/# add_dependencies(gotm bio)/' \
-    $ImageHome/home/GOTM_SOURCES/gotm_coupled_bfm_2016/src/CMakeLists.txt
-
-
-## Because of the commands above, you will get stukt by 
-# make install # to make a GOTM executable, because you changed the CMake dependencies
-
-#####
-# Error logs:
-44%] Building Fortran object gotmlib/CMakeFiles/gotm.dir/gotm.F90.o
-/opt/home/GOTM_SOURCES/gotm_coupled_bfm_2016/src/gotm/gotm.F90:100:7:
-
-    use bio,only:init_var_bio,init_bio,do_bio,end_bio,bio_calc, &
-       1
-Fatal Error: Can't open module file 'bio.mod' for reading at (1): No such file or directory
-compilation terminated.
-gotmlib/CMakeFiles/gotm.dir/build.make:62: recipe for target 'gotmlib/CMakeFiles/gotm.dir/gotm.F90.o' failed
-make[2]: *** [gotmlib/CMakeFiles/gotm.dir/gotm.F90.o] Error 1
-CMakeFiles/Makefile2:3145: recipe for target 'gotmlib/CMakeFiles/gotm.dir/all' failed
-make[1]: *** [gotmlib/CMakeFiles/gotm.dir/all] Error 2
-Makefile:129: recipe for target 'all' failed
-make: *** [all] Error 2
-root@1bd5cfb4f2e1:/opt/build/gotm# make --version
-GNU Make 4.1
-Built for x86_64-pc-linux-gnu
-Copyright (C) 1988-2014 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-###########
 
 ### Things to try:
 # 1. GNU Make version: on HPC it is 3.82. In docker: 4.1
