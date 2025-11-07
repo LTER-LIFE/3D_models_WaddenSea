@@ -1,0 +1,13 @@
+# Running model container on HPC
+module load singularity
+singularity build wadden-eco-models.sif docker://qingzfly/wadden-eco-viewer:latest
+# To go inside a Singularity container shell
+singularity shell --bind /export/lv1/user/svanleeuwen/home:/mnt/svanleeuwen/home wadden-eco-models.sif
+# To exit the shell:
+exit
+
+
+# Notes:
+# BFM cannot be compiled alone, it has to be compiled together with GOTM. The compiled BFM-GOTM can be further compiled with GETM (3D).
+# The compiled executive is set-up specific, and is not standalone.
+# the manual in “/doc/folder” is outdated. Pls ignore the manual in “/doc/ folder”.

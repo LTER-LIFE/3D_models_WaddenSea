@@ -1,0 +1,80 @@
+** STEP 1: git clone GOTM and GETM *************************
+Regarding our iow codes please try out the following. If I registered your IP and ssh key correctly the "git remote add" commands should work...
+ 
+#clone official getm
+git clone git://git.code.sf.net/p/getm/code
+cd code
+ 
+#checkout "official" iow branch
+git checkout -b iow origin/iow
+ 
+#add iow repository
+git remote add -f iow gitolite@svn.io-warnemuende.de:getm-iow
+ 
+#checkout "extended" iow branch (requires gotm-iow)
+git checkout -b iow_master iow/master
+ 
+ 
+#similar for gotm
+git clone git://github.com/gotm-model/code.git
+cd code
+git remote add -f iow gitolite@svn.io-warnemuende.de:gotm-iow
+git checkout -b iow_master iow/master
+
+
+** STEP 2: git clone FABM  *****************
+See https://github.com/fabm-model/fabm/wiki/GOTM
+
+git clone https://github.com/fabm-model/fabm.git
+
+
+** STEP 3: compile gotm ************************************
+See https://github.com/fabm-model/fabm/wiki/GOTM
+
+To build GOTM with FABM support, make sure you have CMake 2.8.8 or higher and a supported Fortran compiler. Then follow our platform-specific instructions for running CMake; you need to specify <GOTMDIR>/src as the source directory and set option FABM_BASE to <FABMDIR>. Here, <GOTMDIR> is the directory with GOTM source code and <FABMDIR> is the directory with FABM source code.
+On Linux-like systems, building is typically achieved by executing something like:
+mkdir -p ~/build/gotm && cd ~/build/gotm
+cmake <GOTMDIR>/src -DFABM_BASE=<FABMDIR>
+make install
+This will produce a GOTM executable at ~/local/gotm/bin/gotm.
+
+
+** STEP 4: compile getm ************************************
+see partly https://www.io-warnemuende.de/getm/articles/getm.html
+
+-Adapt the file getm-git/code/scripts/linux/getm_configure.sh
+-I've stuck this in: /home/jvandermolen/tools/getm/build
+-run this
+-in directory /home/jvandermolen/tools/getm/build/ifort, create a link dimensions.h to the dimensions.h of the desired setup
+-do: make install in the destination directory of the script (/home/jvandermolen/tools/getm/build/ifort)
+
+
+
+
+##############################################################3
+To check out other branches:
+
+** bottom friction branch (12 branches ahead master):
+cd $GOTMDIR
+git checkout master
+cd $GETMDIR
+git fetch iow
+git checkout -b bottfric iow/knut/bottfric
+
+** ip branch (7 branches ahead master):
+cd $GETMDIR
+git fetch iow
+git checkout -b ip iow/knut/ip
+
+** les branch (before ip)
+cd $GETMDIR
+git fetch iow
+git checkout -b les iow/knut/les
+
+
+To switch branches:
+git checkout les
+
+
+
+NOTE: for master, the executable has a different name, see comments in compile script
