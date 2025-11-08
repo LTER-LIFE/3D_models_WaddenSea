@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# !!!! make sure that ../Rules.make points to Rules.make.getmgit2.5 !!!!
+
+echo $gfortran
+echo $CMAKE_Fortran_Compiler
+echo $FORTRAN_COMPILER
+echo $COMPILATION_MODE
+
+export gfortran=$FORTRAN_COMPILER
+#export CMAKE_Fortran_COMPILER=ifort
+export GFORTRAN_UNBUFFERED_ALL=y
+export GFORTRAN_UNBUFFERED_PRECONNECTED=y
+
+echo $gfortran
+echo $CMAKE_Fortran_COMPILER
+
+if [ $FORTRAN_COMPILER = "GFORTRAN" ] ; then
+  compiler='gfortran'
+else
+  compiler='ifort'
+fi
+
+setupdir=`pwd`
+
+setup=dws_200m
+#configurations="1p 24x24 48x24 48x48 96x48 96x96"
+configurations="32x32"
+
+# clean up: make sure that we're re-compiling!!!
+#rm /home/jvandermolen/tools/getm/build/ifort/getm
+#rm /home/jvandermolen/tools/getm/build/ifort/*.mod
+#rm /home/jvandermolen/local/getm/ifort/bin/getm
+
+# configure using CMAKE
+# JM unfortunately this has to be done manually. 
+# JM Run the script once or twice depending on whether you get an error message on CMAKE_Fortran_COMPILER
+# JM No idea how to set this through the scripts...
+#cd /home/jvandermolen/tools/getm/build
+#./getm_configure.sh
+#cd $setupdir
+echo
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "!"
+echo "! Have you configured CMAKE for this branch?"
+echo "!"
+echo "! If not do the equivalent of:"
+echo "! cd build/getm"
+echo "! ./getm_configure.sh"
+echo "! cd $setupdir"
+echo "!"
+echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+echo
+sleep 10
+
+# loop over configurations, compile and install
+for conf in $configurations ; do
+  
+  ln -sf $setupdir/Configurations/$conf/$setup.dim $HOME/tools/getm/build/$compiler/dimensions.h
+
+  cd $HOME/tools/getm/build/$compiler
+  make clean
+  make install
+
+  cd $setupdir
+
+  echo 'WARNING: copying executable getm. Master produces getm_spherical_parallel, copy manually'
+  cp $HOME/local/getm/$compiler/bin/getm $setupdir/bin/getm_prod_$FORTRAN_COMPILER.$conf
+
+done

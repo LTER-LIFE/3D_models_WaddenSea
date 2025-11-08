@@ -1,0 +1,8 @@
+1
+180 201 180 202  1.0  # Balgzand Oostoever channel
+#47 3 47 4 3.06828  # NH coastline near southern boundary, topo points 46 2, 46 3
+#48 5 48 6 0.847857  # NH coastline near southern boundary
+#42 1 46 4 7.00      # NH coastal block
+#46 1 46 4 4.00  # NH coastal boundary strip
+#181 201 181 202  1.0   # Balgzand Oostoever channel
+

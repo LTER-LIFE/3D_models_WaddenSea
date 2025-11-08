@@ -6,9 +6,12 @@ FROM ubuntu:18.04
 LABEL maintainer="Qing Zhan"
 LABEL description="HPC-like environment for GOTM/FABM with GCC 6.4"
 
+
 # --------------------------
-# Install system dependencies
+# Install system dependencies (non-interactive)
 # --------------------------
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
     build-essential \
@@ -25,8 +28,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     zlib1g-dev \
+    libopenmpi-dev \
+    openmpi-bin \
     nano \
     vim \
+    tcl \
     && ln -sf /bin/bash /bin/sh \
     && rm -rf /var/lib/apt/lists/*
 
@@ -109,7 +115,7 @@ ENV LD_LIBRARY_PATH=/opt/netcdf-fortran-4.4.4/lib:/opt/netcdf-c-4.6.0/lib:$LD_LI
 ENV COMPILATION_MODE=production
 ENV GETM_PARALLEL=true
 
-ENV ImageHome=/opt
+ENV HOME=/opt
 ENV GOTMDIR=/opt/home/GOTM_SOURCES/gotm_coupled_bfm_2016/
 ENV FABMDIR=/opt/home/fabm-git/fabm
 ENV BFMDIR=/opt/home/BFM_SOURCES/bfm_2016
@@ -120,50 +126,60 @@ ENV GOTM_BUILD_DIR=/opt/build/gotm
 # --------------------------
 # Clone repositories during build
 # --------------------------
-RUN mkdir -p $ImageHome/home/BFM_SOURCES \
-             $ImageHome/home/GOTM_SOURCES \
-             $ImageHome/home/GETM_SOURCES \
-             $ImageHome/home/fabm-git && \
-    cd $ImageHome/home/BFM_SOURCES && \
+RUN mkdir -p $HOME/home/BFM_SOURCES \
+             $HOME/home/GOTM_SOURCES \
+             $HOME/home/GETM_SOURCES \
+             $HOME/home/fabm-git \
+	     $HOME/home/GETM_ERSEM_SETUPS \    
+	     $HOME/local/gotm \
+	     $HOME/local/getm && \
+    cd $HOME/home/BFM_SOURCES && \
     git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/jvdmolen/bfm_2016.git" && \
     cd bfm_2016 && git checkout -b bfm2016_production_20250827 remotes/origin/bfm2016_production_20250827 && \
-    cd $ImageHome/home/GOTM_SOURCES && \
+    cd $HOME/home/GOTM_SOURCES && \
     git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/jvdmolen/gotm_coupled_bfm_2016.git" && \
     cd gotm_coupled_bfm_2016 && \
     git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126 && \
     git submodule update --init --recursive && \
-    cd $ImageHome/home/GETM_SOURCES && \
+    cd $HOME/home/GETM_SOURCES && \
     git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/jvdmolen/getm_coupled_bfm_2016.git" && \
     cd getm_coupled_bfm_2016 && \
     git checkout -b iow_20200609_bfm2016_20250116 remotes/origin/iow_20200609_bfm2016_20250116 && \
-    cd $ImageHome/home/fabm-git && \
+    cd $HOME/home/fabm-git && \
     git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/fabm-model/fabm.git" && \
     cd fabm && git checkout -b master_20200610 e1f1f08e42d84f8324f5114924b67ad567719334
 
-RUN mkdir -p $ImageHome/build/gotm && cd $ImageHome/build/gotm && \
+RUN mkdir -p $HOME/build/gotm && cd $HOME/build/gotm && \
 	# Create  files in build/gotm 
-	cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=/opt/gotm_exe && \ 
+	cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \ 
 	# Create gotm executable (Run as many parallel compilation jobs as the CPU cores)	
 	make -j$(nproc) && make install
 
-
-### Things to try:
-# 1. GNU Make version: on HPC it is 3.82. In docker: 4.1
-#######################################################################
-#######################################################################
-
-
-# RUN sed -i '1i add_subdirectory('${BFMDIR}'/bfm_up)' $GOTMDIR/src/CMakeLists.txt && \
-#    sed -i '2i add_subdirectory('${BFMDIR}'/bfm_cpl)' $GOTMDIR/src/CMakeLists.txt
-
-
 # --------------------------
-# Copy setup scripts
+# Copy the GETM_ERSEM_SETUPS folder
 # --------------------------
-# COPY setup_3Dmodels.sh /opt/home/setup_3Dmodels.sh
-# COPY cleanup_3Dmodels.sh /opt/home/cleanup_3Dmodels.sh
-# RUN chmod +x /opt/home/setup_3Dmodels.sh
-# RUN chmod +x /opt/home/cleanup_3Dmodels.sh
+COPY dws_200m $HOME/home/GETM_ERSEM_SETUPS/dws_200m
+
+# Create build directory
+RUN mkdir -p $HOME/tools/getm/build
+
+# Set working directory
+WORKDIR $HOME/tools/getm/build
+
+# Copy the configuration script into the build directory
+COPY getm_configure.sh ./
+
+# Run the configuration
+RUN chmod +x getm_configure.sh && ./getm_configure.sh
+
+#------------------------------------------------
+# create getm executable based on Dutch Wadden Sea setup at 200m resolution
+#------------------------------------------------
+# Set working directory
+WORKDIR $HOME/home/GETM_ERSEM_SETUPS/dws_200m
+
+RUN ./compile_all_git
+
 
 # --------------------------
 # Default command
@@ -215,3 +231,8 @@ CMD ["/bin/bash"]
 
 # in the gotm case wk in HPC, run the sbatch
 # sbatch run_gotm_sbatch.sh
+
+### Things to try:
+# 1. GNU Make version: on HPC it is 3.82. In docker: 4.1
+#######################################################################
+#######################################################################

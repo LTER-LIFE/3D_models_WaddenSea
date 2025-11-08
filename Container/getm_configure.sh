@@ -6,8 +6,8 @@
 echo "COMPILATION_MODE: " $COMPILATION_MODE
 
 # if not set use the suggested source code installation directories
-GETM_BASE=${GETM_BASE:=$HOME/home/getm-git/}
-GOTM_BASE=${GOTM_BASE:=$HOME/home/gotm-git/}
+GETM_BASE=${GETM_BASE:=$HOME/home/GETM_SOURCES/getm_coupled_bfm_2016/}
+GOTM_BASE=${GOTM_BASE:=$HOME/home/GOTM_SOURCES/gotm_coupled_bfm_2016/}
 FABM_BASE=${FABM_BASE:=$HOME/home/fabm-git/fabm/}
 
 # default Fortran compiler is gfortran - overide by setting compiler like:
