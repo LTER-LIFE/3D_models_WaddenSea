@@ -10,7 +10,7 @@ LABEL description="HPC-like environment for GOTM/FABM with GCC 6.4"
 # --------------------------
 # Install system dependencies (non-interactive)
 # --------------------------
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive # make the install non-interactive by setting the environment variable
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
@@ -28,11 +28,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     zlib1g-dev \
-    libopenmpi-dev \
+    libopenmpi-dev \ # parallel compilation and model coupling work. mpif90
     openmpi-bin \
     nano \
     vim \
-    tcl \
+    tcl \ # a code generation step written in Tcl that automatically creates big Fortran modules describing variables, memory layout, and parameter lists. 
     && ln -sf /bin/bash /bin/sh \
     && rm -rf /var/lib/apt/lists/*
 
@@ -212,7 +212,10 @@ CMD ["/bin/bash"]
 # run it for compilation
 # ./compile_all_git
 
+
 # remove #sbatch in the file "run_gotm_batch_qing" (copy of "run_gotm_laplace")
+# chmod +x ./run_gotm_batch_qing
+
 # create a file: run_gotm_sbatch.sh
 #!/bin/bash
 #SBATCH --job-name=gotm_laplace
@@ -229,10 +232,8 @@ CMD ["/bin/bash"]
 ## Run the container with GOTM inside
 # singularity exec /path/to/getm-wad-container.sif ./run_gotm_batch_qing
 
+#############################################
 # in the gotm case wk in HPC, run the sbatch
-# sbatch run_gotm_sbatch.sh
-
-### Things to try:
-# 1. GNU Make version: on HPC it is 3.82. In docker: 4.1
-#######################################################################
-#######################################################################
+#############################################
+# chmod +x ./run_gotm_sbatch_qing
+# sbatch ./run_gotm_sbatch_qing
