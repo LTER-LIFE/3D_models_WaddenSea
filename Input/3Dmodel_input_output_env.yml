@@ -12,6 +12,8 @@ dependencies:
   - matplotlib
   - ipykernel   # For VS Code / Jupyter integration
   - pip         # Optional, for pip installs
+  - esda
+  - libpysal
 
 
 # You can save this as porosity_env.yml and then create the environment with a single command
