@@ -1,0 +1,18 @@
+name: 3Dmodel_input_output_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - xarray
+  - numpy
+  - pandas
+  - scipy
+  - netCDF4
+  - matplotlib
+  - ipykernel   # For VS Code / Jupyter integration
+  - pip         # Optional, for pip installs
+
+
+# You can save this as porosity_env.yml and then create the environment with a single command
+# conda env create -f 3Dmodel_input_output_env.yml 
