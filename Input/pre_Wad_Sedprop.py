@@ -3,44 +3,17 @@ import os
 import xarray as xr
 import pandas as pd
 import numpy as np
-from scipy.interpolate import griddata
+from scipy.interpolate import griddata # for interpolation
 import matplotlib.pyplot as plt
 
-# =========================
-# 1. User settings
-# =========================
-topo_file = "topo_adjusted_dws_200m_2009.nc"   # your topo grid
-mud_file  = "samples.csv"                     # your input data
-output_file = "porosity.nc"
+import esda, libpysal # spatial analysis libraries
+from libpysal.weights import KNN # for spatial weights
+from esda.moran import Moran # for spatial autocorrelation
+import geopandas as gpd # project coordinates
+from scipy.spatial import cKDTree # for fast neighbor search
 
-# =========================
-# 2. Load topo grid
-# =========================
-ds_topo = xr.open_dataset(topo_file)
-ds_topo.data_vars # check variables
-
-# Use the cell-centered latitude and longitude
-lat2d = ds_topo["latc"].values
-lon2d = ds_topo["lonc"].values
-bathymetry = ds_topo["bathymetry"].values  # 2D array (yc, xc)
-
-
-
-# check data by visualization:
-plt.figure(figsize=(10,6))
-plt.pcolormesh(lon, lat, bathymetry, shading='auto', cmap='terrain')
-plt.colorbar(label='bathymetry (m)')
-plt.title('bathymetry')
-plt.xlabel('Longitude')
-plt.ylabel('Latitude')
-plt.show()
-
-# ===================================
-
-import xarray as xr
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+from pykrige.ok import OrdinaryKriging # kriging interpolation
+from skgstat import Variogram, OrdinaryKriging
 
 # =========================
 # 1. Load topo dataset
@@ -109,8 +82,6 @@ print(f"Porosity range in samples: {mud_df['porosity'].min():.2f} to {mud_df['po
 # 6. Project coordinates to meters
 # =========================
 
-import geopandas as gpd
-
 # Convert sample points to GeoDataFrame
 gdf = gpd.GeoDataFrame(
     mud_df,
@@ -134,7 +105,6 @@ grid_y = grid_utm.geometry.y.values.reshape(ds_topo["latc"].shape)
 # =========================
 # 7. Inverse distance weighting interpolation
 # =========================
-from scipy.spatial import cKDTree
 
 def idw_interpolation(xy_points, values, xi, yi, radius=1000, power=2):
     """
@@ -187,14 +157,11 @@ plt.show()
 
 
 # =========================
-# Check for spatial autocorrelation
+# 7 Kriging interpolation  
 # =========================
+# Check for spatial autocorrelation
 # Moran’s I statistic
 # Measures global autocorrelation (values between -1 and 1):
-import esda, libpysal
-from libpysal.weights import KNN
-from esda.moran import Moran
-
 coords = list(zip(mud_df.x, mud_df.y))
 w = KNN.from_array(coords, k=5)
 moran = Moran(mud_df.porosity, w)
@@ -202,5 +169,10 @@ print(moran.I, moran.p_sim)
 # If I > 0.3 and p_sim < 0.05, there’s significant positive autocorrelation.
 # print(moran.I, moran.p_sim)
 # 0.8059314999249731 0.001
+
+# =========================
+# Kriging with radius-limited neighbors
+# =========================
+from skgstat import Variogram, OrdinaryKriging
 
 
