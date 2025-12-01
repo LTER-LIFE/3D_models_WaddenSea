@@ -3,15 +3,17 @@ require(ggplot2)
 require(tidyterra)
 require(ncdf4)
 
-path <- ""
-
 ncfile_path <- ""
+
+path <- paste0(ncfile_path, "\\2024_11_18_Franken_SuppInfo3B_BelowMurkyWaters_Silt\\")
+
+
 
 
 # --- User paths (change if needed) ---
 tif_file  <- "2024_11_18_Franken_SuppInfo3B_BelowMurkyWaters_Silt.tif"
 topo_nc   <- "topo_adjusted_dws_200m_2009.nc"
-out_nc    <- "sediment_mud_fraction.nc"
+out_nc    <- paste0(ncfile_path, "sediment_mud_fraction.nc")
 
 # --- 1. load inputs ---
 silt <- rast(paste0(path,"2024_11_18_Franken_SuppInfo3B_BelowMurkyWaters_Silt.tif"))
@@ -24,6 +26,10 @@ bathy_nc <- rast(paste0(ncfile_path, "topo_adjusted_dws_200m_2009.nc"))
 ggplot()+
   geom_spatraster(data = bathy_nc, aes(fill=bathymetry))
 
+bathy_nc_flipped <- flip(bathy_nc, "vertical")
+ggplot()+
+  geom_spatraster(data = bathy_nc_flipped, aes(fill=bathymetry))
+
 lonc <- ncvar_get(nc, "lonc")  # [xc, yc]
 latc <- ncvar_get(nc, "latc")  # [xc, yc]
 dim_xc <- dim(lonc)[1]
@@ -33,7 +39,7 @@ nc_close(nc)
 
 # Quick info
 cat("TIFF CRS:", crs(silt), "\n")
-cat("TIFF extent (proj units):", ext(silt), "\n")
+# cat("TIFF extent (proj units):", ext(silt), "\n")
 cat("GETM lon range:", range(lonc, na.rm = TRUE), "\n")
 cat("GETM lat range:", range(latc, na.rm = TRUE), "\n")
 
@@ -47,7 +53,7 @@ tif_bbox <- ext(silt_ll)            # xmin,xmax,ymin,ymax in lon/lat
 getm_lon_rng <- range(lonc, na.rm=TRUE)
 getm_lat_rng <- range(latc, na.rm=TRUE)
 tif_bbox
-cat("Reprojected TIFF bbox (lon/lat):", tif_bbox, "\n")
+# cat("Reprojected TIFF bbox (lon/lat):", tif_bbox, "\n")
 cat("GETM lon range:", paste(getm_lon_rng, collapse=", "), "\n")
 cat("GETM lat range:", paste(getm_lat_rng, collapse=", "), "\n")
 
@@ -115,6 +121,15 @@ fill_na_with <- -999.0
 silt_arr_filled <- silt_arr
 silt_arr_filled[is.na(silt_arr_filled)] <- fill_na_with
 
+# --- 6b. CALCULATE POROSITY  -------------------------------
+# Equation:
+# Porosity = 0.387 + 0.415 * (fraction of silt & clay - SPM content)
+porosity_arr <- 0.387 + 0.415 * (silt_arr_filled/100)
+# Ensure NA fill value
+porosity_arr[is.na(porosity_arr)] <- fill_na_with   ### ADDED
+
+
+
 # --- 7. WRITE NETCDF (including lonc/latc variables to mimic topo file) ---
 # Build dimensions (use xc, yc names and lengths matching topo)
 xc_dim <- ncdim_def("xc", units="m", vals = 1:dim_xc)
@@ -128,13 +143,21 @@ lat_var <- ncvar_def("latc", "degree_north", list(xc_dim, yc_dim),
 mud_var <- ncvar_def("mud_fraction", "percent", list(xc_dim, yc_dim),
                      missval = -999.0, longname = "sediment mud content (%)", prec = "float")
 
+### ADDED NEW VARIABLE
+por_var <- ncvar_def("porosity", "1", 
+                     list(xc_dim, yc_dim), missval = -999.0,
+                     longname = "sediment porosity (0–1)", prec = "float")
+
 # create file and write
-ncnew <- nc_create(out_nc, vars = list(lon_var, lat_var, mud_var))
+ncnew <- nc_create(out_nc, vars = list(lon_var, lat_var, mud_var, por_var))
 
 # Put arrays. ncvar_put expects arrays matching dimension order (xc,yc)
 ncvar_put(ncnew, "lonc", lonc)
 ncvar_put(ncnew, "latc", latc)
 ncvar_put(ncnew, "mud_fraction", silt_arr_filled)
+
+### ADDED
+ncvar_put(ncnew, "porosity", porosity_arr)
 
 # Global attributes - mimic your topo file a bit
 ncatt_put(ncnew, 0, "type", "Sediment mud fraction file for GETM")
@@ -146,6 +169,15 @@ nc_close(ncnew)
 cat("Wrote NetCDF:", out_nc, "\n")
 
 
-sed_nc <- rast(paste0(ncfile_path, "sediment_silt_fraction.nc"))
+sed_nc <- rast(paste0(ncfile_path, "sediment_mud_fraction.nc"))
 ggplot()+
-  geom_spatraster(data = sed_nc, aes(fill=mud_fraction))
+  geom_spatraster(data = sed_nc, aes(fill=porosity)) + 
+  scale_fill_viridis_c(
+    limits = c(0,1)
+  )
+
+
+sed_nc_flipped <- flip(sed_nc, "vertical")  # or "horizontal"
+ggplot() +
+  geom_spatraster(data = sed_nc_flipped, aes(fill = porosity)) +
+  scale_fill_viridis_c(limits = c(0, 1))
