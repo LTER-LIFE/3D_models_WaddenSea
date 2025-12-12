@@ -16,6 +16,10 @@ git clone git@github.com:NIOZ-QingZ/3D_models_WaddenSea.git
 
 
 # Commit changes
+
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
 ## Check which files have changed:
 git status
 
