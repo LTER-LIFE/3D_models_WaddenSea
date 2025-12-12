@@ -57,7 +57,7 @@ secret_minio_secret_key = "pczCG6FRpXQEtad7lAvXv00iCYFd5Dpa1g8GOWzR"
 # For the bio file
 infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio.nc'
 
-# ofname='/export/lv9/user/qzhan/home/model_input_files/restart/restart_201501_hydro_reducedlayers.nc'
+# ofname='/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/model_input_files/restart/restart_201501_hydro_reducedlayers.nc'
 ofname='/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/model_input_files/restart/restart_201501_bio_reducedlayers.nc'
 
 ##################################################################################
