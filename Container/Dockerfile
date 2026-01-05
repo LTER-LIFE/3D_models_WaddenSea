@@ -10,7 +10,8 @@ LABEL description="HPC-like environment for GOTM/FABM with GCC 6.4"
 # --------------------------
 # Install system dependencies (non-interactive)
 # --------------------------
-ENV DEBIAN_FRONTEND=noninteractive # make the install non-interactive by setting the environment variable
+# make the install non-interactive by setting the environment variable
+ENV DEBIAN_FRONTEND=noninteractive 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
@@ -28,11 +29,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     zlib1g-dev \
-    libopenmpi-dev \ # parallel compilation and model coupling work. mpif90
+    # parallel compilation and model coupling work. mpif90
+    libopenmpi-dev \ 
     openmpi-bin \
     nano \
     vim \
-    tcl \ # a code generation step written in Tcl that automatically creates big Fortran modules describing variables, memory layout, and parameter lists. 
+    # a code generation step written in Tcl that automatically creates big Fortran modules describing variables, memory layout, and parameter lists. 
+    tcl \ 
     && ln -sf /bin/bash /bin/sh \
     && rm -rf /var/lib/apt/lists/*
 
@@ -197,23 +200,9 @@ CMD ["/bin/bash"]
 # singularity shell --bind $HOME/home/singularity-workspace:/opt/workspace getm-wad-container.sif # bind the directory, In Singularity, the container filesystem is mostly read-only. 
 # Only paths that are bound to your host directories are writable.
 
-# --- STEP (10): Compile 3D.
-# mkdir $HOME/tools/getm/build/ && cd $HOME/tools/getm/build/
-# cp /export/lv1/user/jvandermolen/tools/getm/build/getm_configure.sh .
-# Change paths (no "code")
-# nano getm_configure.sh
-# ./getm_configure.sh
-
-# cd /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m
-# nano compile_all_git
-# ln -sf $setupdir/Configurations/$conf/$setup.dim $HOME/tools/getm/build/$compiler/dimensions.h
-# cd $HOME/tools/getm/build/$compiler
-
-# run it for compilation
-# ./compile_all_git
-
 
 # remove #sbatch in the file "run_gotm_batch_qing" (copy of "run_gotm_laplace")
+# gotm-cases/OysterGrounds/run_gotm_sbatch.sh:
 # chmod +x ./run_gotm_batch_qing
 
 # create a file: run_gotm_sbatch.sh
