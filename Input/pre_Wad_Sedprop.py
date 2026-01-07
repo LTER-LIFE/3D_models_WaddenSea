@@ -38,6 +38,7 @@ mud_df = mud_df.dropna(subset=["x", "y", "percentage_mud"])
 
 # Empirical function to get porosity (adjust if needed)
 def mud_to_porosity(pct_mud):
+    # Equation 33 in van der Molen et al., J. Sea Res 127 (2017).
     return 0.38662 + 0.415 * pct_mud / 100.0
 
 mud_df["porosity"] = mud_to_porosity(mud_df["percentage_mud"])

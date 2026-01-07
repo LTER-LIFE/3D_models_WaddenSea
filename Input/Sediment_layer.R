@@ -2,13 +2,43 @@ require(terra)
 require(ggplot2)
 require(tidyterra)
 require(ncdf4)
-
-ncfile_path <- ""
+library(leaflet)
 
 path <- paste0(ncfile_path, "\\2024_11_18_Franken_SuppInfo3B_BelowMurkyWaters_Silt\\")
 
+ncfile_path <- "C:\\Users\\qzhan\\OneDrive - NIOZ\\Attachments\\01_LTER-LIFE\\03_Model\\3D_models_WaddenSea\\Input\\"
 
+topo_nc   <- paste0(ncfile_path, "topo_adjusted_dws_200m_2009.nc")
 
+nc_topo <- nc_open(topo_nc)
+topo_arr <- ncvar_get(nc_topo, "bathymetry")
+
+lonc <- ncvar_get(nc_topo, "lonc")
+latc <- ncvar_get(nc_topo, "latc")
+
+# Convert GETM grid to points (x=lon, y=lat, z=bathymetry)
+df <- data.frame(
+  lon = as.vector(lonc),
+  lat = as.vector(latc),
+  bathymetry = as.vector(topo_arr)
+)
+
+# df already has lon/lat/bathymetry
+# Reduce point size for performance
+leaflet(df) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    lng = ~lon, lat = ~lat,
+    radius = 2,
+    color = ~colorNumeric("viridis", bathymetry)(bathymetry),
+    stroke = FALSE, fillOpacity = 0.8,
+    label = ~paste0("Bathymetry: ", round(bathymetry,2), " m")
+  ) %>%
+  addLegend(
+    pal = colorNumeric("viridis", df$bathymetry),
+    values = df$bathymetry,
+    title = "Bathymetry (m)"
+  )
 
 # --- User paths (change if needed) ---
 tif_file  <- "2024_11_18_Franken_SuppInfo3B_BelowMurkyWaters_Silt.tif"
@@ -17,7 +47,8 @@ out_nc    <- paste0(ncfile_path, "sediment_mud_fraction.nc")
 
 # --- 1. load inputs ---
 silt <- rast(paste0(path,"2024_11_18_Franken_SuppInfo3B_BelowMurkyWaters_Silt.tif"))
-nc <- nc_open(paste0(ncfile_path, "topo_adjusted_dws_200m_2009.nc"))
+nc_topo <- nc_open(paste0(ncfile_path, "topo_adjusted_dws_200m_2009.nc"))
+nc_Sedprop_NS <- nc_open(paste0(ncfile_path, "Ben_Sedprop.nc"))
 
 ggplot()+
   geom_spatraster(data = silt)
@@ -29,6 +60,11 @@ ggplot()+
 bathy_nc_flipped <- flip(bathy_nc, "vertical")
 ggplot()+
   geom_spatraster(data = bathy_nc_flipped, aes(fill=bathymetry))
+
+Sedprop_NS_nc <- rast(paste0(ncfile_path, "Ben_Sedprop.nc"))
+ggplot()+
+  geom_spatraster(data = Sedprop_NS_nc, aes(fill=Porosity))
+
 
 lonc <- ncvar_get(nc, "lonc")  # [xc, yc]
 latc <- ncvar_get(nc, "latc")  # [xc, yc]
@@ -128,8 +164,6 @@ porosity_arr <- 0.387 + 0.415 * (silt_arr_filled/100)
 # Ensure NA fill value
 porosity_arr[is.na(porosity_arr)] <- fill_na_with   ### ADDED
 
-
-
 # --- 7. WRITE NETCDF (including lonc/latc variables to mimic topo file) ---
 # Build dimensions (use xc, yc names and lengths matching topo)
 xc_dim <- ncdim_def("xc", units="m", vals = 1:dim_xc)
@@ -164,10 +198,8 @@ ncatt_put(ncnew, 0, "type", "Sediment mud fraction file for GETM")
 ncatt_put(ncnew, 0, "gridid", "North Sea and Wadden Sea")
 ncatt_put(ncnew, 0, "history", paste("Created:", date()))
 
-
 nc_close(ncnew)
 cat("Wrote NetCDF:", out_nc, "\n")
-
 
 sed_nc <- rast(paste0(ncfile_path, "sediment_mud_fraction.nc"))
 ggplot()+
@@ -176,8 +208,11 @@ ggplot()+
     limits = c(0,1)
   )
 
-
 sed_nc_flipped <- flip(sed_nc, "vertical")  # or "horizontal"
 ggplot() +
   geom_spatraster(data = sed_nc_flipped, aes(fill = porosity)) +
   scale_fill_viridis_c(limits = c(0, 1))
+
+
+
+
