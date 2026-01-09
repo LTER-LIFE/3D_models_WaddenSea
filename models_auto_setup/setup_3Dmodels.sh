@@ -56,8 +56,8 @@ echo "==========================================="
 
 # --- STEP (5): Set up directory structure
 # Such as home/GETM_ERSEM_SETUPS/dws_200m/
-# mkdir "$HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/"
-# mkdir "$HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/Input"
+# mkdir "$HOME/home/GETM_ERSEM_SETUPS/"
+# mkdir "$HOME/home/GETM_ERSEM_SETUPS/Input"
 
 # --- STEP (6): Add settings .sh file: "getm.sh", and modify .bashrc to source shell file in order to set up compilation env
 # --- "getm.sh" file can be found in the github repository: https://github.com/NIOZ-QingZ/3D_models_WaddenSea.git
@@ -86,10 +86,10 @@ ls $HOME/local/gotm/bin
 
 # --- STEP (8): Copy 3D setup from Sonja's directory 
 # --- 8.1 copy dir: "dws_200m" from "/export/lv1/user/svanleeuwen/home/setups/"
-# cp -r "/export/lv1/user/svanleeuwen/home/setups/dws_200m" "$HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/"
+# cp -r "/export/lv1/user/svanleeuwen/home/setups/dws_200m" "$HOME/home/GETM_ERSEM_SETUPS/"
 
 # --- 8.2 copy file: "dws_200m_info.txt" from "/export/lv1/user/svanleeuwen/home/setups/"; info about "TO DO"
-# cp "/export/lv1/user/svanleeuwen/home/setups/dws_200m_info.txt" "$HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/dws_200m_info.txt"
+# cp "/export/lv1/user/svanleeuwen/home/setups/dws_200m_info.txt" "$HOME/home/GETM_ERSEM_SETUPS/dws_200m_info.txt"
 
 # --- 8.3 copy file: "move_files" from Johan's folder (any NS usecase), change:
 #         line 19: #SBATCH --output=/export/lv9/user/qzhan/move_files.stdout  
@@ -103,10 +103,10 @@ ls $HOME/local/gotm/bin
 
 # --- STEP (10): Compile 3D.
 mkdir -p "$HOME/tools/getm/build" && cd "$HOME/tools/getm/build"
-cp "$HOME/home/3D_models_WaddenSea/Container/getm_configure.sh" .
+cp "$HOME/home/GETM_ERSEM_SETUPS/Container/getm_configure.sh" .
 chmod +x getm_configure.sh && ./getm_configure.sh
 
-cd "$HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/dws_200m" && ./compile_all_git
+cd "$HOME/home/GETM_ERSEM_SETUPS/dws_200m" && ./compile_all_git
 
 # Run the script by:
 # Make it executable:
