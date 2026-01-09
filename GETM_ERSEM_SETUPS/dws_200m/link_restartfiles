@@ -1,0 +1,24 @@
+#!/bin/bash
+
+restart_dir=/export/lv9/user/qzhan/home/model_input_files/restart/
+#restart_file=restart_199501_from200201.in
+#outdir=/export/lv1/user/jvandermolen/model_output/active_runs/nwes_bfm/26x26/1995/01/
+restart_file=restart_dws200_2015_01.nc
+outdir=/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01/
+
+
+
+rm -f $outdir/restart.????.in
+
+for i in `seq 0 9`;
+do
+  ln -s $restart_dir/$restart_file $outdir/restart.000$i.in
+done
+for i in `seq 10 99`;
+do
+  ln -s  $restart_dir/$restart_file $outdir/restart.00$i.in
+done
+for i in `seq 100 239`;
+do
+  ln -s $restart_dir/$restart_file  $outdir/restart.0$i.in
+done

@@ -1,0 +1,475 @@
+#!/bin/sh
+#SBATCH --partition=normal --qos=normal
+#SBATCH --nodes=4
+##SBATCH --nodelist=no63,no64,no65,no66
+##SBATCH --ntasks-per-node=40
+#SBATCH --exclusive
+#SBATCH --output=/export/lv1/user/svanleeuwen/home/setups/run_all.stdout
+#SBATCH --job-name="run_all"
+
+module load clustershell/1.8
+
+echo "run_all"
+hostname
+
+# Slurm
+cd ${SLURM_SUBMIT_DIR}
+echo "  SLURM_SUBMIT_DIR" $SLURM_SUBMIT_DIR
+echo "  SLURM_JOB_NODELIST" $SLURM_JOB_NODELIST
+rm new_hosts
+export NODELIST=nodelist.txt
+srun -l bash -c 'hostname' | sort | awk '{print $2}' > $NODELIST
+cat $NODELIST | tr ' ' '\n' | sort | uniq > new_hosts
+
+
+rm machinefile
+MACHINEFILE=$HOME/bin/make_machinefile_qsub
+$MACHINEFILE -i link_machinefile -o machinefile -n new_hosts
+echo "after construction machinefile"
+cp machinefile machinefile_keep
+
+export GETMDIR=$HOME/home/getm-git/code
+
+export runid=dws_200m
+
+cd $HOME/home/setups/$runid/
+
+
+export conf=42x42   # Laplace 4 nodes 145 procs
+
+
+export nprocesses=145   # number of subdomains, for deletion loop in run.getm
+
+run_type=4 #4
+
+particle_tracking=0                            # process fields monthly for particle tracking
+export particle_tracking=$particle_tracking
+
+if [ "$conf" = "1p" ] ; then
+  export PDSH=
+else
+  machines=`cat machinefile | sort | uniq | tr [:space:] , | sed -e "s/,$//"`
+  export nodes=`cat machinefile | sort | uniq | tr [:space:] , | sed -e "s/,$//" | sed -e "y/n/ /" | sed -e "y/,/ /"`
+  export DSH="clush -w $machines"
+  export PDSH="clush -R ssh -w $machines"
+  export firstnode=$firstnode
+  export lastnode=$lastnode
+fi
+
+BASE_1=0
+BASE_2=0 
+BASE_3=1
+
+mkdir -p log/$conf
+
+
+EPOCH_START="2009-01-01 00:00:00"   # epoch_start should conform with year after base year
+YEAR_BASE=2008
+
+YEAR_START=2009
+#YEAR_STOP=$YEAR_START
+YEAR_STOP=2009
+echo $YEAR_BASE
+
+#months="01 02 03 04 05 06 07 08 09 10 11 12"
+#months="01"
+months=""
+days="01"
+
+# for the benefit of adjusting output.yaml; must fit model time step
+export timestep=4  # 4  (Kiki)
+
+OUTDIR=`pwd`/out/$runid/$conf
+
+# For flexible output, disable classical output
+export save_2d=False
+export save_3d=False
+
+#=========================================
+#  SETTINGS BY KIRSTEN SCHULZ
+#=========================================
+export FABM=False
+#export jerlov=7
+#export An_const=5.0
+#export Am=5.0
+
+#export il=1
+#export ih=820
+#export jl=1
+#export jh=486
+#export salt_field_no=1
+
+#=========================================
+#  END OF SETTINGS BY KIRSTEN SCHULZ
+#=========================================
+###################################
+#   BASE 1
+###################################
+
+if [ $BASE_1 == "1" ]; then
+   export runtype=$run_type
+   export hotstart=False
+   export use_epoch=False 
+   # slow spin up of tidal boundary usage [seconds]
+   # longer periods necessary for deeper domains
+   #export bdyramp_2d=181440 #60480 #8640 #28800 #8640 #4320
+   export calc_temp=True   # should be true
+   export calc_salt=True   # should be true
+   export save_initial=True
+   # SvL
+   export vel_depth_method=0  # 0=mean, 1=minimum
+
+   #======================
+   # START OF KSCHULZ SETTINGS
+   #======================
+   export timestep=4  # 4  (Kiki)
+
+   #export metforcing=True
+   export metforcing=False
+   export river_method=2
+   export bdy2d=True
+   export bdy3d=True
+   export temp_method=3
+   export salt_method=3
+
+   export crit_depth=0.9     # 0.3, initial 0.9
+   export min_depth=0.3      # 0.12, initial 0.12
+   export clip_depth=0.01    # 0.1, initial 0.01
+# Johan settings
+#   export crit_depth=3.0
+#   export min_depth=1.0
+#   export clip_depth=0.1
+
+   export bdy2d_ramp=181440    # 6000
+   export bdy3d_tmrlx=True   
+   export ip_ramp=6000
+   #======================
+   # END OF KSCHULZ SETTINGS
+   #======================
+
+   export out_dir=${OUTDIR-"./out"}/base_1
+   export hot_dir=${OUTDIR-"./out"}/base_2
+   rm flex_out
+   ln -s $out_dir flex_out
+
+  
+   mkdir -p $out_dir $hot_dir
+
+   ln -sf no_bio.inp bio.inp
+   
+   # remove old log files
+   export logdir=log/$conf/base_1
+   mkdir -p $logdir
+   rm $logdir/*.stderr
+   rm $logdir/log.run
+   rm $logdir/log.base_1
+
+
+   export start="$YEAR_BASE-11-01 00:00:00"
+   export stop="$YEAR_BASE-12-01 00:00:00"
+   export ref_start_time="$YEAR_BASE-11-01 00:00:00"
+   echo  "run.getm_qsub  $start   $stop  >& $logdir/log.$yy.$mm.$day"
+
+   # boundary files are year specific
+   echo "linking bdy_2d.nc and bdy_3d.nc"
+   rm bdy_*d.nc 
+   ln -sf ../../model_input_files/boundaries/bdy_2d_hmcn_dws_200m.$YEAR_BASE.nc bdy_2d.nc 
+   ln -sf ../../model_input_files/boundaries/bdy_3d_dws_200m.$YEAR_BASE.nc bdy_3d.nc
+   echo "done linking bdy_2d.nc"
+ 
+   basemonth='11'
+   sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$YEAR_BASE'-'$basemonth'/' ./output.yaml
+
+   ./run.getm "$start" "$stop" >& $logdir/log.base_1
+fi   # BASE_1
+
+###################################
+#   BASE 2
+###################################
+
+if [ $BASE_2 == "1" ]; then
+   
+   #============================
+   # Kiki settings base_2
+   #============================
+   export step_2d=150
+   export step_3d=450
+
+   export hotstart=True
+   export metforcing=True
+   export river_method=2
+   export bdy2d=True
+   export bdy3d=True
+   export temp_method=0
+   export salt_method=0
+   export vel_depth_method=1   
+
+   export ip_ramp=-1
+   export bdy2d_ramp=-1
+   export bdy3d_tmrlx=True
+
+   export crit_depth=0.9  # initial 0.9, Kiki: 0.3
+   export min_depth=0.3   # initial 0.3, Kiki: 0.12
+   export clip_depth=0.01 # initial 0.01, try 0.05
+   export timestep=4.0
+   #============================
+   # End of Kiki settings
+   #============================
+
+   export runtype=$run_type
+   export use_epoch=False 
+
+   export out_dir=${OUTDIR-"./out"}/base_2
+   #export hot_dir=${OUTDIR-"./out"}/base_3
+   export hot_dir=${OUTDIR-"./out"}/$YEAR_START/01
+
+   rm flex_out
+   ln -s $out_dir flex_out
+
+   export step_2d=8640 #5760 #2880 #240 is hourly for 15 sec time step
+   export step_3d=43200 #5760 #2880
+
+   mkdir -p $out_dir $hot_dir
+
+   ln -sf no_bio.inp bio.inp
+
+   export logdir=log/$conf/base_2
+   mkdir -p $logdir
+
+   #export start="$YEAR_BASE-11-01 00:00:00"
+   #export stop="$YEAR_BASE-12-01 00:00:00"
+   #export ref_start_time="$YEAR_BASE-11-01 00:00:00"
+   export start="$YEAR_BASE-12-01 00:00:00"
+   export stop="$YEAR_START-01-01 00:00:00"
+   export ref_start_time="$YEAR_BASE-12-01 00:00:00"
+
+   # boundary files are year specific
+   echo "linking bdy_2d.nc and bdy_3d.nc"
+   rm bdy_*d.nc 
+   ln -sf ../../model_input_files/boundaries/bdy_2d_hmcn_dws_200m.$YEAR_BASE.nc bdy_2d.nc 
+   ln -sf ../../model_input_files/boundaries/bdy_3d_dws_200m.$YEAR_BASE.nc bdy_3d.nc
+   echo "done linking bdy files"
+
+   echo  "run.getm_qsub  $start   $stop  >& $logdir/log.base_2"
+
+   #basemonth='11'
+   basemonth='12'
+   sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$YEAR_BASE'-'$basemonth'/' ./output.yaml
+ 
+   ./run.getm "$start" "$stop" >& $logdir/log.base_2
+
+fi  # BASE_2
+
+
+###################################
+#   BASE 3
+###################################
+
+export runtype=$run_type
+export hotstart=True
+export river_method=2
+export An=-1.
+export bdy2d=True
+export bdyramp_2d=-1
+export bdyramp_3d=8640 #28800 #8640 #4320
+export bdy3d=True
+export temp_method=0
+export salt_method=0
+
+
+if [ $BASE_3 == "1" ]; then
+
+   #export meteo_ramp=181440   #introduce here but slowly
+   export metforcing=True
+
+   export use_epoch=True 
+   export bdyramp_2d=-1
+   export out_dir=${OUTDIR-"./out"}/base_3
+   #export hot_dir=${OUTDIR-"./out"}/$YEAR_START/01
+   export hot_dir=${OUTDIR-"./out"}/$YEAR_START/02
+
+   rm flex_out
+   ln -s $out_dir flex_out
+
+   # 240 is hourly for 15 sec time step (360 for 10s)
+   export step_2d=150   # Kiki: 150 
+   export step_3d=450  # Kiki: 450
+
+   #============================
+   # Kiki
+   export timestep=4  # 4  (Kiki)\
+   export crit_depth=0.6  # initial 0.9, Kiki: 0.3
+   export min_depth=0.2   # initial 0.3, Kiki: 0.12
+   export clip_depth=0.02 # initial 0.01, try 0.05
+   #============================
+   export save_initial=False
+
+   mkdir -p $out_dir $hot_dir
+
+   l2 -sf no_bio.inp bio.inp
+
+   export logdir=log/$conf/base_3
+   mkdir -p $logdir
+
+   #export start="$YEAR_BASE-12-01 00:00:00"
+   #export stop="$YEAR_START-01-01 00:00:00"
+   #export ref_start_time="$YEAR_BASE-12-01 00:00:00"
+   #echo  "run.getm_qsub  $start   $stop  >& $logdir/log.base_3"
+   export start="$YEAR_START-01-01 00:00:00"
+   export stop="$YEAR_START-02-01 00:00:00"
+   export ref_start_time="$YEAR_START-01-01 00:00:00"
+   echo  "run.getm_qsub  $start   $stop  >& $logdir/log.base_3"
+
+   #basemonth='12'
+   #sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$YEAR_BASE'-'$basemonth'/' ./output.yaml
+   basemonth='01'
+   sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$YEAR_START'-'$basemonth'/' ./output.yaml
+ 
+   ./run.getm "$start" "$stop" >& $logdir/log.base_3
+
+fi  # BASE_3
+
+##################################################################
+#   NORMAL RUN
+##################################################################
+
+# 2001 monthly runs
+export bdyramp_3d=-1 #28800 #8640 #4320
+
+export step_2d=60480 #360 #240 is hourly for 15 sec time step
+export step_3d=43200 #8640 #28800
+
+export metforcing=True
+export use_epoch=True 
+
+export crit_depth=0.9
+export min_depth=0.3
+export clip_depth=0.1
+
+export save_fluxes=True
+
+yy=$YEAR_START
+#for yy in $years ; do
+while [ $yy -le $YEAR_STOP ] ; do
+   echo "$yy"
+
+   echo "linking bdy_2d.nc and bdy_3d.nc"
+   rm bdy_*d.nc 
+   ln -sf ../../model_input_files/boundaries/bdy_2d_hmcn_dws_200m.$yy.nc bdy_2d.nc 
+   ln -sf ../../model_input_files/boundaries/bdy_3d_dws_200m.$yy.nc bdy_3d.nc
+   echo "done linking bdy_2d.nc"
+
+   for mm in $months ; do
+      echo "$mm"
+      for dd in $days ; do
+
+         ln -sf do_bio.inp bio.inp
+
+         hot_mm=`expr $mm + 1`
+
+	 if [ "$hot_mm " -lt "10" ] ; then
+            hot_mm=0$hot_mm
+         fi
+
+	 if [ "$mm " -eq "12" ] ; then
+            hot_mm=01
+            hot_yy=`expr $yy + 1`
+         else
+            hot_yy=$yy
+         fi
+
+         export out_dir=${OUTDIR-"./out"}/$yy/$mm/
+         export hot_dir=${OUTDIR-"./out"}/$hot_yy/$hot_mm/
+         mkdir -p $out_dir $hot_dir
+
+         rm flex_out
+         ln -s $out_dir flex_out
+
+         if [ $use_epoch == "True" ] ; then
+           export start=$EPOCH_START
+         else
+	   export start="$yy-$mm-$dd 00:00:00"
+         fi
+	 export start="$yy-$mm-$dd 00:00:00"
+	 export stop="$hot_yy-$hot_mm-$dd 00:00:00"
+
+         export logdir=log/$conf/$yy$mm$dd
+         export year=$yy
+         export month=$mm
+         mm_ref=01
+         YBASE=`expr $YEAR_BASE + 1 `
+         echo "YEARBASE: $YEAR_BASE"
+         echo "YBASE: $YBASE"
+         export ref_start_time="$YBASE-$mm_ref-$days 00:00:00"
+         echo "run_all: ref_start_time: $ref_start_time"
+
+
+         sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$yy'-'$mm'/' ./output.yaml
+
+         mkdir -p $logdir
+         ./run.getm "$start" "$stop" >& log/$conf/log.$yy.$mm.$dd
+         wait
+         sleep 1
+
+      done # dd loop over days
+      
+      # particle tracking
+      if [ $particle_tracking == 1 ] ; then
+           export ptcol_dir=/fhgfs/client/svanleeuwen/active_runs/out_nwes_getm/north_west_european_shelf/20x20/$yy
+           outdirparticle=/fhgfs/client/svanleeuwen/active_runs/out_nwes_getm/north_west_european_shelf/20x20/particletracking
+           mkdir $outdirparticle
+           echo $outdirparticle
+           export ptyear=$yy
+           if [ $mm == "01" ] ; then
+             export ptmm1=1
+           fi
+           if [ $mm == "02" ] ; then
+             export ptmm1=2
+           fi
+           if [ $mm == "03" ] ; then
+             export ptmm1=3
+           fi
+           if [ $mm == "04" ] ; then
+             export ptmm1=4
+           fi
+           if [ $mm == "05" ] ; then
+             export ptmm1=5
+           fi
+           if [ $mm == "06" ] ; then
+             export ptmm1=6
+           fi
+           if [ $mm == "07" ] ; then
+             export ptmm1=7
+           fi
+           if [ $mm == "08" ] ; then
+             export ptmm1=8
+           fi
+           if [ $mm == "09" ] ; then
+             export ptmm1=9
+           fi
+           if [ $mm == "10" ] ; then
+             export ptmm1=10
+           fi
+           if [ $mm == "11" ] ; then
+             export ptmm1=11
+           fi
+           if [ $mm == "12" ] ; then
+             export ptmm1=12
+           fi
+           export ptdaily_dir=$outdirparticle
+           export ptfstem=$runid
+           nsubs=`sed -n '1p' par_setup.dat`
+           let nsubs=$nsubs-1
+           export ptnsubs=$nsubs
+           # merge subdomains into daily files
+           ~/bin/particle_extract_perday_automatic_permonth >& $outdirparticle/err_particleextract_$yy$mm.txt
+           # remove model output to make space for next year's run
+           rm -f $ptcol_dir/$mm/*.nc
+       fi  # if particle _tracking
+
+      
+   done  # mm loop over months
+   yy=`expr $yy + 1`
+done  # yy loop over years
+
+#mpdallexit

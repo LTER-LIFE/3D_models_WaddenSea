@@ -1,0 +1,33 @@
+!-------------------------------------------------------------------------------
+! Geobiochemical model
+! 
+!  bio_calc=    .true.: calculate geobiochemical model
+!  bio_model=
+!              -1: template bio model
+!               1: NPZD
+!               2: IOW
+!               3: ?
+!  cnpar=       Cranck-Nicolson parameter
+!  w_adv_discr= advection scheme for vertical motion
+!               2: first order upstream
+!               3: third-order polynomial
+!               4: TVD with Superbee limiter
+!               5: TVD with MUSCL limiter
+!               6: TVD with ULTIMATE QUICKEST
+!  ode_method=  scheme for source & sink dynamics
+!               1: first-order explicit (not positive)              
+!               2: second order explicit Runge-Kutta (not positive)
+!               3: fourth-order explicit Runge-Kutta (not positive)
+!               4: Patankar scheme (first order, not conservative)
+!               5: Patankar-RK scheme (second order, not conservative)
+!               6: Patankar-RK scheme (fourth order, not conservative)
+!  split_factor= in time
+!-------------------------------------------------------------------------------
+&bio_nml
+  bio_calc=.false.,
+  bio_model=2,
+  cnpar=0.5,
+  ode_method=1,
+  w_adv_discr=6,
+  split_factor=1,
+ /

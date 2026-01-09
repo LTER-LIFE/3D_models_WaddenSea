@@ -1,0 +1,77 @@
+
+======================================
+   TO DO
+======================================
+
+Find out where discrepancy comes from (too much ever dry parts in WS): 
+- check elev against RWS data
+- plot elev+min_depth together with bathy
+- check combined signal for known drying and flooding points (do these exist?), e.g. try and compare for Balgzand near to dyke, Griend or vlakte van Kerken. Vliehors, Texel Hors. Groninger coast.
+
+======================================
+   RUNNING
+======================================
+Creating a link
+-----------------
+ln -s file linkname
+
+Running the code --> submit to te queue
+----------------------------
+----------------------------
+squeue : gives you a list of all people running jobs
+sbatch: submit a job
+scancel jobID : cancel a running job
+----------------------------
+----------------------------
+tail -F dws_200m.0062.stderr
+To submit a job to the Slurm queue system do
+
+sbatch ./run_all
+
+in the setup directory
+
+To follow its progress follow the tail of one of the stderr files in the run directory
+
+tail -F *.stderr
+
+merge files
+
+ncmerge dws_200m.2d.0???.nc dws_200m.2d.nc
+======================================
+   EXPERIMENTS
+======================================
+dws_200m setup 
+INFO file
+
+Integer storage of seconds can do no more than +- 10 years at a stretch
+--> start each year with epoch at start of the year
+----------------------------------
+SWIMWAYS - running with yearly time keeping and
+run_all --> run_all_Johan
+run.getm --> run.getm_laplace_getmiow_Sonja
+output.yaml --> output.yaml.dws_200mSvL  (contains which variables to output)
+dws_200m.xml --> dws_200m.xml_Sonja
+
+Time settings for running 2017:
+EPOCH_START="2017-01-01 00:00:00"   # epoch_start should conform with year after base year
+YEAR_BASE=2016
+YEAR_START=2017
+YEAR_STOP=2017
+
+----------------------------------
+INNUDATION
+First try with high res elevation output only
+(5 min output, elev only)
+run_all --> run_all_Sonja
+run.getm --> run.getm_laplace_getmiow_Sonja
+output.yaml --> output.yaml.innudation
+dws_200m.xml --> dws_200m.xml_Sonja
+
+Try outs with min_depth:
+2017-01: 0.25, 0.1, 0.05 (standard settings SWIMWAYS runs)
+2017-02: 0.20, 0.05, 0.01 (worked for Februari)
+2017-03: 0.15, 0.03, 0.01 --> crashes
+2017-02: 0.20, 0.05, 0.01 runs untill August 17th, then crashes
+
+
+

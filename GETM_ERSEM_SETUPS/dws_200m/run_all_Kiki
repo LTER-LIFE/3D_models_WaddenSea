@@ -1,0 +1,288 @@
+#!/bin/sh
+
+# spin-up runs
+
+# Chose the base
+# BASE_1 is to run the month of November 2008 starting from initial conditions
+# BASE_2 is to run any other month from restart files
+BASE_1=1
+BASE_2=0
+
+# Define variables for the getm.inp file
+# Here define some names
+if [ -f .env ] ; then
+. .env
+fi
+export model_dir=$PWD
+export modelname=dws_200m
+export runid=dws_200m_svl
+export parallel=True 
+export title=Dutch_Wadden_Sea_200m
+
+echo $model_dir
+echo $runid 
+
+# Define Output directories
+# define output directory for log file
+export log_dir=log/$runid
+mkdir -p $log_dir
+# define output directory for data
+export OUTDIR=/fhgfs/client/$USER/DWS200out
+
+export FABM=False
+
+export on_grid=False
+export calc_met=True
+export met_method=2
+export f_plane=False
+export fwf_method=3
+
+export vert_cord=3
+export ddu=0.0
+export ddl=0.0001
+export d_gamma=60
+export gamma_surf=False
+
+export use_river_salt=True
+export use_river_temp=True
+export calc_salt=True
+export advect_turbulence=True
+export save_meteo=False
+export vel_check=20
+export min_temp=-2
+
+export avmback=1e-07
+export avhback=1e-07
+
+export min_vel=-100
+export max_vel=100
+
+export bdy3d_tmrlx_max=0.25
+export bdy3d_tmrlx_min=0.0
+export bdy3d_tmrlx_ucut=0.03
+
+export jerlov=7
+export A_const=0.57
+export g1_const=0.37
+export g2_const=3.54
+
+export save_3d=False
+export save_2d=False
+export save_initial=False
+export save_z=False
+export save_s=False
+export save_t=False
+
+export save_turb=False
+export save_tke=False
+export save_eps=False
+export save_num=False
+export save_nuh=False
+export save_ss_nn=False
+export save_rad=False
+export save_rho=False
+export save_waves=False
+export save_strho=False
+export save_z=False
+export save_vel=False
+
+export sync_2d=144
+export sync_3d=48
+
+export An_const=5.0
+export Am=5.0
+
+export il=1
+export ih=820
+export jl=1
+export jh=486
+export salt_field_no=1
+
+#export sync_2d=1
+#export sync_3d=1
+
+if [ $BASE_1 == "1" ]; then
+    
+   export start_time="2008-11-01 00:00:00"
+   export stop_time="2008-12-01 00:00:00"
+   export month="11"
+   export year="2008"  
+
+   export runtype=4
+   export hotstart=False
+   export metforcing=True
+   export river_method=2
+   export bdy2d=True
+   export bdy3d=True
+   export temp_method=3
+   export salt_method=3
+   export maxdepth=49   
+   
+   export timestep=4.0
+   export M=10
+   
+   export min_depth=0.12
+   export crit_depth=0.3
+   export vel_depth_method=1
+
+   export z0_const=0.0017
+   
+   export bdy2d_ramp=6000
+   export bdy3d_tmrlx=True   
+   export meteo_ramp=-1
+
+   export vel2d_adv_split=1
+   export vel2d_adv_hor=6
+   export vel3d_adv_split=2
+   export vel3d_adv_hor=6
+   export vel3d_adv_ver=4
+
+   export temp_adv_split=2
+   export temp_adv_hor=4
+   export temp_adv_ver=4
+   export salt_adv_split=2
+   export salt_adv_hor=4
+   export salt_adv_ver=4
+
+   export An_method=1
+   export An_const=8.0
+   export Am=8.0
+    
+   export ip_ramp=6000
+   export ip_method=6
+   
+   export temp_format=2
+   export salt_format=2
+   export temp_file=initial.nc
+   export salt_file=initial.nc
+   
+   export step_2d=150
+   export step_3d=450
+   export hotout=10800
+
+   export il=1
+   export ih=820
+   export jl=1
+   export jh=486
+
+   export out_dir=${OUTDIR}/$runid/$year/11/
+   #export hot_dir=/home/$USER/getmruns/dws200/hotstart/2008/12/
+   export hot_dir=$out_dir
+   export fin_dir=/fs3/$USER/$runid/$year/$month/
+   export logdir=$log_dir/base_1
+
+   mkdir -p $out_dir
+   mkdir -p $logdir
+   mkdir -p $fin_dir
+   
+   echo "Base_1"
+   echo $start_time
+   echo $stop_time
+
+   qsub inp.pbs > log.pbs
+   export pbs_jobid=`cat log.pbs`
+   echo $pbs_jobid
+   sleep 1
+   qsub  -W depend=afterok:$pbs_jobid run.pbs > log.pbs
+   export pbs_jobid=`cat log.pbs`
+   echo $pbs_jobid
+fi
+
+if [ $BASE_2 == "1" ]; then
+   echo 'BASE_2'
+   export runtype=4
+   export hotstart=True
+   export metforcing=True
+   export river_method=2
+   export bdy2d=True
+   export bdy3d=True
+   export temp_method=0
+   export salt_method=0
+   export vel_depth_method=1   
+
+   export ip_ramp=-1
+   export bdy2d_ramp=-1
+   export bdy3d_tmrlx=True
+   export vel_depth_method=1
+
+   export min_depth=0.12
+   export crit_depth=0.3
+   export z0_method=0
+   export z0_const=0.0017
+   export timestep=4.0
+   export M=10
+
+   export vel2d_adv_split=1
+   export vel2d_adv_hor=6
+   export vel3d_adv_split=2
+   export vel3d_adv_hor=6
+   export vel3d_adv_ver=4
+
+   export temp_adv_split=2
+   export temp_adv_hor=4
+   export temp_adv_ver=4
+   export salt_adv_split=2
+   export salt_adv_hor=4
+   export salt_adv_ver=4
+
+   
+   export step_2d=150
+   export step_3d=450
+   export hotout=10800
+   
+   # change year and month here
+   years=( 2009 )
+   months="08"
+   days="01"
+
+   cont=0
+
+   for yy in $years ; do
+      for mm in $months ; do
+         for dd in $days ; do
+
+            export month=$mm 
+
+            hot_mm=`expr $mm + 1`
+
+	    if [ "$hot_mm " -lt "10" ] ; then
+               hot_mm=0$hot_mm
+            fi
+
+	    if [ "$mm " -eq "12" ] ; then
+               hot_mm=01
+               hot_yy=`expr $yy + 1`
+            else
+               hot_yy=$yy
+            fi
+	    export year=$yy         
+	    export month=$mm
+
+            export out_dir=${OUTDIR-"./Output"}/$runid/$yy/$mm/
+            export hot_dir=$out_dir
+            export logdir=$log_dir/$yy/$mm/
+
+            mkdir -p $logdir
+	 
+            export start_time="$yy-$mm-$dd 00:00:00"
+	 
+            # change end time here
+	    export stop_time="2009-09-01 00:00:00" 
+            echo $start_time
+            echo $stop_time
+
+
+            qsub inp.pbs > log.pbs
+            export pbs_jobid=`cat log.pbs`
+            echo $pbs_jobid
+            sleep 1
+            qsub  -W depend=afterok:$pbs_jobid run.pbs > log.pbs
+            export pbs_jobid=`cat log.pbs`
+            echo $pbs_jobid
+	 
+	    cont=cont+1
+         done  # dd loop over years
+      done  # mm loop over months
+   done  # yy loop over years
+fi  # if base2 is true
+
