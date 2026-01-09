@@ -7,7 +7,7 @@
 #-----Settings---------------------------------------------------
 
 # indir_phys=/export/lv1/user/jvandermolen/home/GETM_ERSEM_SETUPS/north_sea_coarse_noos_bfm2016_jan2025/restart_1981_01/
-indir_phys=/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/model_input_files/restart/
+indir_phys=/export/lv9/user/qzhan/home/model_input_files/restart/
 fname_phys=restart_201501_hydro_reducedlayers.nc
 indir_bio=$indir_phys
 fname_bio=restart_201501_bio_reducedlayers.nc
