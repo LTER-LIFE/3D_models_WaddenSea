@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process          196  of          239  is alive on no67
  ------------------------------------------------------------------------
- getm: Started on  20260112 110922.957
+ getm: Started on  20260112 113953.847
  ------------------------------------------------------------------------
  GETM version: 969dceb (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -1625,33 +1625,3 @@
         Opening Input/Ben_Sedprop.nc.
         Found Porosity in Input/Ben_Sedprop.nc.
         Reading benthic biological fields from hotstart file
-    Error messages to finish in GOTM will be handeld in GETM 
-    init_rivers_bio()
-    init_les
-    init_register_all_variables()
-    init_output
-        save_nuh T
-        save_num T
-        save_tke T
-        save (rotated) velocities in center points
-        save grid-related volume fluxes through interfaces
-        2D results: /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//dws_200m.2d.0196.nc
-        First=           0  step=         150  sync_2d=          144
-        Elevation will be masked for depths below   0.349999994    
-        Saving meteo forcing in /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//dws_200m.2d.0196.nc
-        3D results: /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//dws_200m.3d.0196.nc
-        First=           0  step=         450  sync_3d=           48
-        Elevation will be masked for depths below   0.200000003    
-        calculate and save mixing analysis
-    do_register_all_variables()
-        register_domain_variables()
-        register_meteo_variables()
-        register_waves_variables()
-        register_2d_variables()
-        register_3d_variables()
-        register_les_variables()
-        register_processed_variables()
-    hotstart
-        Reading hotstart file: 
-            /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//restart.0196.in
- FATAL ERROR: open_restart_ncdf: FILE                 No such file or directory                                                       

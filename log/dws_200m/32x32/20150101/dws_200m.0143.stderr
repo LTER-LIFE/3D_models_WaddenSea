@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process          143  of          239  is alive on no66
  ------------------------------------------------------------------------
- getm: Started on  20260112 110922.963
+ getm: Started on  20260112 113953.849
  ------------------------------------------------------------------------
  GETM version: 969dceb (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -1654,4 +1654,3 @@
     hotstart
         Reading hotstart file: 
             /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//restart.0143.in
- FATAL ERROR: open_restart_ncdf: FILE                 No such file or directory                                                       
