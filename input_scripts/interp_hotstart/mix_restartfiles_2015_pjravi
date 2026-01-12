@@ -1,0 +1,61 @@
+#!/bin/bash
+set -euo pipefail
+#---------  FOR 5KM RESOLUTION
+#JAN="/export/lv9/user/pjravi/mix_restartfiles/original_hotstart_5km/restart_201501.in"
+#DEC="/export/lv9/user/pjravi/mix_restartfiles/original_hotstart_5km/restart_201512.in"
+#OUT="/export/lv9/user/pjravi/mix_restartfiles/restart_201501_spinup.nc"
+
+
+#---------  FOR 500M RESOLUTION
+JAN="/export/lv9/user/pjravi/mix_restartfiles/original_hotstart_500m/restart_201501.in"
+DEC="/export/lv9/user/pjravi/mix_restartfiles/original_hotstart_500m/restart_201601.in"
+OUT="/export/lv9/user/pjravi/mix_restartfiles/restart_201501_500m_spinup.in"
+
+
+echo "mix_restartfiles (clean version)"
+
+#------------------------------------------------
+# 1. Start from JAN → structure, dims, axes OK
+#------------------------------------------------
+cp -f "$JAN" "$OUT"
+
+#------------------------------------------------
+# 2. Ensure coordinate variables exist
+#------------------------------------------------
+ncks -A -v xax,yax,zax "$JAN" "$OUT"
+
+#------------------------------------------------
+# 3. Copy time counters from JAN (authoritative)
+#------------------------------------------------
+ncks -A -v loop,julianday,secondsofday,timestep "$JAN" "$OUT"
+
+#------------------------------------------------
+# 4. Replace biology from DEC (EXACT Johan order)
+#------------------------------------------------
+echo "adding biological variables from DEC"
+
+#ncks -A -v numc,numbc,start_3d,start_2d "$DEC" "$OUT"
+
+ncks -A -v R9x,O2o,N1p,N3n,N4n,N5s,N6r,B1c,B1n,B1p,Bac "$DEC" "$OUT"
+ncks -A -v P1c,P1n,P1p,P1l,P1s,P2c,P2n,P2p,P2l,P3c,P3n,P3p,P3l "$DEC" "$OUT"
+ncks -A -v P4c,P4n,P4p,P4l,P5c,P5n,P5p,P5l,P5s,P6c,P6n,P6p,P6l,Pcc "$DEC" "$OUT"
+ncks -A -v R1c,R1n,R1p,R2c,R2n,R3c,R6c,R6n,R6p,R6s,RZc,O3c,O3h "$DEC" "$OUT"
+ncks -A -v Z3c,Z4c,Z2c,Z5c,Z6c,BP1c,BP1n,BP1p,BP1l,BP1s "$DEC" "$OUT"
+ncks -A -v Y1c,Y1n,Y1p,Y2c,Y2n,Y2p,Y4c,Y4n,Y4p,Y5c,Y5n,Y5p "$DEC" "$OUT"
+ncks -A -v Yy3c,Yy3n,Yy3p,Y3c,Y3n,Y3p,Ys3c,Q6c,Q6n,Q6p,Q6s "$DEC" "$OUT"
+ncks -A -v Q9x,Qp9x,QSx,Qun,Q1un,Q2un,Q2c,Q2n,Q12c,Q12n,Q1c,Q1n,Q1p "$DEC" "$OUT"
+ncks -A -v Q11c,Q11n,Q11p,Q21c,Q21n,Q21p,H1c,H1n,H1p,H2c,H2n,H2p "$DEC" "$OUT"
+ncks -A -v H3c,H3n,H3p,HNc,HNn,HNp,Hac,Kp1p,Kp3n,Kp4n,Kn4n,Kp5s "$DEC" "$OUT"
+ncks -A -v Qpun,K1p,K11p,K21p,K4n,K14n,K24n,K5s,K15s,K6r,K16r,K26r,K3n "$DEC" "$OUT"
+ncks -A -v K13n,K23n,G2o,G4n,Dfm,Dcm,Dlm,D1m,D2m,D6m,D7m,D8m,D9m,DSm "$DEC" "$OUT"
+ncks -A -v DH2m,DH3m,irri_bio,G3c,G3h,G13c,G13h,G23c,G23h "$DEC" "$OUT"
+
+#------------------------------------------------
+# 5. Normalize key global attributes
+#------------------------------------------------
+ncatted -a restart_date,global,o,c,"2015-01-01 00:00:00" "$OUT" || true
+ncatted -a ioff,global,o,i,-1 -a joff,global,o,i,0 \
+        -a FirstPelVar,global,o,c,"R9x" \
+        -a FirstBenVar,global,o,c,"BP1c" "$OUT" || true
+
+echo "done!"
