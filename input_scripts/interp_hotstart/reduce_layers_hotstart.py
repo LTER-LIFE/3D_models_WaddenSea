@@ -56,12 +56,12 @@ wdir='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes'
 os.chdir(wdir)
 
 # For the hydro file
-# infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_hydro.nc'
-# ofname='/export/lv9/user/qzhan/home/model_input_files/restart/restart_201501_hydro_reducedlayers.nc'
+infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_hydro.nc'
+ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_hydro_reducedlayers.nc'
 
 # For the bio file
-infname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio.nc'
-ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_bio_reducedlayers.nc'
+#infname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio.nc'
+#ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_bio_reducedlayers.nc'
 
 ##################################################################################
 # Main routine
@@ -82,7 +82,7 @@ print('Variables: ',varnames)
 
 # open and initialise output file
 #outfile=NetCDFFile(ofname,'w')
-outfile=Dataset(ofname,'w',format='NETCDF3_CLASSIC')
+outfile=Dataset(ofname,'w',format='NETCDF4_CLASSIC')
 ndims=len(alldimnames)
 for idim in range(ndims):
   dimname=alldimnames[idim]
@@ -107,6 +107,7 @@ for varname in varnames:
 #  units=var.units
   datavals=var[:]
 #  data_attlist=dir(var)
+
   datatype=datavals.dtype.kind
 ##  print datatype
 #  if datatype=='f':
@@ -125,20 +126,54 @@ for varname in varnames:
     time_2d=datavals
     time_2d_units=units
     
-  if len(dimnames)==3:
-    # adjust
-    sv=shape(datavals)
-    out=zeros(((sv[0]-1)//2+1,sv[1],sv[2]))
-    if varname=='ho' or varname=='hn' :   # add 2 levels
-      out[0,:,:]=datavals[0,:,:]
-      for nl in range(1,(sv[0]-1)//2+1):
-        out[nl,:,:]=datavals[2*nl-1,:,:]+datavals[2*nl,:,:]
-    else:                                         # average 2 levels
-      out[0,:,:]=datavals[0,:,:]
-      for nl in range(1,(sv[0]-1)//2+1):
-        out[nl,:,:]=(datavals[2*nl-1,:,:]+datavals[2*nl,:,:])/2
+  # Check if this variable contains the zax dimension
+  if 'zax' in dimnames:
+    # Find which position zax occupies in the variable's dimensions
+    zax_index = dimnames.index('zax')
+    
+    # Prepare output shape with reduced zax dimension
+    sv = shape(datavals)
+    out_shape = list(sv)
+    out_shape[zax_index] = 1 + (sv[zax_index] - 1) // 2
+    out = zeros(tuple(out_shape))
+    
+    # Perform reduction along the zax dimension
+    if varname=='ho' or varname=='hn':  # sum 2 levels
+      # Copy first level
+      slices_first = [slice(None)] * len(dimnames)
+      slices_first[zax_index] = 0
+      slices_out_first = [slice(None)] * len(dimnames)
+      slices_out_first[zax_index] = 0
+      out[tuple(slices_out_first)] = datavals[tuple(slices_first)]
+      
+      # Sum pairs of subsequent levels
+      for nl in range(1, out_shape[zax_index]):
+        slices_out = [slice(None)] * len(dimnames)
+        slices_out[zax_index] = nl
+        slices_in1 = [slice(None)] * len(dimnames)
+        slices_in1[zax_index] = 2*nl - 1
+        slices_in2 = [slice(None)] * len(dimnames)
+        slices_in2[zax_index] = 2*nl
+        out[tuple(slices_out)] = datavals[tuple(slices_in1)] + datavals[tuple(slices_in2)]
+    else:  # average 2 levels
+      # Copy first level
+      slices_first = [slice(None)] * len(dimnames)
+      slices_first[zax_index] = 0
+      slices_out_first = [slice(None)] * len(dimnames)
+      slices_out_first[zax_index] = 0
+      out[tuple(slices_out_first)] = datavals[tuple(slices_first)]
+      
+      # Average pairs of subsequent levels
+      for nl in range(1, out_shape[zax_index]):
+        slices_out = [slice(None)] * len(dimnames)
+        slices_out[zax_index] = nl
+        slices_in1 = [slice(None)] * len(dimnames)
+        slices_in1[zax_index] = 2*nl - 1
+        slices_in2 = [slice(None)] * len(dimnames)
+        slices_in2[zax_index] = 2*nl
+        out[tuple(slices_out)] = (datavals[tuple(slices_in1)] + datavals[tuple(slices_in2)]) / 2.0
   else:
-    out=datavals
+    out = datavals
 
   if varname=='zax':
     print('yes')
