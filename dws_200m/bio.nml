@@ -39,7 +39,7 @@
 
 !-------------------------------------------------------------------------------
 &bio_nml
-  bio_calc=.true.,
+  bio_calc=.false.,
   bio_model=6,
   bio_eulerian=.true.,
   bio_setup=3,

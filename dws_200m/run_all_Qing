@@ -1,6 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=normal --qos=normal
 #SBATCH --nodes=6
+#SBATCH --exclude=no69
 ##SBATCH --nodelist=no63,no64,no65,no66,no70,no72
 ##SBATCH --nodelist=no67,no68,no69,no70,no71,no72
 ##SBATCH --nodelist=no61,no62,no63,no64,no67,no68
@@ -328,12 +329,6 @@ if [ $BASE_4 == "1" ]; then
   while [ $yy -le $YEAR_STOP ] ; do
      echo "$yy"
 
-     echo "linking bdy_2d.nc and bdy_3d.nc"
-     rm bdy_*d.nc 
-     ln -sf /export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_$yy_$mm.2d.nc bdy_2d.nc 
-     ln -sf /export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_$yy_$mm.3d.nc bdy_3d.nc
-     echo "done linking bdy files"
-
      for mm in $months ; do
         echo "$mm"
         for dd in $days ; do
@@ -378,6 +373,14 @@ if [ $BASE_4 == "1" ]; then
            export ref_start_time="$YBASE-$mm_ref-$days 00:00:00"
            echo "run_all: ref_start_time: $ref_start_time"
 
+           echo "linking bdy_2d.nc and bdy_3d.nc"
+	   rm bdy_*d.nc
+           echo "Year: $yy"
+           echo "Month: $mm"
+	   echo "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".2d.nc"	
+	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".2d.nc" bdy_2d.nc
+	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".3d.nc" bdy_3d.nc
+	   echo "done linking bdy files"
 
            sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$yy'-'$mm'/' ./output.yaml
 

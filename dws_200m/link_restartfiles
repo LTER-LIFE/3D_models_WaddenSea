@@ -2,8 +2,8 @@
 
 restart_dir=/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/
 #restart_file=restart_199501_from200201.in
-#outdir=/export/lv1/user/jvandermolen/model_output/active_runs/nwes_bfm/26x26/1995/01/
-restart_file=restart_dws200_2015_01.nc
+#restart_dir=/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/
+restart_file=restart_201501_hydro_reducedlayers.nc
 outdir=/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01/
 
 
