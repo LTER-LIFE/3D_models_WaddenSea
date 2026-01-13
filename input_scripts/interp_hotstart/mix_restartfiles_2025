@@ -65,7 +65,7 @@ ncks --no-abc -C -A -v loop,julianday,secondsofday,timestep $indir_phys/$fname_p
 
 # add axes from hydro
 # for some reason or other adding this results in an unreadable hotstart file
-#ncks --no-abc -C -A -v xax,yax,zax $outdir/temp_phys.nc $outdir/$outfname
+ncks --no-abc -C -A -v xax,yax,zax $outdir/temp_phys.nc $outdir/$outfname
 
 # add physics
 echo "adding physics variables..."
