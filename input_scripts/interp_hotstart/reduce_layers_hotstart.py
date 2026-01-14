@@ -84,7 +84,7 @@ print('Variables: ',varnames)
 
 # open and initialise output file
 #outfile=NetCDFFile(ofname,'w')
-outfile=Dataset(ofname,'w',format='NETCDF3_CLASSIC')
+outfile=Dataset(ofname,'w',format='NETCDF4')
 ndims=len(alldimnames)
 
 # Create a mapping of old dimension sizes to new dimension sizes
