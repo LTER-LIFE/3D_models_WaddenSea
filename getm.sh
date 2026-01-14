@@ -40,8 +40,8 @@ export COMPILATION_MODE="production"
 export GETM_PARALLEL=true
 
 export GOTMDIR=$HOME/home/gotm-git/
-export FABMDIR=$HOME/home/fabm-git/fabm/src
+export FABMDIR=$HOME/home/fabm-git/fabm/
 export BFMDIR=$HOME/home/BFM_SOURCES/bfm-git
-export GETMDIR=$HOME/home/getm-git/src
+export GETMDIR=$HOME/home/getm-git/
 
 export GOTM_BUILD_DIR=$HOME/home/build/gotm
