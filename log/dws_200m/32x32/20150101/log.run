@@ -32,30 +32,6 @@ Requested max number of outstanding WRs in the RQ:                2
 Requested max number of SGEs in a WR in the SQ:                   511
 Requested max number of SGEs in a WR in the RQ:                   511
 Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
 Error:    File exists
 
 Check requested attributes.
@@ -81,7 +57,7 @@ Requested max number of outstanding WRs in the RQ:                2
 Requested max number of SGEs in a WR in the SQ:                   511
 Requested max number of SGEs in a WR in the RQ:                   511
 Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
+Error:    File exists
 
 Check requested attributes.
 --------------------------------------------------------------------------
@@ -94,7 +70,7 @@ Requested max number of outstanding WRs in the RQ:                2
 Requested max number of SGEs in a WR in the SQ:                   511
 Requested max number of SGEs in a WR in the RQ:                   511
 Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
+Error:    File exists
 
 Check requested attributes.
 --------------------------------------------------------------------------
@@ -142,52 +118,6 @@ in this run.
 
 Hostname: no61
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
@@ -203,291 +133,6 @@ Requested max number of data that can be posted inline to the SQ: 0
 Error:    No such file or directory
 
 Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 Failed to create a queue pair (QP):
@@ -547,59 +192,6 @@ Hostname: no61
 --------------------------------------------------------------------------
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Open MPI has detected that there are UD-capable Verbs devices on your
-system, but none of them were able to be setup properly.  This may
-indicate a problem on this system.
-
-You job will continue, but Open MPI will ignore the "ud" oob component
-in this run.
-
-Hostname: no61
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Failed to create a queue pair (QP):
-
-Hostname: no61
-Requested max number of outstanding WRs in the SQ:                1
-Requested max number of outstanding WRs in the RQ:                2
-Requested max number of SGEs in a WR in the SQ:                   511
-Requested max number of SGEs in a WR in the RQ:                   511
-Requested max number of data that can be posted inline to the SQ: 0
-Error:    No such file or directory
-
-Check requested attributes.
---------------------------------------------------------------------------
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 --------------------------------------------------------------------------
 Failed to create a queue pair (QP):
 
@@ -646,6 +238,20 @@ in this run.
 
 Hostname: no61
 --------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------
 Open MPI has detected that there are UD-capable Verbs devices on your
 system, but none of them were able to be setup properly.  This may
@@ -656,6 +262,250 @@ in this run.
 
 Hostname: no61
 --------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 --------------------------------------------------------------------------
 Failed to create a queue pair (QP):
 
@@ -748,6 +598,36 @@ in this run.
 
 Hostname: no61
 --------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 --------------------------------------------------------------------------
 Failed to create a queue pair (QP):
 
@@ -982,6 +862,54 @@ libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------
 WARNING: No preset parameters were found for the device that Open MPI
 detected:
@@ -1009,985 +937,1221 @@ support) will be disabled for this port.
   Local port:           1
   CPCs attempted:       rdmacm, udcm
 --------------------------------------------------------------------------
- MPI is initialised - v3.1
- Process           13  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           27  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           38  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            3  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            2  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           94  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           34  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           21  of          239  is alive on no61
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Failed to create a queue pair (QP):
+
+Hostname: no61
+Requested max number of outstanding WRs in the SQ:                1
+Requested max number of outstanding WRs in the RQ:                2
+Requested max number of SGEs in a WR in the SQ:                   511
+Requested max number of SGEs in a WR in the RQ:                   511
+Requested max number of data that can be posted inline to the SQ: 0
+Error:    No such file or directory
+
+Check requested attributes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI has detected that there are UD-capable Verbs devices on your
+system, but none of them were able to be setup properly.  This may
+indicate a problem on this system.
+
+You job will continue, but Open MPI will ignore the "ud" oob component
+in this run.
+
+Hostname: no61
+--------------------------------------------------------------------------
  MPI is initialised - v3.1
  Process           12  of          239  is alive on no61
  MPI is initialised - v3.1
- Process           18  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           20  of          239  is alive on no61
- MPI is initialised - v3.1
  Process           28  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           15  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          169  of          239  is alive on no67
- MPI is initialised - v3.1
- Process          151  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           29  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           44  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          154  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           82  of          239  is alive on no65
- MPI is initialised - v3.1
- Process            0  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            4  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            5  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          176  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           49  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          213  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          134  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           16  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           22  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           36  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           32  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          185  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           55  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          217  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          140  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           88  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           14  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           17  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           39  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          191  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           56  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          222  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          148  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           89  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           33  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            6  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           31  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           37  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          162  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           50  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          227  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          145  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           93  of          239  is alive on no65
- MPI is initialised - v3.1
- Process            8  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            9  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           26  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          168  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           48  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          235  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          149  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           97  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           11  of          239  is alive on no61
- MPI is initialised - v3.1
- Process            7  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           24  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          172  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           65  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          200  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          143  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           98  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           19  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          173  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           78  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          206  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          137  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          104  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           23  of          239  is alive on no61
  MPI is initialised - v3.1
  Process           10  of          239  is alive on no61
  MPI is initialised - v3.1
- Process           30  of          239  is alive on no61
- MPI is initialised - v3.1
- Process           35  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          178  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           67  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          216  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          121  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          109  of          239  is alive on no65
- MPI is initialised - v3.1
- Process           25  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          180  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           63  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          219  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          156  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          113  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          188  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           73  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          224  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          152  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           90  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          183  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           62  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          230  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          141  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           99  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          184  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           52  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          207  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          123  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          100  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          167  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           71  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          215  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          127  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          106  of          239  is alive on no65
- MPI is initialised - v3.1
- Process            1  of          239  is alive on no61
- MPI is initialised - v3.1
- Process          193  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           51  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          221  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          130  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          112  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          165  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           41  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          228  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          155  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          116  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          175  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           77  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          210  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          124  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           92  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          199  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           70  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          218  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          126  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          111  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          161  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           43  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          229  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          128  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          107  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          197  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           64  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          209  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          129  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          117  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          181  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           68  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          211  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          144  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           84  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          163  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           75  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          225  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          132  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           85  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          174  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           58  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          201  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          142  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          115  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          177  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           46  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          232  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          147  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          105  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          189  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           54  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          223  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          159  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           81  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          195  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           74  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          212  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          135  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           96  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          166  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           69  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          202  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          131  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          108  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          182  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           45  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          226  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          133  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          114  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          186  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           40  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          204  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          125  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           80  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          190  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           53  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          237  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          139  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          118  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          192  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           42  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          231  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          120  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           87  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          194  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           57  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          203  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          122  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          119  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          196  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           60  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          208  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          146  of          239  is alive on no66
- MPI is initialised - v3.1
- Process           83  of          239  is alive on no65
- MPI is initialised - v3.1
- Process          160  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           47  of          239  is alive on no64
+ Process           27  of          239  is alive on no61
  MPI is initialised - v3.1
  Process          220  of          239  is alive on no68
  MPI is initialised - v3.1
- Process          157  of          239  is alive on no66
+ Process            3  of          239  is alive on no61
  MPI is initialised - v3.1
- Process           95  of          239  is alive on no65
+ Process            0  of          239  is alive on no61
  MPI is initialised - v3.1
- Process          164  of          239  is alive on no67
+ Process          165  of          239  is alive on no67
  MPI is initialised - v3.1
- Process           59  of          239  is alive on no64
+ Process          208  of          239  is alive on no68
  MPI is initialised - v3.1
- Process          205  of          239  is alive on no68
+ Process          215  of          239  is alive on no68
  MPI is initialised - v3.1
- Process          136  of          239  is alive on no66
+ Process            5  of          239  is alive on no61
  MPI is initialised - v3.1
- Process          101  of          239  is alive on no65
+ Process           22  of          239  is alive on no61
  MPI is initialised - v3.1
- Process          171  of          239  is alive on no67
- MPI is initialised - v3.1
- Process           61  of          239  is alive on no64
- MPI is initialised - v3.1
- Process          236  of          239  is alive on no68
- MPI is initialised - v3.1
- Process          150  of          239  is alive on no66
- MPI is initialised - v3.1
- Process          103  of          239  is alive on no65
+ Process          134  of          239  is alive on no66
  MPI is initialised - v3.1
  Process          179  of          239  is alive on no67
  MPI is initialised - v3.1
- Process           66  of          239  is alive on no64
+ Process          216  of          239  is alive on no68
  MPI is initialised - v3.1
- Process          238  of          239  is alive on no68
+ Process            2  of          239  is alive on no61
  MPI is initialised - v3.1
- Process          158  of          239  is alive on no66
+ Process           39  of          239  is alive on no61
  MPI is initialised - v3.1
- Process           91  of          239  is alive on no65
+ Process          150  of          239  is alive on no66
  MPI is initialised - v3.1
- Process          170  of          239  is alive on no67
+ Process          161  of          239  is alive on no67
  MPI is initialised - v3.1
- Process           72  of          239  is alive on no64
+ Process          237  of          239  is alive on no68
  MPI is initialised - v3.1
- Process          233  of          239  is alive on no68
+ Process           29  of          239  is alive on no61
  MPI is initialised - v3.1
- Process          138  of          239  is alive on no66
+ Process           32  of          239  is alive on no61
  MPI is initialised - v3.1
- Process          102  of          239  is alive on no65
+ Process           97  of          239  is alive on no65
  MPI is initialised - v3.1
- Process          187  of          239  is alive on no67
+ Process          159  of          239  is alive on no66
  MPI is initialised - v3.1
- Process           79  of          239  is alive on no64
+ Process          222  of          239  is alive on no68
  MPI is initialised - v3.1
- Process          234  of          239  is alive on no68
+ Process           59  of          239  is alive on no64
  MPI is initialised - v3.1
- Process          153  of          239  is alive on no66
+ Process           19  of          239  is alive on no61
  MPI is initialised - v3.1
- Process           86  of          239  is alive on no65
+ Process           11  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          124  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          185  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          228  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           20  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           26  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          128  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          186  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          211  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process            7  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           21  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          143  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          195  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          218  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           63  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           31  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          144  of          239  is alive on no66
  MPI is initialised - v3.1
  Process          198  of          239  is alive on no67
  MPI is initialised - v3.1
- Process           76  of          239  is alive on no64
+ Process          238  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           69  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           35  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           38  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           34  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          104  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          149  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          172  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          206  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           70  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process            1  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          126  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          176  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          230  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           79  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process            6  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           17  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           36  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          129  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          184  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          232  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           45  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           24  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           18  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          117  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          154  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          178  of          239  is alive on no67
  MPI is initialised - v3.1
  Process          214  of          239  is alive on no68
  MPI is initialised - v3.1
+ Process           46  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process            9  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          158  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          188  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          236  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           15  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           37  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          166  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          226  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           48  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           23  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process          119  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          121  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          167  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          217  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           56  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           16  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process            8  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           30  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           82  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          130  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          196  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          221  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           57  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           13  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           25  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process            4  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           33  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           91  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          133  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          187  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          205  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           64  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           14  of          239  is alive on no61
+ MPI is initialised - v3.1
+ Process           95  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          156  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          173  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          209  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           76  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           96  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          153  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          190  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          224  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           44  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          106  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          120  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          177  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          207  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           52  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          113  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          138  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          181  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          223  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           55  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           81  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          139  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          194  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          233  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           68  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           87  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          140  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          191  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          231  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           40  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           89  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          142  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          160  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          203  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           62  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           90  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          147  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          164  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          213  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           66  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           93  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          123  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          169  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          225  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           71  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           94  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          125  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          170  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          227  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           49  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           99  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          127  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          174  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          202  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           53  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          102  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          131  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          182  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          235  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           61  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          103  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          135  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          183  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          229  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           75  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          109  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          136  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          189  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          212  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           42  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          111  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          137  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          192  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          200  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           43  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          115  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          141  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          197  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          201  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           47  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          118  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          145  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          199  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          204  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           50  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           80  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          148  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          162  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          210  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           51  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           83  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          152  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          163  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          219  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           54  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           84  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          155  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          171  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process          234  of          239  is alive on no68
+ MPI is initialised - v3.1
+ Process           60  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           85  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          157  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          180  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process           65  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           86  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          122  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          193  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process           67  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           88  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          132  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          168  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process           72  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           92  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          146  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process          175  of          239  is alive on no67
+ MPI is initialised - v3.1
+ Process           73  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process           98  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          151  of          239  is alive on no66
+ MPI is initialised - v3.1
+ Process           74  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          100  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process           77  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          101  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process           78  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          105  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process           58  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          107  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process           41  of          239  is alive on no64
+ MPI is initialised - v3.1
+ Process          108  of          239  is alive on no65
+ MPI is initialised - v3.1
  Process          110  of          239  is alive on no65
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG
-STOP open_restart_ncdf
-Note: The following floating-point exceptions are signalling: IEEE_OVERFLOW_FLAG IEEE_DENORMAL
-STOP open_restart_ncdf
+ MPI is initialised - v3.1
+ Process          112  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          114  of          239  is alive on no65
+ MPI is initialised - v3.1
+ Process          116  of          239  is alive on no65
+[no61:06057] 79 more processes have sent help message help-mpi-btl-openib.txt / no device params found
+[no61:06057] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[no61:06057] 39 more processes have sent help message help-mpi-btl-openib-cpc-base.txt / no cpcs for port
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x7f138e8b027f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f138e89c3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f5b6875527f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f5b687413d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f0d9bf6b27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f0d9bf573d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f59e0c4527f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f59e0c313d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f6c717d127f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f6c717bd3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fd96a48527f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fd96a4713d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f48a233127f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f48a231d3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f7b7fad827f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f7b7fac43d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f273d0a327f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f273d08f3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f78ada7c27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f78ada683d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fa94ecbe27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fa94ecaa3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fbd2559f27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fbd2558b3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f289422a27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f28942163d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7ffb06c1b27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7ffb06c073d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f59c835227f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f59c833e3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f67b61ae27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f67b619a3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f2e508eb27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f2e508d73d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fdb4050627f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fdb404f23d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f44b8f2227f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f44b8f0e3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
 --------------------------------------------------------------------------
-mpirun has exited due to process rank 4 with PID 0 on
-node no61 exiting improperly. There are three reasons this could occur:
+An MPI communication peer process has unexpectedly disconnected.  This
+usually indicates a failure in the peer process (e.g., a crash or
+otherwise exiting without calling MPI_FINALIZE first).
 
-1. this process did not call "init" before exiting, but others in
-the job did. This can cause a job to hang indefinitely while it waits
-for all processes to call "init". By rule, if one process calls "init",
-then ALL processes must call "init" prior to termination.
+Although this local MPI process will likely now behave unpredictably
+(it may even hang or crash), the root cause of this problem is the
+failure of the peer -- that is what you need to investigate.  For
+example, there may be a core file that you can examine.  More
+generally: such peer hangups are frequently caused by application bugs
+or other external events.
 
-2. this process called "init", but exited without calling "finalize".
-By rule, all processes that call "init" MUST call "finalize" prior to
-exiting or it will be considered an "abnormal termination"
-
-3. this process called "MPI_Abort" or "orte_abort" and the mca parameter
-orte_create_session_dirs is set to false. In this case, the run-time cannot
-detect that the abort call was an abnormal termination. Hence, the only
-error message you will receive is this one.
-
-This may have caused other processes in the application to be
-terminated by signals sent by mpirun (as reported here).
-
-You can avoid this message by specifying -quiet on the mpirun command line.
+  Local host: no65
+  Local PID:  99107
+  Peer host:  no66
 --------------------------------------------------------------------------
-[no61:01982] 79 more processes have sent help message help-mpi-btl-openib.txt / no device params found
-[no61:01982] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
-[no61:01982] 39 more processes have sent help message help-mpi-btl-openib-cpc-base.txt / no cpcs for port
+#0  0x7f37e9b0827f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f37e9af43d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f20dfeaf27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f20dfe9b3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fb40a05e27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fb40a04a3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f22921c627f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f22921b23d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f5499df427f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f5499de03d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fb65a3be27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fb65a3aa3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7ff30274d27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7ff3027393d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f816cdb327f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f816cd9f3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7ff9c191527f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7ff9c19013d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fa0220bb27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fa0220a73d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7efc701a527f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7efc701913d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7efd8f3e627f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7efd8f3d23d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fe25404127f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fe25402d3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f4cc040a27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f4cc03f63d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f7ccf34d27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f7ccf3393d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f25313a127f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f253138d3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f6aec62827f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f6aec6143d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7ff035ce227f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7ff035cce3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f6f8de3027f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f6f8de1c3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f8b3e29c27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f8b3e2883d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f37eb8db27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f37eb8c73d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7fe757edb27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7fe757ec73d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f9b323dc27f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f9b323c83d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f5086de627f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f5086dd23d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f1cfd9d027f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f1cfd9bc3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f08f69f527f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f08f69e13d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+#0  0x7f00c993327f in ???
+#1  0x4f8462 in ???
+#2  0x4b96d6 in ???
+#3  0x405e41 in ???
+#4  0x407456 in ???
+#5  0x4049d1 in ???
+#6  0x403eac in ???
+#7  0x7f00c991f3d4 in ???
+#8  0x403edc in ???
+#9  0xffffffffffffffff in ???
+--------------------------------------------------------------------------
+mpirun noticed that process rank 12 with PID 0 on node no61 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
+[no61:06057] 42 more processes have sent help message help-mpi-btl-tcp.txt / peer hung up
+3 total processes killed (some possibly by mpirun during cleanup)
