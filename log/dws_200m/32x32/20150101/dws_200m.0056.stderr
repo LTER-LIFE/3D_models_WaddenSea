@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process           56  of          239  is alive on no62
  ------------------------------------------------------------------------
- getm: Started on  20260115 154659.751
+ getm: Started on  20260115 155015.155
  ------------------------------------------------------------------------
  GETM version: 969dceb (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -1660,7 +1660,7 @@
             variable missing in restart file. Skipping Vinto               
  read_restart_ncdf_0           1           2           3           4
  read_restart_ncdf_1
-    imin,ioff_l,iread_from,il,ifill_from           1         224           0    10630880           0
+    imin,ioff_l,iread_from,il,ifill_from           1         224           0           0           0
     jmin,joff_l,jread_from,jl,jfill_from           1         224           0           0           0
     il         225
     il         225
@@ -1696,23 +1696,17 @@
  rest_bio_ncdf 3d:           0
             read 2d/benthic variables
  rest_bio_ncdf 2d:           0
-                H3c was smaller than 0.100000E-19 i=225 (  1) j=255 (  9)
+                H3c was smaller than 0.100000E-19 i=225 (  1) j=256 ( 10)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=225 (  1) j=255 (  9)
+                H3n was smaller than 0.100000E-19 i=225 (  1) j=256 ( 10)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=225 (  1) j=255 (  9)
+                H3p was smaller than 0.100000E-19 i=225 (  1) j=256 ( 10)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=226 (  2) j=255 (  9)
+                H3c was smaller than 0.100000E-19 i=226 (  2) j=256 ( 10)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=226 (  2) j=255 (  9)
+                H3n was smaller than 0.100000E-19 i=226 (  2) j=256 ( 10)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=226 (  2) j=255 (  9)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=227 (  3) j=254 (  8)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=227 (  3) j=254 (  8)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=227 (  3) j=254 (  8)
+                H3p was smaller than 0.100000E-19 i=226 (  2) j=256 ( 10)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=227 (  3) j=255 (  9)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1726,11 +1720,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=227 (  3) j=256 ( 10)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=228 (  4) j=254 (  8)
+                H3c was smaller than 0.100000E-19 i=227 (  3) j=257 ( 11)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=228 (  4) j=254 (  8)
+                H3n was smaller than 0.100000E-19 i=227 (  3) j=257 ( 11)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=228 (  4) j=254 (  8)
+                H3p was smaller than 0.100000E-19 i=227 (  3) j=257 ( 11)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=228 (  4) j=255 (  9)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1744,11 +1738,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=228 (  4) j=256 ( 10)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=229 (  5) j=254 (  8)
+                H3c was smaller than 0.100000E-19 i=228 (  4) j=257 ( 11)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=229 (  5) j=254 (  8)
+                H3n was smaller than 0.100000E-19 i=228 (  4) j=257 ( 11)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=229 (  5) j=254 (  8)
+                H3p was smaller than 0.100000E-19 i=228 (  4) j=257 ( 11)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=229 (  5) j=255 (  9)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1768,11 +1762,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=229 (  5) j=257 ( 11)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=230 (  6) j=253 (  7)
+                H3c was smaller than 0.100000E-19 i=229 (  5) j=258 ( 12)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=230 (  6) j=253 (  7)
+                H3n was smaller than 0.100000E-19 i=229 (  5) j=258 ( 12)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=230 (  6) j=253 (  7)
+                H3p was smaller than 0.100000E-19 i=229 (  5) j=258 ( 12)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=230 (  6) j=254 (  8)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1798,11 +1792,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=230 (  6) j=257 ( 11)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=231 (  7) j=253 (  7)
+                H3c was smaller than 0.100000E-19 i=230 (  6) j=258 ( 12)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=231 (  7) j=253 (  7)
+                H3n was smaller than 0.100000E-19 i=230 (  6) j=258 ( 12)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=231 (  7) j=253 (  7)
+                H3p was smaller than 0.100000E-19 i=230 (  6) j=258 ( 12)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=231 (  7) j=254 (  8)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1834,11 +1828,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=231 (  7) j=258 ( 12)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=232 (  8) j=253 (  7)
+                H3c was smaller than 0.100000E-19 i=231 (  7) j=259 ( 13)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=232 (  8) j=253 (  7)
+                H3n was smaller than 0.100000E-19 i=231 (  7) j=259 ( 13)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=232 (  8) j=253 (  7)
+                H3p was smaller than 0.100000E-19 i=231 (  7) j=259 ( 13)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=232 (  8) j=254 (  8)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1876,11 +1870,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=232 (  8) j=259 ( 13)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=233 (  9) j=252 (  6)
+                H3c was smaller than 0.100000E-19 i=232 (  8) j=260 ( 14)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=233 (  9) j=252 (  6)
+                H3n was smaller than 0.100000E-19 i=232 (  8) j=260 ( 14)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=233 (  9) j=252 (  6)
+                H3p was smaller than 0.100000E-19 i=232 (  8) j=260 ( 14)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=233 (  9) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1924,11 +1918,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=233 (  9) j=259 ( 13)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=234 ( 10) j=252 (  6)
+                H3c was smaller than 0.100000E-19 i=233 (  9) j=260 ( 14)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=234 ( 10) j=252 (  6)
+                H3n was smaller than 0.100000E-19 i=233 (  9) j=260 ( 14)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=234 ( 10) j=252 (  6)
+                H3p was smaller than 0.100000E-19 i=233 (  9) j=260 ( 14)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=234 ( 10) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -1978,11 +1972,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=234 ( 10) j=260 ( 14)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=235 ( 11) j=252 (  6)
+                H3c was smaller than 0.100000E-19 i=234 ( 10) j=261 ( 15)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=235 ( 11) j=252 (  6)
+                H3n was smaller than 0.100000E-19 i=234 ( 10) j=261 ( 15)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=235 ( 11) j=252 (  6)
+                H3p was smaller than 0.100000E-19 i=234 ( 10) j=261 ( 15)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=235 ( 11) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2032,11 +2026,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=235 ( 11) j=260 ( 14)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=236 ( 12) j=251 (  5)
+                H3c was smaller than 0.100000E-19 i=235 ( 11) j=261 ( 15)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=236 ( 12) j=251 (  5)
+                H3n was smaller than 0.100000E-19 i=235 ( 11) j=261 ( 15)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=236 ( 12) j=251 (  5)
+                H3p was smaller than 0.100000E-19 i=235 ( 11) j=261 ( 15)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=236 ( 12) j=252 (  6)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2098,11 +2092,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=236 ( 12) j=261 ( 15)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=237 ( 13) j=251 (  5)
+                H3c was smaller than 0.100000E-19 i=236 ( 12) j=262 ( 16)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=237 ( 13) j=251 (  5)
+                H3n was smaller than 0.100000E-19 i=236 ( 12) j=262 ( 16)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=237 ( 13) j=251 (  5)
+                H3p was smaller than 0.100000E-19 i=236 ( 12) j=262 ( 16)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=237 ( 13) j=252 (  6)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2164,11 +2158,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=237 ( 13) j=261 ( 15)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=238 ( 14) j=251 (  5)
+                H3c was smaller than 0.100000E-19 i=237 ( 13) j=262 ( 16)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=238 ( 14) j=251 (  5)
+                H3n was smaller than 0.100000E-19 i=237 ( 13) j=262 ( 16)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=238 ( 14) j=251 (  5)
+                H3p was smaller than 0.100000E-19 i=237 ( 13) j=262 ( 16)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=238 ( 14) j=252 (  6)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2236,11 +2230,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=238 ( 14) j=262 ( 16)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=239 ( 15) j=251 (  5)
+                H3c was smaller than 0.100000E-19 i=238 ( 14) j=263 ( 17)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=239 ( 15) j=251 (  5)
+                H3n was smaller than 0.100000E-19 i=238 ( 14) j=263 ( 17)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=239 ( 15) j=251 (  5)
+                H3p was smaller than 0.100000E-19 i=238 ( 14) j=263 ( 17)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=239 ( 15) j=252 (  6)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2308,11 +2302,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=239 ( 15) j=262 ( 16)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=240 ( 16) j=250 (  4)
+                H3c was smaller than 0.100000E-19 i=239 ( 15) j=263 ( 17)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=240 ( 16) j=250 (  4)
+                H3n was smaller than 0.100000E-19 i=239 ( 15) j=263 ( 17)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=240 ( 16) j=250 (  4)
+                H3p was smaller than 0.100000E-19 i=239 ( 15) j=263 ( 17)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=240 ( 16) j=251 (  5)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2392,11 +2386,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=240 ( 16) j=263 ( 17)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=241 ( 17) j=250 (  4)
+                H3c was smaller than 0.100000E-19 i=240 ( 16) j=264 ( 18)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=241 ( 17) j=250 (  4)
+                H3n was smaller than 0.100000E-19 i=240 ( 16) j=264 ( 18)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=241 ( 17) j=250 (  4)
+                H3p was smaller than 0.100000E-19 i=240 ( 16) j=264 ( 18)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=241 ( 17) j=251 (  5)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2482,11 +2476,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=241 ( 17) j=264 ( 18)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=242 ( 18) j=250 (  4)
+                H3c was smaller than 0.100000E-19 i=241 ( 17) j=265 ( 19)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=242 ( 18) j=250 (  4)
+                H3n was smaller than 0.100000E-19 i=241 ( 17) j=265 ( 19)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=242 ( 18) j=250 (  4)
+                H3p was smaller than 0.100000E-19 i=241 ( 17) j=265 ( 19)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=242 ( 18) j=251 (  5)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2572,11 +2566,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=242 ( 18) j=264 ( 18)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=243 ( 19) j=249 (  3)
+                H3c was smaller than 0.100000E-19 i=242 ( 18) j=265 ( 19)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=243 ( 19) j=249 (  3)
+                H3n was smaller than 0.100000E-19 i=242 ( 18) j=265 ( 19)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=243 ( 19) j=249 (  3)
+                H3p was smaller than 0.100000E-19 i=242 ( 18) j=265 ( 19)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=243 ( 19) j=250 (  4)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2674,11 +2668,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=243 ( 19) j=265 ( 19)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=244 ( 20) j=249 (  3)
+                H3c was smaller than 0.100000E-19 i=243 ( 19) j=266 ( 20)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=244 ( 20) j=249 (  3)
+                H3n was smaller than 0.100000E-19 i=243 ( 19) j=266 ( 20)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=244 ( 20) j=249 (  3)
+                H3p was smaller than 0.100000E-19 i=243 ( 19) j=266 ( 20)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=244 ( 20) j=250 (  4)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2776,11 +2770,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=244 ( 20) j=265 ( 19)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=245 ( 21) j=249 (  3)
+                H3c was smaller than 0.100000E-19 i=244 ( 20) j=266 ( 20)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=245 ( 21) j=249 (  3)
+                H3n was smaller than 0.100000E-19 i=244 ( 20) j=266 ( 20)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=245 ( 21) j=249 (  3)
+                H3p was smaller than 0.100000E-19 i=244 ( 20) j=266 ( 20)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=245 ( 21) j=250 (  4)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2884,11 +2878,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=245 ( 21) j=266 ( 20)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=246 ( 22) j=248 (  2)
+                H3c was smaller than 0.100000E-19 i=245 ( 21) j=267 ( 21)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=246 ( 22) j=248 (  2)
+                H3n was smaller than 0.100000E-19 i=245 ( 21) j=267 ( 21)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=246 ( 22) j=248 (  2)
+                H3p was smaller than 0.100000E-19 i=245 ( 21) j=267 ( 21)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=246 ( 22) j=249 (  3)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2998,11 +2992,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=246 ( 22) j=266 ( 20)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=247 ( 23) j=248 (  2)
+                H3c was smaller than 0.100000E-19 i=246 ( 22) j=267 ( 21)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=247 ( 23) j=248 (  2)
+                H3n was smaller than 0.100000E-19 i=246 ( 22) j=267 ( 21)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=247 ( 23) j=248 (  2)
+                H3p was smaller than 0.100000E-19 i=246 ( 22) j=267 ( 21)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=247 ( 23) j=249 (  3)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -3118,11 +3112,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=247 ( 23) j=267 ( 21)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=248 ( 24) j=248 (  2)
+                H3c was smaller than 0.100000E-19 i=247 ( 23) j=268 ( 22)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=248 ( 24) j=248 (  2)
+                H3n was smaller than 0.100000E-19 i=247 ( 23) j=268 ( 22)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=248 ( 24) j=248 (  2)
+                H3p was smaller than 0.100000E-19 i=247 ( 23) j=268 ( 22)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=248 ( 24) j=249 (  3)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -3238,11 +3232,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=248 ( 24) j=267 ( 21)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=249 ( 25) j=247 (  1)
+                H3c was smaller than 0.100000E-19 i=248 ( 24) j=268 ( 22)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=249 ( 25) j=247 (  1)
+                H3n was smaller than 0.100000E-19 i=248 ( 24) j=268 ( 22)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=249 ( 25) j=247 (  1)
+                H3p was smaller than 0.100000E-19 i=248 ( 24) j=268 ( 22)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=249 ( 25) j=248 (  2)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -3370,11 +3364,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=249 ( 25) j=268 ( 22)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=250 ( 26) j=247 (  1)
+                H3c was smaller than 0.100000E-19 i=249 ( 25) j=269 ( 23)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=250 ( 26) j=247 (  1)
+                H3n was smaller than 0.100000E-19 i=249 ( 25) j=269 ( 23)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=250 ( 26) j=247 (  1)
+                H3p was smaller than 0.100000E-19 i=249 ( 25) j=269 ( 23)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=250 ( 26) j=248 (  2)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -3502,11 +3496,11 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=250 ( 26) j=268 ( 22)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=251 ( 27) j=247 (  1)
+                H3c was smaller than 0.100000E-19 i=250 ( 26) j=269 ( 23)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=251 ( 27) j=247 (  1)
+                H3n was smaller than 0.100000E-19 i=250 ( 26) j=269 ( 23)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=251 ( 27) j=247 (  1)
+                H3p was smaller than 0.100000E-19 i=250 ( 26) j=269 ( 23)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=251 ( 27) j=248 (  2)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -3639,6 +3633,12 @@
                 H3n was smaller than 0.100000E-19 i=251 ( 27) j=269 ( 23)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=251 ( 27) j=269 ( 23)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=251 ( 27) j=270 ( 24)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=251 ( 27) j=270 ( 24)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=251 ( 27) j=270 ( 24)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=252 ( 28) j=247 (  1)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -3784,6 +3784,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=252 ( 28) j=270 ( 24)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=252 ( 28) j=271 ( 25)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=252 ( 28) j=271 ( 25)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=252 ( 28) j=271 ( 25)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=253 ( 29) j=247 (  1)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=253 ( 29) j=247 (  1)
@@ -3927,6 +3933,12 @@
                 H3n was smaller than 0.100000E-19 i=253 ( 29) j=270 ( 24)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=253 ( 29) j=270 ( 24)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=253 ( 29) j=271 ( 25)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=253 ( 29) j=271 ( 25)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=253 ( 29) j=271 ( 25)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=254 ( 30) j=247 (  1)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -4078,6 +4090,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=254 ( 30) j=271 ( 25)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=254 ( 30) j=272 ( 26)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=254 ( 30) j=272 ( 26)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=254 ( 30) j=272 ( 26)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=255 ( 31) j=247 (  1)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=255 ( 31) j=247 (  1)
@@ -4227,6 +4245,12 @@
                 H3n was smaller than 0.100000E-19 i=255 ( 31) j=271 ( 25)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=255 ( 31) j=271 ( 25)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=255 ( 31) j=272 ( 26)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=255 ( 31) j=272 ( 26)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=255 ( 31) j=272 ( 26)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=256 ( 32) j=247 (  1)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -4383,6 +4407,12 @@
                 H3n was smaller than 0.100000E-19 i=256 ( 32) j=272 ( 26)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=256 ( 32) j=272 ( 26)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=256 ( 32) j=273 ( 27)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=256 ( 32) j=273 ( 27)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=256 ( 32) j=273 ( 27)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
             MinN adjusted to     39441600
             2015-01-01 00:00:00

@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process          175  of          239  is alive on no65
  ------------------------------------------------------------------------
- getm: Started on  20260115 154659.745
+ getm: Started on  20260115 155015.156
  ------------------------------------------------------------------------
  GETM version: 969dceb (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -1692,8 +1692,6 @@
             reading bio variables
             read 3d/pelagic variables
  rest_bio_ncdf 3d:           0
-            missing intial pelagic data  gridpoint i=449 (  1) j=421 ( 15)
-            Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=449 (  1) j=422 ( 16)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=449 (  1) j=423 ( 17)
@@ -1712,7 +1710,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=449 (  1) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=450 (  2) j=420 ( 14)
+            missing intial pelagic data  gridpoint i=449 (  1) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=450 (  2) j=421 ( 15)
             Initial values defined in bio_bfm.nml are used
@@ -1734,7 +1732,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=450 (  2) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=451 (  3) j=420 ( 14)
+            missing intial pelagic data  gridpoint i=450 (  2) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=451 (  3) j=421 ( 15)
             Initial values defined in bio_bfm.nml are used
@@ -1756,7 +1754,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=451 (  3) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=452 (  4) j=420 ( 14)
+            missing intial pelagic data  gridpoint i=451 (  3) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=452 (  4) j=421 ( 15)
             Initial values defined in bio_bfm.nml are used
@@ -1778,7 +1776,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=452 (  4) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=453 (  5) j=420 ( 14)
+            missing intial pelagic data  gridpoint i=452 (  4) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=453 (  5) j=421 ( 15)
             Initial values defined in bio_bfm.nml are used
@@ -1800,7 +1798,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=453 (  5) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=454 (  6) j=419 ( 13)
+            missing intial pelagic data  gridpoint i=453 (  5) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=454 (  6) j=420 ( 14)
             Initial values defined in bio_bfm.nml are used
@@ -1824,7 +1822,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=454 (  6) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=455 (  7) j=419 ( 13)
+            missing intial pelagic data  gridpoint i=454 (  6) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=455 (  7) j=420 ( 14)
             Initial values defined in bio_bfm.nml are used
@@ -1848,7 +1846,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=455 (  7) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=456 (  8) j=419 ( 13)
+            missing intial pelagic data  gridpoint i=455 (  7) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=456 (  8) j=420 ( 14)
             Initial values defined in bio_bfm.nml are used
@@ -1874,7 +1872,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=456 (  8) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=457 (  9) j=418 ( 12)
+            missing intial pelagic data  gridpoint i=456 (  8) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=457 (  9) j=419 ( 13)
             Initial values defined in bio_bfm.nml are used
@@ -1902,7 +1900,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=457 (  9) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=458 ( 10) j=418 ( 12)
+            missing intial pelagic data  gridpoint i=457 (  9) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=458 ( 10) j=419 ( 13)
             Initial values defined in bio_bfm.nml are used
@@ -1930,7 +1928,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=458 ( 10) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=459 ( 11) j=418 ( 12)
+            missing intial pelagic data  gridpoint i=458 ( 10) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=459 ( 11) j=419 ( 13)
             Initial values defined in bio_bfm.nml are used
@@ -1958,7 +1956,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=459 ( 11) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=460 ( 12) j=417 ( 11)
+            missing intial pelagic data  gridpoint i=459 ( 11) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=460 ( 12) j=418 ( 12)
             Initial values defined in bio_bfm.nml are used
@@ -1988,7 +1986,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=460 ( 12) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=461 ( 13) j=417 ( 11)
+            missing intial pelagic data  gridpoint i=460 ( 12) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=461 ( 13) j=418 ( 12)
             Initial values defined in bio_bfm.nml are used
@@ -2018,7 +2016,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=461 ( 13) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=462 ( 14) j=417 ( 11)
+            missing intial pelagic data  gridpoint i=461 ( 13) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=462 ( 14) j=418 ( 12)
             Initial values defined in bio_bfm.nml are used
@@ -2048,7 +2046,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=462 ( 14) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=463 ( 15) j=417 ( 11)
+            missing intial pelagic data  gridpoint i=462 ( 14) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=463 ( 15) j=418 ( 12)
             Initial values defined in bio_bfm.nml are used
@@ -2078,7 +2076,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=463 ( 15) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=464 ( 16) j=417 ( 11)
+            missing intial pelagic data  gridpoint i=463 ( 15) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=464 ( 16) j=418 ( 12)
             Initial values defined in bio_bfm.nml are used
@@ -2108,7 +2106,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=464 ( 16) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=465 ( 17) j=416 ( 10)
+            missing intial pelagic data  gridpoint i=464 ( 16) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=465 ( 17) j=417 ( 11)
             Initial values defined in bio_bfm.nml are used
@@ -2140,7 +2138,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=465 ( 17) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=466 ( 18) j=416 ( 10)
+            missing intial pelagic data  gridpoint i=465 ( 17) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=466 ( 18) j=417 ( 11)
             Initial values defined in bio_bfm.nml are used
@@ -2172,7 +2170,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=466 ( 18) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=467 ( 19) j=416 ( 10)
+            missing intial pelagic data  gridpoint i=466 ( 18) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=467 ( 19) j=417 ( 11)
             Initial values defined in bio_bfm.nml are used
@@ -2204,7 +2202,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=467 ( 19) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=468 ( 20) j=415 (  9)
+            missing intial pelagic data  gridpoint i=467 ( 19) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=468 ( 20) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2238,7 +2236,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=468 ( 20) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=469 ( 21) j=415 (  9)
+            missing intial pelagic data  gridpoint i=468 ( 20) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=469 ( 21) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2272,7 +2270,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=469 ( 21) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=470 ( 22) j=415 (  9)
+            missing intial pelagic data  gridpoint i=469 ( 21) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=470 ( 22) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2306,7 +2304,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=470 ( 22) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=471 ( 23) j=415 (  9)
+            missing intial pelagic data  gridpoint i=470 ( 22) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=471 ( 23) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2338,7 +2336,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=471 ( 23) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=472 ( 24) j=415 (  9)
+            missing intial pelagic data  gridpoint i=471 ( 23) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=472 ( 24) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2370,7 +2368,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=472 ( 24) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=473 ( 25) j=415 (  9)
+            missing intial pelagic data  gridpoint i=472 ( 24) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=473 ( 25) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2404,7 +2402,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=473 ( 25) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=474 ( 26) j=415 (  9)
+            missing intial pelagic data  gridpoint i=473 ( 25) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=474 ( 26) j=416 ( 10)
             Initial values defined in bio_bfm.nml are used
@@ -2438,7 +2436,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=474 ( 26) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=475 ( 27) j=416 ( 10)
+            missing intial pelagic data  gridpoint i=474 ( 26) j=432 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=475 ( 27) j=417 ( 11)
             Initial values defined in bio_bfm.nml are used
@@ -2468,7 +2466,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=475 ( 27) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=476 ( 28) j=416 ( 10)
+            missing intial pelagic data  gridpoint i=475 ( 27) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=476 ( 28) j=417 ( 11)
             Initial values defined in bio_bfm.nml are used
@@ -2498,7 +2496,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=476 ( 28) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=477 ( 29) j=418 ( 12)
+            missing intial pelagic data  gridpoint i=476 ( 28) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=477 ( 29) j=419 ( 13)
             Initial values defined in bio_bfm.nml are used
@@ -2524,7 +2522,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=477 ( 29) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=478 ( 30) j=420 ( 14)
+            missing intial pelagic data  gridpoint i=477 ( 29) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=478 ( 30) j=421 ( 15)
             Initial values defined in bio_bfm.nml are used
@@ -2546,7 +2544,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=478 ( 30) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=479 ( 31) j=421 ( 15)
+            missing intial pelagic data  gridpoint i=478 ( 30) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=479 ( 31) j=422 ( 16)
             Initial values defined in bio_bfm.nml are used
@@ -2566,7 +2564,7 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=479 ( 31) j=430 ( 24)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=480 ( 32) j=421 ( 15)
+            missing intial pelagic data  gridpoint i=479 ( 31) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=480 ( 32) j=422 ( 16)
             Initial values defined in bio_bfm.nml are used
@@ -2585,6 +2583,8 @@
             missing intial pelagic data  gridpoint i=480 ( 32) j=429 ( 23)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=480 ( 32) j=430 ( 24)
+            Initial values defined in bio_bfm.nml are used
+            missing intial pelagic data  gridpoint i=480 ( 32) j=431 ( 25)
             Initial values defined in bio_bfm.nml are used
             read 2d/benthic variables
  rest_bio_ncdf 2d:           0

@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process           54  of          239  is alive on no62
  ------------------------------------------------------------------------
- getm: Started on  20260115 154659.751
+ getm: Started on  20260115 155015.155
  ------------------------------------------------------------------------
  GETM version: 969dceb (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -1698,6 +1698,8 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=161 (  1) j=249 (  3)
             Initial values defined in bio_bfm.nml are used
+            missing intial pelagic data  gridpoint i=161 (  1) j=250 (  4)
+            Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=162 (  2) j=247 (  1)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=162 (  2) j=248 (  2)
@@ -1705,6 +1707,8 @@
             missing intial pelagic data  gridpoint i=162 (  2) j=249 (  3)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=162 (  2) j=250 (  4)
+            Initial values defined in bio_bfm.nml are used
+            missing intial pelagic data  gridpoint i=162 (  2) j=251 (  5)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=163 (  3) j=247 (  1)
             Initial values defined in bio_bfm.nml are used
@@ -1716,6 +1720,8 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=163 (  3) j=251 (  5)
             Initial values defined in bio_bfm.nml are used
+            missing intial pelagic data  gridpoint i=163 (  3) j=252 (  6)
+            Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=164 (  4) j=247 (  1)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=164 (  4) j=248 (  2)
@@ -1725,6 +1731,8 @@
             missing intial pelagic data  gridpoint i=164 (  4) j=250 (  4)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=164 (  4) j=251 (  5)
+            Initial values defined in bio_bfm.nml are used
+            missing intial pelagic data  gridpoint i=164 (  4) j=252 (  6)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=165 (  5) j=247 (  1)
             Initial values defined in bio_bfm.nml are used
@@ -1736,25 +1744,21 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=165 (  5) j=251 (  5)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=166 (  6) j=277 ( 31)
+            missing intial pelagic data  gridpoint i=165 (  5) j=252 (  6)
+            Initial values defined in bio_bfm.nml are used
+            missing intial pelagic data  gridpoint i=166 (  6) j=252 (  6)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=166 (  6) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=167 (  7) j=276 ( 30)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=167 (  7) j=277 ( 31)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=167 (  7) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=168 (  8) j=275 ( 29)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=168 (  8) j=276 ( 30)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=168 (  8) j=277 ( 31)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=168 (  8) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=169 (  9) j=274 ( 28)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=169 (  9) j=275 ( 29)
             Initial values defined in bio_bfm.nml are used
@@ -1763,8 +1767,6 @@
             missing intial pelagic data  gridpoint i=169 (  9) j=277 ( 31)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=169 (  9) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=170 ( 10) j=273 ( 27)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=170 ( 10) j=274 ( 28)
             Initial values defined in bio_bfm.nml are used
@@ -1776,8 +1778,6 @@
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=170 ( 10) j=278 ( 32)
             Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=171 ( 11) j=273 ( 27)
-            Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=171 ( 11) j=274 ( 28)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=171 ( 11) j=275 ( 29)
@@ -1787,8 +1787,6 @@
             missing intial pelagic data  gridpoint i=171 ( 11) j=277 ( 31)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=171 ( 11) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=172 ( 12) j=272 ( 26)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=172 ( 12) j=273 ( 27)
             Initial values defined in bio_bfm.nml are used
@@ -1801,8 +1799,6 @@
             missing intial pelagic data  gridpoint i=172 ( 12) j=277 ( 31)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=172 ( 12) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=173 ( 13) j=271 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=173 ( 13) j=272 ( 26)
             Initial values defined in bio_bfm.nml are used
@@ -1817,8 +1813,6 @@
             missing intial pelagic data  gridpoint i=173 ( 13) j=277 ( 31)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=173 ( 13) j=278 ( 32)
-            Initial values defined in bio_bfm.nml are used
-            missing intial pelagic data  gridpoint i=174 ( 14) j=271 ( 25)
             Initial values defined in bio_bfm.nml are used
             missing intial pelagic data  gridpoint i=174 ( 14) j=272 ( 26)
             Initial values defined in bio_bfm.nml are used
@@ -1886,12 +1880,6 @@
             Initial values defined in bio_bfm.nml are used
             read 2d/benthic variables
  rest_bio_ncdf 2d:           0
-                H3c was smaller than 0.100000E-19 i=161 (  1) j=250 (  4)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=161 (  1) j=250 (  4)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=161 (  1) j=250 (  4)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=161 (  1) j=251 (  5)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=161 (  1) j=251 (  5)
@@ -2060,12 +2048,6 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=161 (  1) j=278 ( 32)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=162 (  2) j=251 (  5)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=162 (  2) j=251 (  5)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=162 (  2) j=251 (  5)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=162 (  2) j=252 (  6)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=162 (  2) j=252 (  6)
@@ -2228,12 +2210,6 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=162 (  2) j=278 ( 32)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=163 (  3) j=252 (  6)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=163 (  3) j=252 (  6)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=163 (  3) j=252 (  6)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=163 (  3) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=163 (  3) j=253 (  7)
@@ -2389,12 +2365,6 @@
                 H3n was smaller than 0.100000E-19 i=163 (  3) j=278 ( 32)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=163 (  3) j=278 ( 32)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=164 (  4) j=252 (  6)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=164 (  4) j=252 (  6)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=164 (  4) j=252 (  6)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=164 (  4) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
@@ -2552,12 +2522,6 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=164 (  4) j=278 ( 32)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=165 (  5) j=252 (  6)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=165 (  5) j=252 (  6)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=165 (  5) j=252 (  6)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=165 (  5) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=165 (  5) j=253 (  7)
@@ -2714,12 +2678,6 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=165 (  5) j=278 ( 32)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
-                H3c was smaller than 0.100000E-19 i=166 (  6) j=252 (  6)
-                H3c reinitialized assuming a fixed ../C quotum of 0.500000
-                H3n was smaller than 0.100000E-19 i=166 (  6) j=252 (  6)
-                H3n reinitialized assuming a fixed ../C quotum of 0.500000
-                H3p was smaller than 0.100000E-19 i=166 (  6) j=252 (  6)
-                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=166 (  6) j=253 (  7)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=166 (  6) j=253 (  7)
@@ -2864,6 +2822,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=166 (  6) j=276 ( 30)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=166 (  6) j=277 ( 31)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=166 (  6) j=277 ( 31)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=166 (  6) j=277 ( 31)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=167 (  7) j=256 ( 10)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=167 (  7) j=256 ( 10)
@@ -2984,6 +2948,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=167 (  7) j=275 ( 29)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=167 (  7) j=276 ( 30)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=167 (  7) j=276 ( 30)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=167 (  7) j=276 ( 30)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=168 (  8) j=258 ( 12)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=168 (  8) j=258 ( 12)
@@ -3086,6 +3056,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=168 (  8) j=274 ( 28)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=168 (  8) j=275 ( 29)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=168 (  8) j=275 ( 29)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=168 (  8) j=275 ( 29)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=169 (  9) j=260 ( 14)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=169 (  9) j=260 ( 14)
@@ -3170,6 +3146,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=169 (  9) j=273 ( 27)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=169 (  9) j=274 ( 28)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=169 (  9) j=274 ( 28)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=169 (  9) j=274 ( 28)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=170 ( 10) j=262 ( 16)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=170 ( 10) j=262 ( 16)
@@ -3236,6 +3218,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=170 ( 10) j=272 ( 26)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=170 ( 10) j=273 ( 27)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=170 ( 10) j=273 ( 27)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=170 ( 10) j=273 ( 27)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=171 ( 11) j=264 ( 18)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=171 ( 11) j=264 ( 18)
@@ -3290,6 +3278,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=171 ( 11) j=272 ( 26)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=171 ( 11) j=273 ( 27)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=171 ( 11) j=273 ( 27)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=171 ( 11) j=273 ( 27)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=172 ( 12) j=266 ( 20)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=172 ( 12) j=266 ( 20)
@@ -3326,6 +3320,12 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=172 ( 12) j=271 ( 25)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=172 ( 12) j=272 ( 26)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=172 ( 12) j=272 ( 26)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=172 ( 12) j=272 ( 26)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=173 ( 13) j=268 ( 22)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=173 ( 13) j=268 ( 22)
@@ -3344,11 +3344,23 @@
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=173 ( 13) j=270 ( 24)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=173 ( 13) j=271 ( 25)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=173 ( 13) j=271 ( 25)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=173 ( 13) j=271 ( 25)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
                 H3c was smaller than 0.100000E-19 i=174 ( 14) j=270 ( 24)
                 H3c reinitialized assuming a fixed ../C quotum of 0.500000
                 H3n was smaller than 0.100000E-19 i=174 ( 14) j=270 ( 24)
                 H3n reinitialized assuming a fixed ../C quotum of 0.500000
                 H3p was smaller than 0.100000E-19 i=174 ( 14) j=270 ( 24)
+                H3p reinitialized assuming a fixed ../C quotum of 0.500000
+                H3c was smaller than 0.100000E-19 i=174 ( 14) j=271 ( 25)
+                H3c reinitialized assuming a fixed ../C quotum of 0.500000
+                H3n was smaller than 0.100000E-19 i=174 ( 14) j=271 ( 25)
+                H3n reinitialized assuming a fixed ../C quotum of 0.500000
+                H3p was smaller than 0.100000E-19 i=174 ( 14) j=271 ( 25)
                 H3p reinitialized assuming a fixed ../C quotum of 0.500000
             MinN adjusted to     39441600
             2015-01-01 00:00:00
