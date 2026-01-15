@@ -133,8 +133,9 @@ if [ $BASE_1 == "1" ]; then
    #======================
    export An_const=20.0  # horizontal diffusion, xml: 5
    
-   export step_2d=150 #150 # 150  # xml: 90
-   export step_3d=450  # xml: 1440
+   export step_2d=1 #150 #150 # 150  # xml: 90
+   export step_3d=1 # 450  # xml: 1440
+   export save_initial=True
 
    export out_dir=${OUTDIR-"./out"}/base_1
    export hot_dir=${OUTDIR-"./out"}/base_2
@@ -316,6 +317,10 @@ fi  # BASE_3
 ##################################################################
 if [ $BASE_4 == "1" ]; then
 
+  export step_2d=150 #150 #150 # 150  # xml: 90
+  export step_3d=450 # 450  # xml: 1440
+  export save_initial=True
+  
   export use_epoch=True 
 
   export crit_depth=0.25  # 0.25  # Johan: 0.9, Kiki: 0.3, Ulf: 0.25

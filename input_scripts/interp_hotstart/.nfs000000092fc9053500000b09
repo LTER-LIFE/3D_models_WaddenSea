@@ -60,8 +60,8 @@ os.chdir(wdir)
 #ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_hydro_reducedlayers.nc'
 
 # For the bio file
-infname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio.nc'
-ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_bio_reducedlayers.nc'
+infname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio_i2.nc'
+ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_bio_reducedlayers_i2.nc'
 
 ##################################################################################
 # Main routine

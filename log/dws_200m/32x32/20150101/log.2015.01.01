@@ -493,7 +493,7 @@ done
 making getm.inp
 metforcing
 done
-Thu Jan 15 15:50:14 CET 2026
+Thu Jan 15 16:56:21 CET 2026
 start running the model....
   mpiexec -l  -n 239 bin/getm_prod_IFORT13.32x32 &> log/dws_200m/32x32/20150101/log.run
 ... we made it

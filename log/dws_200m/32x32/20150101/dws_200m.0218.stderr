@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process          218  of          239  is alive on no66
  ------------------------------------------------------------------------
- getm: Started on  20260115 155015.151
+ getm: Started on  20260115 165622.321
  ------------------------------------------------------------------------
  GETM version: 969dceb (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -39,7 +39,7 @@
 191192193
  ------------------------------------------------------------------------
         Reading bathymetry and grid information ...
-        using NetCDF version: 4.6.0 of Aug 15 2018 14:35:17 $
+        using NetCDF version: 4.6.1 of May 30 2018 23:38:05 $
         using cartesian grid.
         reading bathymetry: 
             iextr (iextr_topo):          820 (         820 )
@@ -1679,7 +1679,7 @@
             variable missing in restart file. Skipping Vinto               
  read_restart_ncdf_0           1           2           3           4
  read_restart_ncdf_1
-    imin,ioff_l,iread_from,il,ifill_from           1         160           0    10630880           0
+    imin,ioff_l,iread_from,il,ifill_from           1         160           0           0           0
     jmin,joff_l,jread_from,jl,jfill_from           1         448           0           0           0
     il         161
     il         161
