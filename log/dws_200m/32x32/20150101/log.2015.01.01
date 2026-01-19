@@ -1,5 +1,5 @@
 run.getm
-no61
+no62
 modelname=
 ref_start: 2010-01-01 00:00:00
 start: 2015-01-01 00:00:00
@@ -493,7 +493,7 @@ done
 making getm.inp
 metforcing
 done
-Thu Jan 15 16:56:21 CET 2026
+Mon Jan 19 14:26:53 CET 2026
 start running the model....
   mpiexec -l  -n 239 bin/getm_prod_IFORT13.32x32 &> log/dws_200m/32x32/20150101/log.run
 ... we made it
