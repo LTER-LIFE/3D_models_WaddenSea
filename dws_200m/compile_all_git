@@ -51,7 +51,7 @@ echo "! cd $setupdir"
 echo "!"
 echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 echo
-sleep 10
+sleep 1
 
 # loop over configurations, compile and install
 for conf in $configurations ; do
@@ -59,7 +59,7 @@ for conf in $configurations ; do
   ln -sf $setupdir/Configurations/$configurations/$setup.dim $HOME/tools/getm/build/$compiler/dimensions.h
 
   cd $HOME/tools/getm/build/$compiler
-  make clean
+#  make clean
   make install
 
   cd $setupdir

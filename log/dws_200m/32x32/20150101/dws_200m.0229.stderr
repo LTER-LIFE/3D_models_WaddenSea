@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
  Process          229  of          239  is alive on no66
  ------------------------------------------------------------------------
- getm: Started on  20260123 100506.703
+ getm: Started on  20260123 165122.575
  ------------------------------------------------------------------------
  GETM version: 71711f1 (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -25,8 +25,8 @@
         Time step:         4.0000000000000000       seconds
         Time format:               2
         Start:          2010-01-01 00:00:00
-        Stop:           2015-02-01 00:00:00
-         ==>         1857  day(s) and            0  seconds ==>     40111200  micro time steps
+        Stop:           2015-01-01 00:00:04
+         ==>         1826  day(s) and            4  seconds ==>     39441601  micro time steps
         using "2010-01-01 00:00:00" as time reference
     init_domain
     read_par_setup: Consistency OK
@@ -169,7 +169,7 @@
             bdyfile_2d=bdy_2d.nc
             bdyfmt_2d=           2
     init_3d
-        splitting factor M:           15
+        splitting factor M:            2
         init_variables_3d
         init_advection_3d
         Advection of horizontal 3D velocities
@@ -1657,11 +1657,11 @@
         save (rotated) velocities in center points
         save grid-related volume fluxes through interfaces
         2D results: /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//dws_200m.2d.0229.nc
-        First=           0  step=         150  sync_2d=          144
+        First=           0  step=           1  sync_2d=          144
         Elevation will be masked for depths below   0.349999994    
         Saving meteo forcing in /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//dws_200m.2d.0229.nc
         3D results: /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//dws_200m.3d.0229.nc
-        First=           0  step=         450  sync_3d=           48
+        First=           0  step=           1  sync_3d=           48
         Elevation will be masked for depths below   0.200000003    
         calculate and save mixing analysis
     do_register_all_variables()
@@ -1679,26 +1679,28 @@
             variable missing in restart file. Skipping Vinto               
  read_restart_ncdf_0           1           2           3           4
  read_restart_ncdf_1
+    joff/jmax          14
     jmax,joff,joff_0,joff_l          32         470          22         448
-    imin,ioff_l,iread_from,il,ifill_from           1         512           0           0           0
-    jmin,joff_l,jread_from,jl,jfill_from           1         448           0           0           0
+    joff_l         480
+    imin,ioff_l,iread_from,il,ifill_from           1         512           0    10651360           0
+    jmin,joff_l,jread_from,jl,jfill_from           1         480           0           0           0
     il         513
     il         513
-    jl         449
-    jl         449
+    jl         481
+    jl         481
  read_restart_ncdf: fulldomain file
  read_restart_ncdf ioff_0_ff,joff_0_ff       -9999           0
  read_restart_ncdf ioff,joff         512         470
  read_restart_ncdf ioff_0,joff_0           0           0
- read_restart_ncdf ioff_l,joff_l         512         448
+ read_restart_ncdf ioff_l,joff_l         512         480
  read_restart_ncdf il,ih         513         544
- read_restart_ncdf jl,jh         449         480
+ read_restart_ncdf jl,jh         481         512
  read_restart_ncdf iloc,jloc           1           1
  read_restart_ncdf ilen,jlen          32          32
  read_restart_ncdf iread_from,jread_from           0           0
  read_restart_ncdf ifill_from,jfill_from           0           0
  read_restart_ncdf edges          32          32          16           0           0
- read_restart_ncdf start         513         449           1           0           0
+ read_restart_ncdf start         513         481           1           0           0
                  mpi-read returned with status=           0
             read_restart_ncdf(): leaving UEulerInt=0
             read_restart_ncdf(): leaving VEulerInt=0
@@ -4608,90 +4610,6 @@
     init_input
         init_meteo_input
             Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2000-ShelfSeas.nc
-                time_id -->            1 , len =         8784
-                Meteorological offset time    315619200.00000000     
-                Datafile starts:   2000-01-01 00:00:00
-                Datafile ends  :   2000-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2001-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    283996800.00000000     
-                Datafile starts:   2001-01-01 00:00:00
-                Datafile ends  :   2001-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2002-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    252460800.00000000     
-                Datafile starts:   2002-01-01 00:00:00
-                Datafile ends  :   2002-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2003-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    220924800.00000000     
-                Datafile starts:   2003-01-01 00:00:00
-                Datafile ends  :   2003-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2004-ShelfSeas.nc
-                time_id -->            1 , len =         8784
-                Meteorological offset time    189388800.00000000     
-                Datafile starts:   2004-01-01 00:00:00
-                Datafile ends  :   2004-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2005-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    157766400.00000000     
-                Datafile starts:   2005-01-01 00:00:00
-                Datafile ends  :   2005-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2006-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    126230400.00000000     
-                Datafile starts:   2006-01-01 00:00:00
-                Datafile ends  :   2006-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2007-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    94694400.000000000     
-                Datafile starts:   2007-01-01 00:00:00
-                Datafile ends  :   2007-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2008-ShelfSeas.nc
-                time_id -->            1 , len =         8784
-                Meteorological offset time    63158400.000000000     
-                Datafile starts:   2008-01-01 00:00:00
-                Datafile ends  :   2008-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2009-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    31536000.000000000     
-                Datafile starts:   2009-01-01 00:00:00
-                Datafile ends  :   2009-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2010-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time    0.0000000000000000     
-                Datafile starts:   2010-01-01 00:00:00
-                Datafile ends  :   2010-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2011-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time   -31536000.000000000     
-                Datafile starts:   2011-01-01 00:00:00
-                Datafile ends  :   2011-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2012-ShelfSeas.nc
-                time_id -->            1 , len =         8784
-                Meteorological offset time   -63072000.000000000     
-                Datafile starts:   2012-01-01 00:00:00
-                Datafile ends  :   2012-12-31 23:00:00
-            Trying meteo from:
-                /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2013-ShelfSeas.nc
-                time_id -->            1 , len =         8760
-                Meteorological offset time   -94694400.000000000     
-                Datafile starts:   2013-01-01 00:00:00
-                Datafile ends  :   2013-12-31 23:00:00
-            Trying meteo from:
                 /export/lv1/user/jvandermolen/data/model_input_files/meteo/ERA5-2014-ShelfSeas.nc
                 time_id -->            1 , len =         8760
                 Meteorological offset time   -126230400.00000000     
@@ -5010,3 +4928,103 @@
             2015-01-01 00:00:00: reading meteo data - 2015-01-01 01:00:00
             2015-01-01 00:00:00: reading 2D boundary data ...           2
     NaN sweeping seems OK with this compiler and settings
+            2015-01-01 00:00:04: saving 2D .... 
+            2015-01-01 00:00:04: saving 3D .... 
+        Checking for NANs before saving hotstart file...
+        Saving hotstart file #            1  as /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//restart.0229.out
+ ------------------------------------------------------------------------
+ Cleaning up....
+ ------------------------------------------------------------------------
+    clean_input
+        At final MPI barrier
+ barrier(): we are waiting
+        About to finish parallel part of GETM - calling MPI_Finalize()
+        MPI finalized
+ ------------------------------------------------------------------------
+    getm: Completed on 20260123 165146.361
+    Memory used (global 2D and 3D arrays):
+        2D:          216  kbytes
+        3D:         3200  kbytes
+    Total CPU-time was:       6.05671978      seconds
+    Number of time steps:             1
+    Number of calc-points:          512
+    CPU-time/calc-point:      1.18295308E-02  seconds
+    Sim-time/CPU-time:        26048159.685675062     
+ ------------------------------------------------------------------------
+    GETM timers in seconds (           1000000000  tics per second)
+                                 wall      #sysclocks     % of total
+     Timername                time (s)        calls       clocked time
+  initialize                   20.35              6         99.36
+   sum bottom_friction          0.00              4          0.00
+  momentum                      0.00              2          0.00
+   momentum-halo                0.00              4          0.00
+  uv_depths                     0.00              2          0.00
+   sum uv_advect                0.01              2          0.04
+   uv_advect-halo               0.01              4          0.03
+   sum deformation_rates        0.00              0          0.00
+   sum uv_diffusion             0.00              2          0.00
+   sum depth_update             0.00              6          0.00
+   sum dryfac_update            0.00              2          0.00
+  sealevel                      0.00              2          0.00
+   sealevel-halo                0.00              2          0.00
+  gotm                          0.00              0          0.00
+   gotm-halo                    0.00              0          0.00
+  uv_advect_3d                  0.00              0          0.00
+   uv_advect_3d-halo            0.00              0          0.00
+  deformation_rates_3d          0.00              0          0.00
+  uv_diffusion_3d               0.00              0          0.00
+  vv_momentum_3d                0.00              0          0.00
+   vv_momentum_3d-halo          0.00              0          0.00
+  uu_momentum_3d                0.00              0          0.00
+   uu_momentum_3d-halo          0.00              0          0.00
+  ww_momentum_3d                0.00              0          0.00
+   ww_momentum_3d-halo          0.00              0          0.00
+  shear_frequency               0.00              0          0.00
+  buoyancy_frequency            0.00              2          0.00
+  stresses_3d                   0.00              0          0.00
+  do_bdy_3d                     0.00              0          0.00
+  do_temperature                0.00              0          0.00
+   temperature-halo             0.00              0          0.00
+  do_salinity                   0.00              0          0.00
+   salinity-halo                0.00              0          0.00
+  coordinates                   0.00              3          0.01
+  do_internal_pressure          0.00              2          0.01
+  do_nonhydrostatic             0.00              0          0.00
+   nonhyd overhead              0.00              0          0.00
+  start_macro                   0.00              0          0.00
+  stop_macro                    0.00              0          0.00
+  eq_state                      0.00              2          0.01
+  tracer_stirring               0.00              0          0.00
+   sum tracer_diffusion         0.00              0          0.00
+  calc_mean_fields              0.00              0          0.00
+  do_meteo                      0.00              6          0.02
+  getm_bio                      0.00              0          0.00
+  integrate_2d other            0.01              8          0.04
+  integrate_3d other            0.00              0          0.00
+  do_input                      0.00              2          0.00
+  do_output                     0.11              4          0.55
+  output_manager_save           0.00              4          0.00
+  do_output_processing          0.00              2          0.00
+   sum do_advection             0.00              4          0.01
+   do_advection-halo            0.00              6          0.00
+   sum do_advection_3d          0.00              0          0.00
+   do_advection_3d-halo         0.00              0          0.00
+   sum check_3d_fields          0.00              0          0.00
+  numerical mixing analysi      0.00              0          0.00
+   sum do_halo_2d               0.00             68          0.00
+   sum do_halo_3d               0.00            366          0.02
+   sum wait_halo                2.98            434         14.53
+   advection getm_bio           0.00              0          0.00
+  do_les_2d                     0.00              0          0.00
+  do_les_3d                     0.00              0          0.00
+   sum les_smagorinsky          0.00              0          0.00
+  waves                         0.00              0          0.00
+              TIMERS SUM       20.48            951        100.00
+ ------------------------------------------------------------------------
+    Communication with other sub-domains:
+        2D data exchange:                     0  MB
+        3D data exchange:                     5  MB
+ ------------------------------------------------------------------------
+    Copyright (C) Karsten Bolding and Hans Burchard.
+    under the General Public License (GPL) - http://www.gnu.org 
+ ------------------------------------------------------------------------

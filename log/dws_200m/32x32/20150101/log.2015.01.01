@@ -3,7 +3,7 @@ no61
 modelname=
 ref_start: 2010-01-01 00:00:00
 start: 2015-01-01 00:00:00
-stop:  2015-02-01 00:00:00
+stop:  2015-01-01 00:00:04
 configuration: 
 removing old output and old output hot start files
 done
@@ -493,14 +493,12 @@ done
 making getm.inp
 metforcing
 done
-Fri Jan 23 10:05:05 CET 2026
+Fri Jan 23 16:51:21 CET 2026
 start running the model....
   mpiexec -l  -n 239 bin/getm_prod_IFORT13.32x32 &> log/dws_200m/32x32/20150101/log.run
 ... we made it
 moving hot start files
 moving restart files, hot_dir:,/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/02/
-mv: cannot stat ‘/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01//*.out’: No such file or directory
-rename: /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/02//*.out: rename to /export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/02//*.in failed: No such file or directory
 done
 done
 moving log files

@@ -111,7 +111,7 @@
                         <bdy2d_sponge_size>4</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
-			<M>15</M>
+			<M>2</M>
 			<cnpar>1.0</cnpar>
 			<cord_relax>0.0</cord_relax>
 			<adv_ver_iterations>500</adv_ver_iterations>
