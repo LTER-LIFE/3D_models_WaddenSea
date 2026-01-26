@@ -1,7 +1,7 @@
  MPI is initialised - v3.1
- Process          108  of          239  is alive on no63
+ Process          108  of          239  is alive on no64
  ------------------------------------------------------------------------
- getm: Started on  20260123 165122.583
+ getm: Started on  20260126 111202.650
  ------------------------------------------------------------------------
  GETM version: 71711f1 (iow_20200609_bfm2016_20250116 branch)
  GOTM version: f7b271b (master_20210107_couplingGETM_bfm2016_20241126 branch)
@@ -1668,7 +1668,7 @@
     jl         321
     jl         321
  read_restart_ncdf: fulldomain file
- read_restart_ncdf ioff_0_ff,joff_0_ff       -9999           0
+ read_restart_ncdf ioff_0_ff,joff_0_ff       -9999       32767
  read_restart_ncdf ioff,joff         800         310
  read_restart_ncdf ioff_0,joff_0           0           0
  read_restart_ncdf ioff_l,joff_l         800         320
@@ -5420,26 +5420,26 @@
         About to finish parallel part of GETM - calling MPI_Finalize()
         MPI finalized
  ------------------------------------------------------------------------
-    getm: Completed on 20260123 165146.360
+    getm: Completed on 20260126 111225.207
     Memory used (global 2D and 3D arrays):
         2D:          216  kbytes
         3D:         3200  kbytes
-    Total CPU-time was:       11.6637564      seconds
+    Total CPU-time was:       9.94469643      seconds
     Number of time steps:             1
     Number of calc-points:          608
-    CPU-time/calc-point:      1.91838089E-02  seconds
-    Sim-time/CPU-time:        13526208.794828923     
+    CPU-time/calc-point:      1.63564086E-02  seconds
+    Sim-time/CPU-time:        15864376.068968149     
  ------------------------------------------------------------------------
     GETM timers in seconds (           1000000000  tics per second)
                                  wall      #sysclocks     % of total
      Timername                time (s)        calls       clocked time
-  initialize                   16.48              6         74.07
+  initialize                   15.46              6         80.11
    sum bottom_friction          0.00              4          0.00
   momentum                      0.00              2          0.00
    momentum-halo                0.00              4          0.00
   uv_depths                     0.00              2          0.00
-   sum uv_advect                4.44              2         19.94
-   uv_advect-halo               4.44              4         19.94
+   sum uv_advect                3.71              2         19.21
+   uv_advect-halo               3.69              4         19.13
    sum deformation_rates        0.00              0          0.00
    sum uv_diffusion             0.00              2          0.00
    sum depth_update             0.00              6          0.00
@@ -5476,29 +5476,29 @@
   tracer_stirring               0.00              0          0.00
    sum tracer_diffusion         0.00              0          0.00
   calc_mean_fields              0.00              0          0.00
-  do_meteo                      0.01              6          0.02
+  do_meteo                      0.01              6          0.03
   getm_bio                      0.00              0          0.00
-  integrate_2d other            4.44              8         19.94
+  integrate_2d other            3.71              8         19.21
   integrate_3d other            0.00              0          0.00
   do_input                      0.00              2          0.00
-  do_output                     1.32              4          5.94
+  do_output                     0.12              4          0.62
   output_manager_save           0.00              4          0.00
   do_output_processing          0.00              2          0.00
-   sum do_advection             0.00              4          0.00
-   do_advection-halo            0.00              6          0.00
+   sum do_advection             0.02              4          0.08
+   do_advection-halo            0.02              6          0.08
    sum do_advection_3d          0.00              0          0.00
    do_advection_3d-halo         0.00              0          0.00
    sum check_3d_fields          0.00              0          0.00
   numerical mixing analysi      0.00              0          0.00
    sum do_halo_2d               0.00             68          0.01
    sum do_halo_3d               0.01            366          0.04
-   sum wait_halo                9.29            434         41.76
+   sum wait_halo                7.61            434         39.46
    advection getm_bio           0.00              0          0.00
   do_les_2d                     0.00              0          0.00
   do_les_3d                     0.00              0          0.00
    sum les_smagorinsky          0.00              0          0.00
   waves                         0.00              0          0.00
-              TIMERS SUM       22.25            951        100.00
+              TIMERS SUM       19.30            951        100.00
  ------------------------------------------------------------------------
     Communication with other sub-domains:
         2D data exchange:                     0  MB

@@ -162,6 +162,7 @@ esac
 
 # to debug:
 # BFM_SOURCES/bfm-git/src/getm/read_restart_ncdf.F90
+
 #      LEVEL1 "joff/jmax",joff/jmax
 #      ioff_l=ioff-ioff_0
 #      joff_l=joff-joff_0
@@ -171,6 +172,20 @@ esac
 #         ioff_0=0;joff_0=0
 #         joff_l=jmax*(joff/jmax+1)
 #         LEVEL1 "joff_l",joff_l
+#!possibility to use "old" netcdf restart files...
+#      if (ioff_0_from_file .eq.-9999) then
+#         ioff_0=0;joff_0=0
+#         joff_l=jmax*(joff/jmax+1)
+#         if (joff.le.0) then
+#            joff_l=0
+#         endif
+#         LEVEL1 "joff_l",joff_l
+#      else
+#!       [ij]off_0 : relative difference of position the sw-corner of the
+#!                          subdomain in the sw corner of the domain.
+#        ioff_0=ioff_0-ioff_0_from_file
+#        joff_0=joff_0-joff_0_from_file
+#      endif
 
 # --- to run a test case, e.g., OysterGrounds
 # mkdir -p "$HOME/home/gotm-cases/nov2024_bfm2016" && cd "$HOME/home/gotm-cases/nov2024_bfm2016"
