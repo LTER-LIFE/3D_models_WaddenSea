@@ -320,8 +320,8 @@ fi  # BASE_3
 ##################################################################
 if [ $BASE_4 == "1" ]; then
 
-  export step_2d=900 #21600 #900 #150 # 150  # xml: 90
-  export step_3d=900 #21600 #900   # xml: 1440
+  export step_2d=21600 #900 #150 # 150  # xml: 90
+  export step_3d=21600 #900   # xml: 1440
   export save_initial=True
   
   export use_epoch=True 
@@ -370,7 +370,7 @@ if [ $BASE_4 == "1" ]; then
            fi
 	   export start="$yy-$mm-$dd 00:00:00"
 	   export stop="$hot_yy-$hot_mm-$dd 00:00:00"
-  	   export stop="$hot_yy-01-02 14:00:00"
+  	   #export stop="$hot_yy-01-02 14:00:00"
 
            export logdir=log/$runid/$conf/$yy$mm$dd
            export year=$yy

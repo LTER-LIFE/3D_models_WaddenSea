@@ -1,5 +1,7 @@
-1
+3 # how many lines
 180 201 180 202  1.0  # Balgzand Oostoever channel
+259 176 259 176  6.0 # den Oever
+260 176 260 177  9.0 # den Oever  
 #47 3 47 4 3.06828  # NH coastline near southern boundary, topo points 46 2, 46 3
 #48 5 48 6 0.847857  # NH coastline near southern boundary
 #42 1 46 4 7.00      # NH coastal block
