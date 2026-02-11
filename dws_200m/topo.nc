@@ -1,1 +1,1 @@
-../../model_input_files/topo/topo_adjusted_dws_200m_2009_smoothed_05percent_max_change.nc
+../../model_input_files/topo/topo_adjusted_dws_200m_2009_smoothed_10percent_max_change_gt_1.nc
