@@ -13,7 +13,7 @@
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=qing.zhan@nioz.nl
+#SBATCH --mail-user=qing.zhan@nioz.nl,christos.giannopoulos@nioz.nl,johan.van.der.molen@nioz.nl
 
 module load clustershell/1.8
 
@@ -369,8 +369,8 @@ if [ $BASE_4 == "1" ]; then
 	     export start="$yy-$mm-$dd 00:00:00"
            fi
 	   export start="$yy-$mm-$dd 00:00:00"
-	   export stop="$hot_yy-$hot_mm-$dd 00:00:00"
-  	   #export stop="$hot_yy-01-02 14:00:00"
+	   #export stop="$hot_yy-$hot_mm-$dd 00:00:00"
+  	   export stop="$hot_yy-01-04 23:00:00"
 
            export logdir=log/$runid/$conf/$yy$mm$dd
            export year=$yy
