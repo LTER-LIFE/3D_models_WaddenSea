@@ -1,6 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=normal --qos=normal
 #SBATCH --nodes=6
+#SBATCH --exclude=no69
 ##SBATCH --nodelist=no63,no64,no65,no66,no70,no72
 ##SBATCH --nodelist=no67,no68,no69,no70,no71,no72
 ##SBATCH --nodelist=no61,no62,no63,no64,no67,no68
@@ -10,6 +11,9 @@
 #SBATCH --time=1-1:00:00
 #SBATCH --output=/export/lv9/user/qzhan/home/run_all.stdout
 #SBATCH --job-name="run_all"
+
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=qing.zhan@nioz.nl
 
 module load clustershell/1.8
 
@@ -35,7 +39,7 @@ cp machinefile machinefile_keep
 export GETMDIR=$HOME/home/getm-git/
 export runid=dws_200m
 
-cd $HOME/home/GETM_ERSEM_SETUPS/$runid/
+cd $HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/$runid/
 
 rm *.stderr
 rm *.stdout
@@ -63,7 +67,7 @@ BASE_2=0  # November base year further spin up, bdy 3d+hotstart
 BASE_3=0  # December base year start up, meteo+rivers
 BASE_4=1  # actual run
 
-mkdir -p log/$conf
+#mkdir -p log/$conf
 
 #EPOCH_START="2019-01-01 00:00:00"   # epoch_start should conform with year after base year
 #YEAR_BASE=2018
@@ -72,13 +76,13 @@ mkdir -p log/$conf
 
 export EPOCH_START="2010-01-01 00:00:00"   # epoch_start should conform with year after base year
 YEAR_BASE=2009
-YEAR_START=2013
-YEAR_STOP=2013
+YEAR_START=2015
+YEAR_STOP=2015
 echo $YEAR_BASE
 
 months="01 02 03 04 05 06 07 08 09 10 11 12"
 #months="02 03 04 05 06 07 08 09 10"
-months="12"
+months="01"
 days="01"
 
 # for the benefit of adjusting output.yaml; must fit model time step
@@ -87,8 +91,8 @@ export timestep=4  # 4  (Kiki), also in xml file as 4
 OUTDIR=`pwd`/out/$runid/$conf
 
 # For flexible output, disable classical output
-export save_2d=False
-export save_3d=False
+export save_2d=True
+export save_3d=True
 export FABM=False
 
 
@@ -132,8 +136,9 @@ if [ $BASE_1 == "1" ]; then
    #======================
    export An_const=20.0  # horizontal diffusion, xml: 5
    
-   export step_2d=150 #150 # 150  # xml: 90
-   export step_3d=450  # xml: 1440
+   export step_2d=1 #150 #150 # 150  # xml: 90
+   export step_3d=1 # 450  # xml: 1440
+   export save_initial=True
 
    export out_dir=${OUTDIR-"./out"}/base_1
    export hot_dir=${OUTDIR-"./out"}/base_2
@@ -315,11 +320,15 @@ fi  # BASE_3
 ##################################################################
 if [ $BASE_4 == "1" ]; then
 
+  export step_2d=21600 #900 #150 # 150  # xml: 90
+  export step_3d=21600 #900   # xml: 1440
+  export save_initial=True
+  
   export use_epoch=True 
 
-  export crit_depth=0.25  # 0.25  # Johan: 0.9, Kiki: 0.3, Ulf: 0.25
-  export min_depth=0.10  # 0.1  # Johan: 0.3, Kiki: 0.12, Ulf: 0.1
-  export clip_depth=0.05  # 0.05  # Johan: 0.1, Kiki: 0.01, Ulf: 0.1
+  export crit_depth=0.9  # 0.25  # Johan: 0.9, Kiki: 0.3, Ulf: 0.25
+  export min_depth=0.3  # 0.1  # Johan: 0.3, Kiki: 0.12, Ulf: 0.1
+  export clip_depth=0.1  # 0.05  # Johan: 0.1, Kiki: 0.01, Ulf: 0.1
 
   export save_fluxes=True
 
@@ -327,12 +336,6 @@ if [ $BASE_4 == "1" ]; then
   #for yy in $years ; do
   while [ $yy -le $YEAR_STOP ] ; do
      echo "$yy"
-
-     echo "linking bdy_2d.nc and bdy_3d.nc"
-     rm bdy_*d.nc 
-     ln -sf ../../../model_input_files/boundaries/bdy_dws_200m_$yy.2d.nc bdy_2d.nc 
-     ln -sf ../../../model_input_files/boundaries/bdy_dws_200m_$yy.3d.nc bdy_3d.nc
-     echo "done linking bdy files"
 
      for mm in $months ; do
         echo "$mm"
@@ -367,6 +370,7 @@ if [ $BASE_4 == "1" ]; then
            fi
 	   export start="$yy-$mm-$dd 00:00:00"
 	   export stop="$hot_yy-$hot_mm-$dd 00:00:00"
+  	   #export stop="$hot_yy-01-02 14:00:00"
 
            export logdir=log/$runid/$conf/$yy$mm$dd
            export year=$yy
@@ -378,11 +382,22 @@ if [ $BASE_4 == "1" ]; then
            export ref_start_time="$YBASE-$mm_ref-$days 00:00:00"
            echo "run_all: ref_start_time: $ref_start_time"
 
+           echo "linking bdy_2d.nc and bdy_3d.nc"
+	   rm bdy_*d.nc
+           echo "Year: $yy"
+           echo "Month: $mm"
+	   echo "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".2d.nc"	
+	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".2d.nc" bdy_2d.nc
+	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".3d.nc" bdy_3d.nc
+	   echo "done linking bdy files"
 
-           sed --follow-symlinks -i -e 's/\(time_start: \).\{7\}/\1'$yy'-'$mm'/' ./output.yaml
+        cp output.yaml output_yaml.tmp
+         sed --follow-symlinks -e 's/\(time_start: \).\{7\}/\1'$yy'-'$mm'/' output_yaml.tmp > output.yaml 
+         wait
+         rm output_yaml.tmp
 
            mkdir -p $logdir
-           ./run.getm "$start" "$stop" >& log/$conf/log.$yy.$mm.$dd
+           ./run.getm "$start" "$stop" >& $logdir/log.$yy.$mm.$dd
            wait
            sleep 1
 
