@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 # --------------------------
 # Base image: Ubuntu 18.04 (HPC-like)
 # --------------------------
@@ -19,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     curl \
     git \
+    openssh-client \
     tar \
     gzip \
     bzip2 \
@@ -96,14 +98,8 @@ RUN cd /tmp && \
     cd / && rm -rf /tmp/netcdf-fortran-4.4.4*
 
 # --------------------------
-# Build-time arguments for Git credentials
+# SSH configuration for secure git cloning
 # --------------------------
-ARG GIT_USERNAME
-ARG GIT_TOKEN
-
-# Expose as environment variables for RUN commands
-ENV GIT_USERNAME=${GIT_USERNAME}
-ENV GIT_TOKEN=${GIT_TOKEN}
 
 # --------------------------
 # Environment variables (HPC-like)
@@ -114,7 +110,7 @@ ENV NETCDF=/opt/netcdf-fortran-4.4.4
 ENV NETCDF_ROOT=/opt/netcdf-fortran-4.4.4
 ENV NETCDF_LIBDIR=/opt/netcdf-fortran-4.4.4/lib
 ENV NETCDF_INCDIR=/opt/netcdf-fortran-4.4.4/include
-ENV LD_LIBRARY_PATH=/opt/netcdf-fortran-4.4.4/lib:/opt/netcdf-c-4.6.0/lib:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/opt/netcdf-fortran-4.4.4/lib:/opt/netcdf-c-4.6.0/lib:${LD_LIBRARY_PATH}
 ENV COMPILATION_MODE=production
 ENV GETM_PARALLEL=true
 
@@ -127,36 +123,48 @@ ENV GOTM_BUILD_DIR=/opt/home/build/gotm
 
 
 # --------------------------
-# Clone repositories during build
+# Clone repositories during build (using SSH with BuildKit mount)
 # --------------------------
-RUN mkdir -p $HOME/home/BFM_SOURCES \
-             $HOME/home/GOTM_SOURCES \
-             $HOME/home/GETM_SOURCES \
-             $HOME/home/fabm-git \
-	     $HOME/home/GETM_ERSEM_SETUPS \    
-	     $HOME/local/gotm \
-	     $HOME/local/getm && \
-    cd $HOME/home/BFM_SOURCES && \
-    git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/jvdmolen/bfm_2016.git" && \
-    cd bfm_2016 && git checkout -b bfm2016_production_20250827 remotes/origin/bfm2016_production_20250827 && \
-    cd $HOME/home/GOTM_SOURCES && \
-    git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/jvdmolen/gotm_coupled_bfm_2016.git" && \
-    cd gotm_coupled_bfm_2016 && \
+RUN --mount=type=ssh \
+    set -eux; \
+    mkdir -p /opt/home/BFM_SOURCES \
+             /opt/home/GOTM_SOURCES \
+             /opt/home/GETM_SOURCES \
+             /opt/home/fabm-git \
+             /opt/home/GETM_ERSEM_SETUPS \
+             /opt/local/gotm \
+             /opt/local/getm; \
+    mkdir -p /root/.ssh && \
+    ssh-keyscan github.com >> /root/.ssh/known_hosts && \
+    git config --global user.email "qing.zhan@nioz.nl" && \
+    git config --global user.name "NIOZ-QingZ" && \
+    echo "Cloning BFM..." && \
+    cd "$HOME/home/BFM_SOURCES" || exit 1 && \
+    git clone "git@github.com:jvdmolen/bfm_2016.git" && \
+    cd bfm_2016 || exit 1 && \
+    git checkout -b bfm2016_production_20250827 remotes/origin/bfm2016_production_20250827 && \
+    echo "Cloning GOTM..." && \
+    cd "$HOME/home/GOTM_SOURCES" || exit 1 && \
+    git clone "git@github.com:jvdmolen/gotm_coupled_bfm_2016.git" && \
+    cd gotm_coupled_bfm_2016 || exit 1 && \
     git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126 && \
     git submodule update --init --recursive && \
-    cd $HOME/home/GETM_SOURCES && \
-    git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/jvdmolen/getm_coupled_bfm_2016.git" && \
-    cd getm_coupled_bfm_2016 && \
-    git checkout -b iow_20200609_bfm2016_20250116 remotes/origin/iow_20200609_bfm2016_20250116 && \
-    cd $HOME/home/fabm-git && \
-    git clone "https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/fabm-model/fabm.git" && \
-    cd fabm && git checkout -b master_20200610 e1f1f08e42d84f8324f5114924b67ad567719334
-
-RUN mkdir -p $HOME/home/build/gotm && cd $HOME/home/build/gotm && \
-	# Create  files in build/gotm 
-	cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \ 
-	# Create gotm executable (Run as many parallel compilation jobs as the CPU cores)	
-	make -j$(nproc) && make install
+    echo "Cloning GETM..." && \
+    cd "$HOME/home/GETM_SOURCES" || exit 1 && \
+    git clone "git@github.com:jvdmolen/getm_coupled_bfm_2016.git" && \
+    cd getm_coupled_bfm_2016 || exit 1 && \
+    git checkout -b iow_20200609_bfm2016_20250116 969dceb73ca9d801c03eb7f218da1d45d5748db3 && \
+    echo "Cloning FABM..." && \
+    cd "$HOME/home/fabm-git" || exit 1 && \
+    git clone "git@github.com:fabm-model/fabm.git" && \
+    cd fabm || exit 1 && \
+    git checkout -b master_20200610 e1f1f08e42d84f8324f5114924b67ad567719334
+    
+RUN mkdir -p $HOME/home/build/gotm && \
+    cd $HOME/home/build/gotm && \
+    cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \
+    make -j$(nproc) && \
+    make install
 
 # --------------------------
 # Copy the GETM_ERSEM_SETUPS folder
@@ -190,8 +198,27 @@ COPY dws_200m $HOME/home/GETM_ERSEM_SETUPS/dws_200m
 WORKDIR /opt/
 CMD ["/bin/bash"]
 
-# docker build -t getm-wad-container:latest .
-# docker build --build-arg GIT_USERNAME=yourusername --build-arg GIT_TOKEN=yourtoken  -t getm-wad-container:latest .
+# Build commands (requires Docker BuildKit and SSH key):
+#
+# === PREREQUISITES ===
+# 1. Ensure SSH agent is running with your SSH key loaded:
+#    - On Linux/Mac: ssh-add ~/.ssh/id_rsa
+#    - On Windows (PowerShell as Admin):
+#        Start-Service ssh-agent
+#        ssh-add C:\Users\<username>\.ssh\id_rsa
+#    - On Windows (Git Bash):
+#        eval $(ssh-agent -s)
+#        ssh-add ~/.ssh/id_rsa
+#
+# === BUILD COMMANDS ===
+# Linux/Mac with SSH agent:
+# DOCKER_BUILDKIT=1 docker build --ssh default -t getm-wad-container:latest .
+#
+# Windows PowerShell:
+# $env:DOCKER_BUILDKIT=1; docker build --ssh default -t getm-wad-container:latest .
+#
+# Windows with specific SSH key path:
+# $env:DOCKER_BUILDKIT=1; docker build --ssh default=C:\Users\qzhan\.ssh\id_rsa -t getm-wad-container:latest .
 
 # On HPC:
 # module load singularity
