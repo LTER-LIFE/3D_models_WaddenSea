@@ -81,7 +81,7 @@ export stop=$stop_time
 export GOTMGUIDIR=$HOME/home/GOTM_SOURCES/gotm-git/gui.py
 
 # getm_git: master, iow_master (and les and ip branches)
-$HOME/tools/bbpy/editscenario/editscenario/editscenario.py -q -e nml . --schemadir=/$HOME/home/getm-git/code/schemas --targetversion=getm-2.5 $setup.xml
+$HOME/tools/bbpy/editscenario/editscenario/editscenario.py -q -e nml . --schemadir=/$HOME/home/getm-git/schemas --targetversion=getm-2.5 $setup.xml
 
 echo "done"
 
@@ -91,7 +91,7 @@ echo "start running the model...."
 t1=`date +%s`
 echo "  mpiexec -l $mpich2_args -n $np bin/getm_prod_IFORT13.$conf &> $logdir/log.run"
 
-  mpirun $mpi_args -np $np $HOME/home/setups/$setup/bin/getm_prod_$FORTRAN_COMPILER.$conf &> $logdir/log.run
+  mpirun $mpi_args -np $np $HOME/home/GETM_ERSEM_SETUPS/$setup/bin/getm_prod_$FORTRAN_COMPILER.$conf &> $logdir/log.run
 
 t2=`date +%s`
 echo "... we made it"

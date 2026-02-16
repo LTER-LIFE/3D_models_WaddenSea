@@ -50,7 +50,7 @@ selections='2d 3d mean'
 #selections='2d'
 #selections='3d'
 #selections=''
-merge_files=1
+merge_files=0
 if [ $merge_files -eq 1 ] ; then
 for selection in $selections ; do
 #  fname=$nodesid'_'$runid'.'$selection.*.nc
