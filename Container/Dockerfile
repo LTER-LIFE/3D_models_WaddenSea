@@ -159,7 +159,8 @@ RUN --mount=type=ssh \
     git clone "git@github.com:fabm-model/fabm.git" && \
     cd fabm || exit 1 && \
     git checkout -b master_20200610 e1f1f08e42d84f8324f5114924b67ad567719334
-    
+
+# --- Compile GOTM (1D) ---
 RUN mkdir -p $HOME/home/build/gotm && \
     cd $HOME/home/build/gotm && \
     cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \
@@ -170,6 +171,13 @@ RUN mkdir -p $HOME/home/build/gotm && \
 # Copy the GETM_ERSEM_SETUPS folder
 # --------------------------
 COPY dws_200m $HOME/home/GETM_ERSEM_SETUPS/dws_200m
+
+# --- Compile GETM (3D) ---
+RUN mkdir -p $HOME/tools/getm/build && \
+    cd $HOME/home/build/gotm && \
+    cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \
+    make -j$(nproc) && \
+    make install
 
 # Create build directory
 # RUN mkdir -p $HOME/tools/getm/build
@@ -224,7 +232,7 @@ CMD ["/bin/bash"]
 # module load singularity
 # singularity --version
 # singularity pull getm-wad-container.sif docker://qingzfly/getm-wad-container:latest
-# singularity shell --bind $HOME/home/singularity-workspace:/opt/workspace getm-wad-container.sif # bind the directory, In Singularity, the container filesystem is mostly read-only. 
+# singularity shell --bind $HOME/home/container:/opt/workspace getm-wad-container.sif # bind the directory, In Singularity, the container filesystem is mostly read-only. 
 # Only paths that are bound to your host directories are writable.
 
 
