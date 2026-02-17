@@ -110,7 +110,7 @@ ENV NETCDF=/opt/netcdf-fortran-4.4.4
 ENV NETCDF_ROOT=/opt/netcdf-fortran-4.4.4
 ENV NETCDF_LIBDIR=/opt/netcdf-fortran-4.4.4/lib
 ENV NETCDF_INCDIR=/opt/netcdf-fortran-4.4.4/include
-ENV LD_LIBRARY_PATH=/opt/netcdf-fortran-4.4.4/lib:/opt/netcdf-c-4.6.0/lib:${LD_LIBRARY_PATH}
+ENV LD_LIBRARY_PATH=/opt/netcdf-fortran-4.4.4/lib:/opt/netcdf-c-4.6.0/lib
 ENV COMPILATION_MODE=production
 ENV GETM_PARALLEL=true
 
@@ -160,24 +160,38 @@ RUN --mount=type=ssh \
     cd fabm || exit 1 && \
     git checkout -b master_20200610 e1f1f08e42d84f8324f5114924b67ad567719334
 
-# --- Compile GOTM (1D) ---
-RUN mkdir -p $HOME/home/build/gotm && \
-    cd $HOME/home/build/gotm && \
-    cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \
-    make -j$(nproc) && \
-    make install
-
 # --------------------------
 # Copy the GETM_ERSEM_SETUPS folder
 # --------------------------
-COPY dws_200m $HOME/home/GETM_ERSEM_SETUPS/dws_200m
+RUN mkdir -p /opt/home/build/gotm
+RUN mkdir -p /opt/tools/getm/build
 
-# --- Compile GETM (3D) ---
-RUN mkdir -p $HOME/tools/getm/build && \
-    cd $HOME/home/build/gotm && \
-    cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=$HOME/local/gotm && \
+COPY dws_200m /opt/home/GETM_ERSEM_SETUPS/dws_200m
+COPY bbpy /opt/tools/bbpy
+COPY getm_configure.sh /opt/tools/getm/build/
+
+# --- Compile GOTM (1D) ---
+RUN mkdir -p /opt/home/build/gotm && \
+    cd /opt/home/build/gotm && \
+    cmake $GOTMDIR -DFABM_BASE=$FABMDIR -DCMAKE_INSTALL_PREFIX=/opt/local/gotm && \
     make -j$(nproc) && \
     make install
+
+# --- Compile GETM (3D) ---
+RUN mkdir -p /opt/tools/getm/build && \
+    cd /opt/tools/getm/build && \
+    sed -i 's/\r$//' getm_configure.sh && \
+    chmod +x getm_configure.sh && \
+    ./getm_configure.sh && \
+    cd /opt/home/GETM_ERSEM_SETUPS/dws_200m && \
+    # link_restartfiles is not needed for comipilation, run it on cluster before running the model.
+    # sed -i 's/\r$//' link_restartfiles && \
+    sed -i 's/\r$//' compile_all_git && \
+    # chmod +x link_restartfiles compile_all_git && \
+    chmod +x compile_all_git && \
+    #./link_restartfiles && \
+    ./compile_all_git && \
+    echo "GOTM and GETM compilation completed successfully."
 
 # Create build directory
 # RUN mkdir -p $HOME/tools/getm/build
