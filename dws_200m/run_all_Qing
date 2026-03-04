@@ -13,7 +13,7 @@
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=qing.zhan@nioz.nl,christos.giannopoulos@nioz.nl,johan.van.der.molen@nioz.nl
+#SBATCH --mail-user=qing.zhan@nioz.nl,christos.giannopoulos@nioz.nl
 
 module load clustershell/1.8
 
