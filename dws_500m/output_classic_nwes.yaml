@@ -1,0 +1,85 @@
+#<filename without extension>:
+#  time_step:      (MANDATORY)
+#  time_unit:      (MANDATORY) [ dt | second | hour | day | month | year ]
+#  time_method:    (optional)  [ 0 (time independent) | 1 (instantanuous; DEFAULT) | 2 (mean) | 3 (integrated) ]
+#  time_reference: (optional)  [string; DEFAULT: first output time]
+#  time_start: 1981-01tional)  [string; DEFAULT: start of simulation]
+#  time_stop:      (optional)  [string; DEFAULT: end of simulation]
+#  [i|j|k]_[start|stop|stride]: (optional) [global integers]
+#  format:         (optional)  [ netcdf (DEFAULT) | text ]
+#  sync_interval:  (optional)  [DEFAULT: 1]
+#  variables:     (MANDATORY)
+#    - source: [ * | <varname>,<category>/[ * | <varname>, ... ]
+#      name:    (optional) [output name for specific variable, e.g. to mention non-instananous flavor]
+#      prefix:  (optional) [prefix variable names of a whole category]
+#      postfix: (optional) [postfix variable names of a whole category]
+#      time_method:  (optional)  [ 0 (time independent) | 1 (instantanuous; DEFAULT) | 2 (mean) | 3 (integrated) ] (for specific variable)
+#      xtype: (optional) [5 (real; DEFAULT) | 6 (double)] (for specific variable)
+#      output_level: (optional) [specified for a whole category]
+
+# calls in code:
+# option 1) register_variables(data=)
+#           output_manager_init()
+# option 2) output_manager_init()
+#           register(used=)
+#           if (used) send_data(data=)
+
+flex_out/north_west_european_shelf.2d:
+  time_step: 1 
+  time_unit: day
+  time_reference: 1981-01-01 00:00:00
+  time_start: 1981-01-02 00:00:00
+  variables: 
+    - source: level
+    - source: lonc
+    - source: latc
+    - source: bathymetry
+    - source: az
+    - source: z
+      name:   elev
+    - source: u2d-destag
+      name:   u
+    - source: v2d-destag
+      name:   v
+    - source: u10
+    - source: v10
+    - source: airp
+    - source: t2
+    - source: tcc
+    - source: tausx
+    - source: tausy
+    - source: swr
+    - source: shf
+    - source: albedo
+    - source: taubmax
+
+flex_out/north_west_european_shelf.3d:
+  time_step: 1
+  time_unit: day
+  time_reference: 1981-01-01 00:00:00
+  time_start: 1981-01-02 00:00:00
+  variables: 
+    - source: level
+    - source: lonc
+    - source: latc
+    - source: bathymetry
+    - source: az
+    - source: z
+      name:   elev
+    - source: u3d
+      name:   uu
+    - source: v3d
+      name:   vv
+    - source: ww
+      name:   w
+    - source: hn
+      name:   h
+    - source: hun
+    - source: hvn
+    - source: num
+    - source: nuh
+    - source: tke
+    - source: salt
+    - source: temp
+    - source: rho
+

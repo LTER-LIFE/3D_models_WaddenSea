@@ -1,0 +1,24 @@
+0 #14 # how many lines
+#259 176 259 176 5.294041 # 5.40597 # loc a for den Oever
+#258 176 258 176 3.048340 # 5.40597 # loc 1 for den Oever
+#259 177 259 177 5.294041 # 5.494775 # loc b for den Oever
+#258 177 258 177 3.048340 # 5.494775 # loc 2 for den Oever
+#259 178 259 178 5.294041 # 4.981377 #loc c
+#258 178 258 178 3.048340 # 4.981377 #loc 3
+#260 178 260 178 5.968974  # loc d
+#261 178 261 178 5.968974  # loc e
+#262 178 262 178 5.968974  # loc f
+#263 178 263 178 5.492235 # loc g
+#260 176 262 177 7.55 # den Oever
+#372 221 374 222 5.0 # IJmeer inlet
+#371 221 371 221 2.890056 # loc a
+#371 222 371 222 3.45516 # loc b
+#180 201 180 202  1.0  # Balgzand Oostoever channel
+# 259 176 259 176  6.0 # den Oever
+# 260 176 260 177  9.0 # den Oever  
+#47 3 47 4 3.06828  # NH coastline near southern boundary, topo points 46 2, 46 3
+#48 5 48 6 0.847857  # NH coastline near southern boundary
+#42 1 46 4 7.00      # NH coastal block
+#46 1 46 4 4.00  # NH coastal boundary strip
+#181 201 181 202  1.0   # Balgzand Oostoever channel
+

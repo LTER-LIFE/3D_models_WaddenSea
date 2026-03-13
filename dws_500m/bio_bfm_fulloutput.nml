@@ -1,0 +1,457 @@
+!-------------------------------------------------------------------------------
+! BFM biological model
+!
+!  surface_flux_method = 0: constant; 2: from file 'bio_fluxes.dat'
+!  n_surface_fluxes = number of variables with a mass flux at the surface
+!  
+! pelagic  (O)              O2:   Oxygen (mmol/m3)
+! pelagic  (P)              N1:   Phosphate (mmol/m3)
+! pelagic  (N)              N3:   Nitrate (mmol/m3)
+! pelagic  (N)              N4:   Ammonium (mmol/m3)
+! pelagic  (Si)             N5:   Silicate (mmol/m3)
+! pelagic  (R)              N6:   Reduction Equivalents (mmol/m3)
+! pelagic  (N)              O4:   N2-sink (mmol/m3)
+! pelagic  (CNP)            B1:   Pelagic Bacteria
+! pelagic  (CNPSiI)         P1:   Diatoms (group PhytoPlankton))
+! pelagic  (CNPSiI)         P2:   Flagellates (group PhytoPlankton))
+! pelagic  (CNPSiI)         P3:   PicoPhytoPlankton (group PhytoPlankton))
+! pelagic  (CNPSiI)         P4:   Dinoflagellates (group PhytoPlankton))
+! pelagic  (CNP)            Z3:   Carnivorous mesozooplankton (group MesoZooPlankton))
+! pelagic  (CNP)            Z4:   Omnivorous mesozooplankton (group MesoZooPlankton))
+! pelagic  (CNP)            Z5:   Microzooplankton (group MicroZooPlankton))
+! pelagic  (CNP)            Z6:   Heterotrophic nanoflagellates (HNAN) (group MicroZooPlankton))
+! pelagic  (CNPSi)          R1:   Labile Organic Carbon (LOC)
+! pelagic  (C)              R2:   CarboHydrates (sugars)
+! pelagic  (CNPSi)          R6:   Particulate Organic Carbon (POC)
+! pelagic  (C)              R7:   Refractory Disoolved Organic Carbon
+!
+!-------------------------------------------------------------------------------
+
+&bfm_init_nml  
+!   surface_flux_method = 0,
+   surface_flux_method = 3,
+   n_surface_fluxes = 3,
+   rel_max_sedi_rate=10,
+   sfl_N3n= 0.12,
+   sfl_N4n= 0.09,
+   N1p0 = 0.15, !1.5, !4.0,
+   N3n0 = 6.0, !7.0
+   N4n0 = 4.0,
+   N5s0 = 5.0,
+   N6r0 = 1.0,
+   O2o0 = 300.0,
+   P1c0 = 3.0,
+   P2c0 = 3.0,
+   P3c0 = 5.0,
+   P4c0 = 0.5,
+   P5c0 = 0.05,
+   Z3c0 = 1.0,
+   Z4c0 = 1.0,
+   Z5c0 = 3.5,
+   Z6c0 = 4.5,
+   R2c0 = 0.01,
+   R6c0 = 17.0,
+   RZc0 = 0.1,
+   B1c0 = 10
+/
+
+
+!-------------------------------------------------------------------------------
+! Model switches
+! bfm_benthic_model = INTEGER       : 0 = no nutrient regeneration
+!                                   : 1 = simple nutrient return
+!                                   : 2 = benthos + nutrient return 
+!                                   : 3 = benthos + Ruardij & Van Raaphorst 
+!
+! benthic  (CNP)            Y1:   Epibenthos (group BenOrganisms))
+! benthic  (CNP)            Y2:   Deposit feeders (group BenOrganisms))
+! benthic  (CNP)            Y3:   Suspension feeders (group BenOrganisms))
+! benthic  (CNP)            Y4:   Meiobenthos (group ! BenOrganisms))
+! benthic  (CNP)            Y5:   Benthic predators (group BenOrganisms))
+! benthic  (CNPSi)          Q1:   Labile organic carbon (group BenDetritus))
+! benthic  (CNPSi)          Q11:  Labile organic carbon (group BenDetritus))
+! benthic  (CNPSi)          Q6:   Particulate organic carbon (group BenDetritus))
+! benthic  (CNP)            H1:   Aerobic benthic bacteria (group BenBacteria))
+! benthic  (CNP)            H2:   Anaerobic benthic bacteria (group BenBacteria))
+! benthic  (P)              K1:   Phosphate in oxic layer (group BenthicPhosphate))
+! benthic  (P)              K11:  Phosphate in denit layer (group BenthicPhosphate))
+! benthic  (P)              K21:  Phosphate in anoxic layer (group BenthicPhosphate))
+! benthic  (N)              K4:   Ammonium in oxic layer (group BenthicAmmonium))
+! benthic  (N)              K14:  Ammonium in denit layer (group BenthicAmmonium))
+! benthic  (N)              K24:  Ammonium in anoxic layer (group BenthicAmmonium))
+! benthic  (R)              K6:   Reduction equivalents 
+! benthic  (M)              D1:   Oxygen penetration depth
+! benthic  (M)              D2:   Denitrification depth 
+! benthic  (M)              D6:   Depth distribution factor organic C 
+! benthic  (M)              D7:   Depth distribution factor organic N
+! benthic  (M)              D8:   Depth distribution factor organic P
+! benthic  (M)              D9:   Depth distribution factor organic Si
+! benthic  (O)              G2:   Benthic O2
+!-------------------------------------------------------------------------------
+
+&bfm_ben_init_nml  
+   calc_init_bennut_states=0,
+   p_poro0 = 0.423,
+   p_qnQIc = 0.0061,
+   p_qpQIc = 0.39E-3,
+   p_qsQIc = 0.00021,
+   Y1c0  = 150.0,            !
+   Y2c0  = 200.0,            !
+   Y3c0  = 800.0,            !
+   Y4c0  = 10.0,            !
+   Y5c0  = 1.0,            !
+   BP1c0 = 2.0,
+   H1c0  = 165.0,            !
+   H2c0  = 45.0,            !
+   HNc0  = 3.0,
+   Hac0  = 1.5,
+   K1p0  = 1.0, !6.1,	! original value = 6.1
+   K11p0 = 15.0, !15.0,	! original value = 15.0
+   K21p0 = 7.0, !2.95,
+   K4n0  = 0.478,
+   K14n0 = 3.5,
+   K24n0 = 2.5,
+   K3n0  = 1.05,
+   K5s0  = 80.0, !3.7,
+   K15s0 = 60.0, !CC added
+   K6r0  = 1.8,
+   K16r0 = 5.0,
+   K26r0 =5.0,
+   D1m0  = 0.024,            !
+   D2m0  = 0.075,            !
+   D6m0  = 0.030,            !
+   D7m0  = 0.030,            !
+   D8m0  = 0.030,            !
+   D9m0  = 0.0400,            !
+   Q6c0  = 150000.0,            !0: 310000.0
+   Q1c0  = 0.4, 
+   Q11c0 = 0.45, 
+   G2o0  = 100.0, 
+/
+
+!-------------------------------------------------------------------------------
+!-------------------------------------------------------------------------------
+
+!         'trN1p',
+!         'aptN1p',
+!         'ptN1p',
+!         'ptB1p',
+!         'ptP1p',
+!         'ptP2p',
+!         'ptP3p',
+!         'ptP4p',
+!         'ptZ3p',
+!         'ptZ4p',
+!         'ptZ5p',
+!         'ptZ6p',
+!         'ptR1p',
+!         'ptR2p',
+!         'ptR6p',
+!         'ptQ1p',
+!         'ptQ11p',
+!         'ptQ6p',
+!         'ptH1p',
+!         'ptH2p',
+!         'ptH3p',
+!         'ptY1p',
+!         'ptY2p',
+!         'ptY3p',
+!         'ptY4p',
+!         'ptY5p',
+!         'ptK1p',
+!         'ptK11p',
+!         'ptK21p',
+&bfm_save_nml
+nco_style_vars=.true.
+var_save= 'O2o',
+          'N1p',
+          'N3n',
+          'N4n',
+          'N5s',
+          'N6r',
+          'Nun',
+          'B1c',
+          'B1n',
+          'Bac',
+          'P1c',
+          'P1n',
+          'P2n',
+          'P3n',
+          'P4n',
+          'P5n',
+          'P6n',
+          'P2c',
+          'P3c',
+          'P4c',
+          'P5c',
+          'P6c',
+          'P1l',
+          'P2l',
+          'P3l',
+          'P4l',
+          'P5l',
+          'P6l',
+          'Pcc',
+          'Z2c',
+          'Z3c',
+          'Z4c',
+          'Z5c',
+          'Z6c',
+          'R1c',
+          'R1p',
+          'R1n',
+          'R1c',
+          'R1s',
+          'R2c',
+          'R3c',
+          'R6c',
+          'R6s',
+          'R6p',
+          'R6n',
+          'RZc',
+          'Q1c',
+          'Q1n',
+          'Q1p',
+          'Q11c',
+          'Q11n',
+          'Q11p',
+          'Q6c',
+          'Q6s',
+          'Q6n',
+          'Q6p',
+          'Chla',
+          'H1c',
+          'H2c',
+          'H3c',
+          'HNc',
+          'Hac',
+          'Y1c',
+          'Y2c',
+          'Y3c',
+          'Y4c',
+          'Y5c',
+          'Yy3c',
+          'K6r',
+          'K16r',
+          'K26r',
+          'K5s',
+          'K15s',
+          'K3n',
+          'K4n',
+          'K13n',
+          'K14n',
+          'K24n',
+          'K1p',
+          'K11p',
+          'K21p',
+          'D1m',
+          'D2m',
+          'D6m',
+          'D7m',
+          'D8m',
+          'D9m',
+          'Dcm',
+          'Dfm',
+          'O3c',
+          'DIC'
+          'pCO2'
+          'CO2'
+          'HCO3'
+          'CO3'
+          'pH'
+          'Ac'
+          'G3h'
+          'G13h'
+          'G23h'
+          'G3c'
+          'G13c'
+          'G23c'
+          'G14n'
+          'Acae'
+          'Acan'
+          'DICae'
+          'DICan'
+          'pHae'
+          'pHan'
+          'pCO2ae'
+          'pCO2an'
+          'PrM1p'
+          'PrM3n'
+          'PrM4n'
+          'PrM6r'
+          'PrM5s'
+          'PrQ1c'
+          'PrDIC'
+          'PrAc'
+          'PrpH'
+          'G3h'
+          'G13h'
+          'BP1c'
+          'totPELn'
+          'totPELp'
+          'totPELs'
+	  'totPELc',
+          'totBENn'
+          'totBENp'
+          'totBENs'
+          'totBENc',
+          'totSYSn',
+          'totSYSp',
+          'totSYSs',
+          'totSYSc',
+          'ETW',
+          'irrenh',
+          'turenh',
+          'R2n',
+          'PON',
+ave_save=  'dry_z'
+          'jK25K15s'
+          'jK31K21p'
+          'jK34K24n'
+          'jK36K26r'
+          'jK13K3n'
+          'jG33G23h'
+          'jG33G23c'
+           'sK4K3'
+          'jK4K3n'
+          'jK3G4n'
+          'jG2K7o'
+          'qqrivR6p'
+          'qqrivNtn'
+          'qqrivNtp'
+          'jbotO2o'
+          'jbotN4n'
+          'jbotN3n'
+          'jbotN1p'
+          'jbotN5s'
+          'jbotR6c'
+          'jbotR6n'
+          'jbotR6p'
+          'jbotR6s'
+          'jRIY3p',
+          'jbotZ2c'
+          'jbotP1c',
+	  'jbotP2c',
+          'jbotP3c',
+          'jbotP4c',
+          'jbotP5c',
+          'jbotP6c',
+	  'jbotZ3c',
+          'jbotZ4c',
+          'jbotZ5c',
+          'jbotZ6c',
+	  'jbotB1c',
+          'jbotQ6c',
+          'jbotQ6n',
+          'jbotQ6p',
+          'jbotQ6s',
+          'jbott_ESS',
+          'jrESS',
+          'rrBTo',
+          'rrATo',
+          'jnetPTc',
+          'grsPPm2',
+          'exPPm2',
+          'resPPm2',
+          'jspaY3c',
+          'jnetBPTc',
+          'jnetMeZc',
+          'jnetMiZc',
+          'jnetB1c',
+          'jnetY3c',
+          'jnetYy3c',
+          'EIR'
+          'sediR2'
+          'jbotO3c'
+          'jbotO3h'
+          'jsurO3c'
+          'reBTp'
+          'reBTn'
+          'reATn'
+          'reATp'
+          'J1_PTc',
+          'J1_R6c',
+          'J1_R2c',
+          'jPelFishInput'
+          'jBenFishInput'
+	  'fPZc',
+	  'fBZc',
+	  'fBO3c',
+	  'fZO3c',
+	  'fZRc',
+	  'fRBc',
+	  'fYG3c',
+	  'fYQ1c',
+	  'fQ1Yc',
+	  'fQ6Hc',
+	  'fHQ6c',
+	  'fHYc',
+	  'fHG3c',
+          'pMIupZ4',
+          'EUWIND'
+          'EVWIND'
+          'SdTdzTh'
+          'BMLd'
+          'TMLd'
+          'efilP6Y3'
+          'Output2d_1'
+          'Output2d_2'
+          'Output2d_3'
+          'Output2d_4'
+          'jZ5Z2c'
+          'jP1Z2c'
+          'jP1ZIc'
+          'jP6ZIc'
+          'jPIY3n'
+          'jPIY3p'
+          'jZIY3c'
+	  'jRIY3c',
+	  'jRIQIc',
+          'fldiPIn',
+          'flN3PIn',
+          'ruZTc',
+	  'eO2mO2',
+	  'XO2o',
+          'lim_rumn4'
+          'lim_rumn3'
+          'lim_rump1'
+          'ruPTc'
+          'jtotbenpelc',
+          'jtotbenpeln',
+          'jtotbenpelp',
+          'jtotbenpels',
+          'netPP',
+          'turenh',
+          'irrenh'
+          'netPPm2',
+	  'ESS'
+          'xEPS',
+          'Hs_out',
+          'Tz_out',
+          'u_orb_out',
+          'TauW',
+          'TauC',
+          'TauS',
+          'ws_out',
+          'eta_out',
+          'sdMs_iiMs_',
+          'sunMI_iiMs_',
+          'sugMI_iiMs_',
+          'fr_lim_Ma_n_iiMca_',
+          'fr_lim_Ma_p_iiMca_',
+          'Mcac',
+          'Mcan',
+          'Mcap',
+          'Mcal',
+          'Msc',
+          'psur_iiMs_',
+          'farm_surface_iiMs_',
+          'surface',
+          'rnetPTc',
+
+
+/
+!         'Output2d_1'
+!         'Output2d_2'
+!         'Output2d_3'
+!         'Output2d_4'
