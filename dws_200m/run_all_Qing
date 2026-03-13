@@ -8,7 +8,7 @@
 ##SBATCH --nodelist=no63,no64,no65,no66,no67,no68
 ##SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
-#SBATCH --time=1-1:00:00
+#SBATCH --time=4-1:00:00
 #SBATCH --output=/export/lv9/user/qzhan/home/run_all.stdout
 #SBATCH --job-name="run_all"
 
@@ -320,8 +320,8 @@ fi  # BASE_3
 ##################################################################
 if [ $BASE_4 == "1" ]; then
 
-  export step_2d=21600 #900 #150 # 150  # xml: 90
-  export step_3d=21600 #900   # xml: 1440
+  export step_2d=21600 #daily #900 #150 # 150  # xml: 90
+  export step_3d=21600 #daily #900   # xml: 1440
   export save_initial=True
   
   export use_epoch=True 

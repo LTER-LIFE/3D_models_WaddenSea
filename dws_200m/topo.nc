@@ -1,1 +1,1 @@
-../../model_input_files/topo/topo_adjusted_dws_200m_2009_smoothed_p10_o4_SD24_SD47.nc
+../../model_input_files/topo/topo_adjusted_dws_200m_2009.nc

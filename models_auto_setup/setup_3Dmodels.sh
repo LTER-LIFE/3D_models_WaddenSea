@@ -152,6 +152,7 @@ case "$ACTION" in
     check_ssh
     cleanup_repos
     clone_repos
+    compile_models
     ;;
   2)
     compile_models
