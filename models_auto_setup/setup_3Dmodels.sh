@@ -163,62 +163,6 @@ case "$ACTION" in
     ;;
 esac
 
-# to debug:
-# BFM_SOURCES/bfm-git/src/getm/read_restart_ncdf.F90
-
-#      LEVEL1 "joff/jmax",joff/jmax
-#      ioff_l=ioff-ioff_0
-#      joff_l=joff-joff_0
-#      LEVEL1 "jmax,joff,joff_0,joff_l",jmax,joff,joff_0,joff_l      
-#!possibility to use "old" netcdf restart files...
-#      if (ioff_0_from_file .eq.-9999) then
-#         ioff_0=0;joff_0=0
-#         joff_l=jmax*(joff/jmax+1)
-#         LEVEL1 "joff_l",joff_l
-#!possibility to use "old" netcdf restart files...
-#      if (ioff_0_from_file .eq.-9999) then
-#         ioff_0=0;joff_0=0
-#         joff_l=jmax*(joff/jmax+1)
-#         if (joff.le.0) then
-#            joff_l=0
-#         endif
-#         LEVEL1 "joff_l",joff_l
-#      else
-#!       [ij]off_0 : relative difference of position the sw-corner of the
-#!                          subdomain in the sw corner of the domain.
-#        ioff_0=ioff_0-ioff_0_from_file
-#        joff_0=joff_0-joff_0_from_file
-#      endif
-
-# --- to run a test case, e.g., OysterGrounds
-# mkdir -p "$HOME/home/gotm-cases/nov2024_bfm2016" && cd "$HOME/home/gotm-cases/nov2024_bfm2016"
-# rsync -av /export/lv1/user/jvandermolen/home/gotm-cases/nov2024_bfm2016/OysterGrounds .
-
-# grep -r jvandermolen . # find paths that include jvandermolen, change it to your user
-# nano gotmrun.nml
-# nano run_gotm_laplace
-# sbatch ./run_gotm_laplace
-# squeue
-# ls log*
-# tail -F log.out
-
-# --- STEP: Copy 3D setup from Sonja's directory 
-# --- copy dir: "dws_200m" from "/export/lv1/user/svanleeuwen/home/setups/"
-# cp -r "/export/lv1/user/svanleeuwen/home/setups/dws_200m" "$HOME/home/GETM_ERSEM_SETUPS/"
-
-# --- copy file: "dws_200m_info.txt" from "/export/lv1/user/svanleeuwen/home/setups/"; info about "TO DO"
-# cp "/export/lv1/user/svanleeuwen/home/setups/dws_200m_info.txt" "$HOME/home/GETM_ERSEM_SETUPS/dws_200m_info.txt"
-
-# --- copy file: "move_files" from Johan's folder (any NS usecase), change:
-#         line 19: #SBATCH --output=/export/lv9/user/qzhan/move_files.stdout  
-# --- Modify file: "run_getm_laplace_getmiow_Sonja"; change paths and command for "sbatch ./move_files"
-
-
-# --- STEP: Make some modifications/additions to use BFM
-# --- Prepare a porosity map based on SIBES&SUBES dataset. An example of such a file is in "/export/lv1/user/jvandermolen/home/GETM_ERSEM_SETUPS/north_west_european_shelf_bfm_jan2025/nwes/Input/Ben_Sedprop.nc"
-# --- download SIBES mud_percentage dataset (https://doi.org/10.25850/nioz/7b.b.ug)
-# --- download tiff image from Franken (BelowMurkyWaters_Silt)
-
 # Run the script by:
 # Make it executable:
 # chmod +x setup_3Dmodels.sh
