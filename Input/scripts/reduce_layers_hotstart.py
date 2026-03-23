@@ -4,7 +4,7 @@
 # source .bashrc.conda3
 # conda activate interp_hotstart
 
-# python script to read an .nc file, halving number of layers 
+# python script to read an .nc file and reduce number of layers 
 # and write
 # a new file
 # Works on a restart file
@@ -17,7 +17,7 @@ from netCDF4 import Dataset
 from numpy import *
 from pylab import *
 #import Numeric
-from ncvue import ncvue
+#from ncvue import ncvue
 
 # Access MinIO files
 from minio import Minio
@@ -50,31 +50,35 @@ secret_minio_secret_key = ""
 
 ############## settings ##################################################
 
+# Reduce vertical layers by grouping this many source layers into one target layer.
+LAYER_REDUCTION_FACTOR = 3
+
 # from script nest_bdy
 #infname=os.environ['infname']
 #ofname=os.environ['ofname']
 
 # set hard (comment out if using script)
 # For the hydro file
-# infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_hydro.nc'
+infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_hydro.nc'
 
 # For the bio file
-infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio.nc'
+# infname='/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/restart_201501_dws200m_bio.nc'
 
-# ofname='/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/model_input_files/restart/restart_201501_hydro_reducedlayers.nc'
-ofname='/export/lv9/user/qzhan/home/model_input_files/restart/restart_201501_bio_reducedlayers.nc'
+ofname='/export/lv9/user/qzhan/home/model_input_files/restart/restart_201501_hydro_10layers.nc'
+# ofname='/export/lv9/user/qzhan/model_output/active_runs/boundaries/restart_201501_bio_reducedlayers.nc'
+# ofname='/export/lv9/user/qzhan/home/model_input_files/restart/restart_201501_bio_10layers.nc'
 
 ##################################################################################
 # Main routine
 
 # Open input files
-print('halving layers in nc file.')
+print('reducing layers in nc file.')
 print('Input files:')
 print(infname)
 infile=Dataset(infname,'r',format='NETCDF4') #NetCDFFile(infname,'r')
 
 # Launch the ncview-like GUI
-ncvue(infname) # or on cluster ncview(infname) if X11 forwarding is enabled
+#ncvue(infname) # or on cluster ncview(infname) if X11 forwarding is enabled
 
 print('Output file: ',ofname)
 
@@ -94,7 +98,7 @@ for idim in range(ndims):
   print('dimvalue', dimvalue)
 
   if alldimnames[idim] == 'zax':
-    lendim=1+(len(dimvalue)-1)//2
+    lendim=1+(len(dimvalue)-1)//LAYER_REDUCTION_FACTOR
   else:
     lendim=len(dimvalue)
 
@@ -107,7 +111,6 @@ for varname in varnames:
   print(varname)
   var=infile.variables[varname]
   dimnames=var.dimensions
-#  units=var.units
   datavals=var[:]
 #  data_attlist=dir(var)
   datatype=datavals.dtype.kind
@@ -126,28 +129,33 @@ for varname in varnames:
   # save time variable
   if varname=='timestemp':
     time_2d=datavals
-    time_2d_units=units
+    time_2d_units=getattr(var, 'units', None)
 
   if len(dimnames)==3:
     # adjust
     sv=shape(datavals)
-    out=zeros(((sv[0]-1)//2+1,sv[1],sv[2]))
-    if varname=='ho' or varname=='hn' :   # add 2 levels
+    nout=1+(sv[0]-1)//LAYER_REDUCTION_FACTOR
+    out=zeros((nout,sv[1],sv[2]))
+    if varname=='ho' or varname=='hn' :   # add grouped levels
       out[0,:,:]=datavals[0,:,:]
-      for nl in range(1,(sv[0]-1)//2+1):
-        out[nl,:,:]=datavals[2*nl-1,:,:]+datavals[2*nl,:,:]
-    else:                                         # average 2 levels
+      for nl in range(1,nout):
+        start=1+(nl-1)*LAYER_REDUCTION_FACTOR
+        stop=start+LAYER_REDUCTION_FACTOR
+        out[nl,:,:]=sum(datavals[start:stop,:,:], axis=0)
+    else:                                         # average grouped levels
       out[0,:,:]=datavals[0,:,:]
-      for nl in range(1,(sv[0]-1)//2+1):
-        out[nl,:,:]=(datavals[2*nl-1,:,:]+datavals[2*nl,:,:])/2
+      for nl in range(1,nout):
+        start=1+(nl-1)*LAYER_REDUCTION_FACTOR
+        stop=start+LAYER_REDUCTION_FACTOR
+        out[nl,:,:]=mean(datavals[start:stop,:,:], axis=0)
   else:
     out=datavals
 
   if varname=='zax':
     print('yes')
     sv=datavals.shape
-    newz = 1 + (sv[0]-1)//2
-    out = np.arange(newz, dtype=datavals.dtype)
+    newz=1+(sv[0]-1)//LAYER_REDUCTION_FACTOR
+    out=arange(newz, dtype=datavals.dtype)
   #out = np.arange(16, dtype=datavals.dtype)
 
   # write variable
@@ -184,4 +192,5 @@ infile.close()
 outfile.close()
 
 print('Done')
+
 
