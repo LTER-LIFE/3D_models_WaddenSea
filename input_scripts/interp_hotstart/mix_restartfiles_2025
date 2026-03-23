@@ -9,9 +9,9 @@ module load netcdf/4.6.1 # needed for ncks, ncrename, ncpdq, ncrcat
 
 #indir_phys=/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes
 indir_phys=/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes
-fname_phys=restart_201501_hydro_reducedlayers.nc
+fname_phys=restart_201501_hydro_10layers.nc
 indir_bio=/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes
-fname_bio=restart_201501_bio_reducedlayers.nc
+fname_bio=restart_201501_bio_10layers.nc
 
 outdir=/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes
 outfname=restart_dws200m_2015_01.nc
