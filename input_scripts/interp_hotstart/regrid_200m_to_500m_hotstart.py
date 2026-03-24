@@ -32,10 +32,10 @@ from scipy.interpolate import griddata
 # =============================================================================
 
 # Combined 200 m restart file (10 layers, hydro + bio merged)
-infname = '/export/lv9/user/qzhan/home/model_input_files/restart/restart_dws200_2015_01.nc'
+infname = '/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_dws200m_2015_01.nc'
 
 # Output 500 m restart file
-ofname  = '/export/lv9/user/qzhan/home/model_input_files/restart/restart_dws500_2015_01.nc'
+ofname  = '/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/restart_dws500m_2015_01.nc'
 
 # topo.nc for the SOURCE 200 m domain  (contains lonc/latc or lon/lat 2-D arrays)
 src_topo_fname = '/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/Input/topo/topo_adjusted_dws_200m_2009.nc'
