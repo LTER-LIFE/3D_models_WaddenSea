@@ -9,6 +9,7 @@ dependencies:
   - pandas
   - scipy
   - netCDF4
+  - minio
   - jupyterlab
   - ipykernel
 #  - matplotlib
