@@ -14,7 +14,7 @@ library(tidyterra)
 library(terra)
 library(leaflet)
 
-ncfile_path <- "C:/Users/qzhan/OneDrive - NIOZ/Attachments/01_LTER-LIFE/03_Model/3D_models_WaddenSea/Input/"
+ncfile_path <- "C:/Users/qzhan/OneDrive - NIOZ/Attachments/01_LTER-LIFE/03_Model/GETM_ERSEM_SETUPS/Input/"
 
 # --- Load topo (to get grid and Wadden island mask) ---
 nc_topo <- nc_open(paste0(ncfile_path, "topo_adjusted_dws_200m_2009.nc"))
@@ -30,7 +30,7 @@ dim_yc <- dim(lonc)[2]
 island_mask <- is.na(bathy)
 
 # --- Load Wadden Sea measurements ---
-silt_nc <- rast(paste0(ncfile_path, "sediment_mud_fraction.nc"))
+silt_nc <- rast(paste0(ncfile_path, "/Porosity/sediment_mud_fraction.nc"))
 
 # Assign CRS (assume lon/lat, EPSG:4326)
 if (crs(silt_nc) == "") crs(silt_nc) <- "EPSG:4326"
