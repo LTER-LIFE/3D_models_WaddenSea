@@ -1,0 +1,19 @@
+name: input_data_prep
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.3
+  - r-terra        # rast(), project(), extract()
+  - r-ncdf4        # nc_open(), ncvar_get(), nc_create()
+  - r-ggplot2      # ggplot()
+  - r-tidyterra    # geom_spatraster() and terra/ggplot2 bridge
+  - r-leaflet      # leaflet()
+  - r-classint     # classIntervals()
+  - r-rmarkdown    # knit / render the .Rmd file
+
+# Create the environment:
+#   conda env create -f input_data_prep_env.yml
+#   conda activate input_data_prep
+
+# To render the Rmd from the command line:
+#   Rscript -e "rmarkdown::render('Input_data_prep.Rmd')"
