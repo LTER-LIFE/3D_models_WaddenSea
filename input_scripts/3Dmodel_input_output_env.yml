@@ -9,6 +9,8 @@ dependencies:
   - pandas
   - scipy
   - netCDF4
+  - jupyterlab
+  - ipykernel
 #  - matplotlib
 #  - ipykernel   # For VS Code / Jupyter integration
 #  - pip         # Optional, for pip installs
