@@ -10,10 +10,13 @@ dependencies:
   - r-leaflet      # leaflet()
   - r-classint     # classIntervals()
   - r-rmarkdown    # knit / render the .Rmd file
+  - r-irkernel     # create and register R Jupyter kernel
+  - jupyterlab     # launch notebooks from this environment
 
 # Create the environment:
 #   conda env create -f input_data_prep_env.yml
 #   conda activate input_data_prep
+#   R -e "IRkernel::installspec(name='input_data_prep', displayname='R (input_data_prep)')"
 
 # To render the Rmd from the command line:
 #   Rscript -e "rmarkdown::render('Input_data_prep.Rmd')"
