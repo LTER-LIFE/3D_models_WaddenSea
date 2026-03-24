@@ -17,7 +17,9 @@ library(leaflet)
 ncfile_path <- "C:/Users/qzhan/OneDrive - NIOZ/Attachments/01_LTER-LIFE/03_Model/GETM_ERSEM_SETUPS/Input/"
 
 # --- Load topo (to get grid and Wadden island mask) ---
-nc_topo <- nc_open(paste0(ncfile_path, "topo_adjusted_dws_200m_2009.nc"))
+#nc_topo <- nc_open(paste0(ncfile_path, "/topo/topo_adjusted_dws_200m_2009.nc"))
+nc_topo <- nc_open(paste0(ncfile_path, "/topo/topos2_dws_500m.nc"))
+
 lonc <- ncvar_get(nc_topo, "lonc")
 latc <- ncvar_get(nc_topo, "latc")
 bathy <- ncvar_get(nc_topo, "bathymetry")
@@ -39,7 +41,7 @@ if (crs(silt_nc) == "") crs(silt_nc) <- "EPSG:4326"
 silt_nc[silt_nc < 0] <- NA
 
 # --- Load North Sea porosity ---
-ns_nc <- rast(paste0(ncfile_path, "Ben_Sedprop.nc"))
+ns_nc <- rast(paste0(ncfile_path, "/Porosity/Ben_Sedprop.nc"))
 crs(ns_nc)
 ns_ll <- project(ns_nc, "EPSG:4326")  # reproject to lon/lat if needed
 
@@ -93,7 +95,7 @@ plot_interactive <- function(arr, lonc, latc, title="Raster Map") {
 library(classInt)
 library(leaflet)
 
-silt_nc <- rast(paste0(ncfile_path, "sediment_mud_fraction.nc"))
+silt_nc <- rast(paste0(ncfile_path, "/Porosity/sediment_mud_fraction.nc"))
 
 # Assign CRS (assume lon/lat, EPSG:4326)
 if (crs(silt_nc) == "") crs(silt_nc) <- "EPSG:4326"
@@ -179,7 +181,7 @@ The range of Wadden Sea porosity based on SIBES & SUBES dataset: 0.3878324 0.675
 
 # 2. Load Default North Sea porosity raster
 ```{r}
-ns_por <- rast(paste0(ncfile_path, "Ben_Sedprop.nc"))
+ns_por <- rast(paste0(ncfile_path, "/Porosity/Ben_Sedprop.nc"))
 
 # Reproject to EPSG:4326 if needed
 if (crs(ns_por) != "EPSG:4326") {
@@ -400,7 +402,8 @@ leaflet(df_final) %>%
 # 2.4 Write NetCDF
 ```{r}
 
-out_nc <- paste0(ncfile_path, "porosity_merged.nc") # the name needs to be changed to "Ben_Sedprop.nc" which is the name that can be recognized in 3D model
+out_nc <- paste0(ncfile_path, "Ben_Sedprop_500m.nc") # the name needs to be changed to "Ben_Sedprop.nc" which is the name that can be recognized in 3D model
+# out_nc <- paste0(ncfile_path, "porosity_merged.nc") # the name needs to be changed to "Ben_Sedprop.nc" which is the name that can be recognized in 3D model
 
 xc_dim <- ncdim_def("xc", "m", 1:dim_xc)
 yc_dim <- ncdim_def("yc", "m", 1:dim_yc)
