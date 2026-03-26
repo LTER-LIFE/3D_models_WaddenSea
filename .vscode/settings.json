@@ -1,0 +1,13 @@
+{
+    "sshfs.configs": [
+        {
+            "name": "laplace",
+            "host": "laplace.nioz.nl",
+            "label": "SSH FS setting",
+            "username": "qzhan",
+            "privateKeyPath": "c:\\Users\\qzhan\\.ssh\\id_ed25519",
+            "newFileMode": "0o777",
+            "root": "/export/lv9/user/qzhan"
+        }
+    ]
+}
