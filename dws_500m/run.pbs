@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+#PBS -N sim_GETM
+#PBS -l nodes=n04:ppn=27+n05:ppn=27+n06:ppn=27+n07:ppn=27+n08:ppn=29
+#PBS -l walltime=50:00:00
+#PBS -q batch
+#PBS -m abe
+#PBS -M kirstin.schulz@nioz.nl
+#PBS -j oe
+#PBS -v start_time
+cd ${PBS_O_WORKDIR}
+
+np=`cat machinefile | wc -l`
+
+# Print useful diagnostic information to stdout
+echo This is job $PBS_JOBID
+echo $start_time
+echo $stop_time
+
+nf-config --version
+mpirun -np $np ./getm
