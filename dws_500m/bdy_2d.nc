@@ -1,1 +1,1 @@
-/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_2015_01.2d.nc
+/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_2014_12.2d.nc

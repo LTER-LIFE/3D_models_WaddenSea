@@ -1,1 +1,1 @@
-Configurations/32x32/dws_200m.dim
+Configurations/15x10/dws_500m.dim
