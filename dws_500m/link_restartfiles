@@ -1,10 +1,10 @@
 #!/bin/bash
 
-restart_dir=/export/lv9/user/qzhan/model_output/active_runs/boundaries/dws_200m_nwes/
+restart_dir=/export/lv9/user/cgiannopoulos/home/pre-processing/hotstart
 #restart_file=restart_199501_from200201.in
 #restart_dir=/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/
-restart_file=restart_dws200m_2015_01.nc
-outdir=/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_200m/out/dws_200m/32x32/2015/01/
+restart_file=restart_dws_500m_201412_hydro_10_layers_padded.nc
+outdir=/export/lv9/user/cgiannopoulos/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/15x10/2014/12/
 
 
 
