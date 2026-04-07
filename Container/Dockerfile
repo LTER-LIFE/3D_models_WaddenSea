@@ -115,7 +115,7 @@ ENV COMPILATION_MODE=production
 ENV GETM_PARALLEL=true
 
 ENV HOME=/opt
-ENV GOTMDIR=/opt/home/GOTM_SOURCES/gotm_coupled_bfm_2016/
+ENV GOTMDIR=/opt/home/gotm-git
 ENV FABMDIR=/opt/home/fabm-git/fabm
 ENV BFMDIR=/opt/home/BFM_SOURCES/bfm_2016
 ENV GETMDIR=/opt/home/getm-git
@@ -125,11 +125,13 @@ ENV GOTM_BUILD_DIR=/opt/home/build/gotm
 # --------------------------
 # Clone repositories during build (using SSH with BuildKit mount)
 # --------------------------
+COPY Model_source_codes /opt/home/Model_source_codes
+
 RUN --mount=type=ssh \
     set -eux; \
     mkdir -p /opt/home/BFM_SOURCES \
-             /opt/home/GOTM_SOURCES \
-             /opt/home/GETM_SOURCES \
+             /opt/home/gotm-git \
+             /opt/home/getm-git \
              /opt/home/fabm-git \
              /opt/home/GETM_ERSEM_SETUPS \
              /opt/local/gotm \
@@ -143,17 +145,30 @@ RUN --mount=type=ssh \
     git clone "git@github.com:jvdmolen/bfm_2016.git" && \
     cd bfm_2016 || exit 1 && \
     git checkout -b bfm2016_production_20250827 remotes/origin/bfm2016_production_20250827 && \
-    echo "Cloning GOTM..." && \
-    cd "$HOME/home/GOTM_SOURCES" || exit 1 && \
-    git clone "git@github.com:jvdmolen/gotm_coupled_bfm_2016.git" && \
-    cd gotm_coupled_bfm_2016 || exit 1 && \
-    git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126 && \
-    git submodule update --init --recursive && \
-    echo "Cloning GETM..." && \
-    cd "$HOME/home/GETM_SOURCES" || exit 1 && \
-    git clone "git@github.com:jvdmolen/getm_coupled_bfm_2016.git" && \
-    cd getm_coupled_bfm_2016 || exit 1 && \
-    git checkout -b iow_20200609_bfm2016_20250116 969dceb73ca9d801c03eb7f218da1d45d5748db3 && \
+    echo "Preparing GOTM source..." && \
+    if [ -d /opt/home/Model_source_codes/gotm-git ] && [ "$(ls -A /opt/home/Model_source_codes/gotm-git)" ]; then \
+        echo "Using local copy: Model_source_codes/gotm-git"; \
+        cp -a /opt/home/Model_source_codes/gotm-git/. /opt/home/gotm-git/; \
+    else \
+        echo "Local GOTM copy not found. Cloning from GitHub..."; \
+        git clone "git@github.com:jvdmolen/gotm_coupled_bfm_2016.git" /opt/home/gotm-git; \
+        cd /opt/home/gotm-git || exit 1; \
+        git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126; \
+    fi && \
+    if [ -d /opt/home/gotm-git/.git ]; then \
+        cd /opt/home/gotm-git || exit 1; \
+        git submodule update --init --recursive; \
+    fi && \
+    echo "Preparing GETM source..." && \
+    if [ -d /opt/home/Model_source_codes/getm-git ] && [ "$(ls -A /opt/home/Model_source_codes/getm-git)" ]; then \
+        echo "Using local copy: Model_source_codes/getm-git"; \
+        cp -a /opt/home/Model_source_codes/getm-git/. /opt/home/getm-git/; \
+    else \
+        echo "Local GETM copy not found. Cloning from GitHub..."; \
+        git clone "git@github.com:jvdmolen/getm_coupled_bfm_2016.git" /opt/home/getm-git; \
+        cd /opt/home/getm-git || exit 1; \
+        git checkout -b iow_20200609_bfm2016_20250116 969dceb73ca9d801c03eb7f218da1d45d5748db3; \
+    fi && \
     echo "Cloning FABM..." && \
     cd "$HOME/home/fabm-git" || exit 1 && \
     git clone "git@github.com:fabm-model/fabm.git" && \
