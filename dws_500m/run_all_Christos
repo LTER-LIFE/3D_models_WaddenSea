@@ -383,14 +383,14 @@ if [ $BASE_4 == "1" ]; then
            export ref_start_time="$YBASE-$mm_ref-$days 00:00:00"
            echo "run_all: ref_start_time: $ref_start_time"
 
-#           echo "linking bdy_2d.nc and bdy_3d.nc"
-#	   rm bdy_*d.nc
-#           echo "Year: $yy"
-#           echo "Month: $mm"
-#	   echo "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".2d.nc"	
-#	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".2d.nc" bdy_2d.nc
-#	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_200m_nwes/bdy_dws_200m_2_"$yy"_"$mm".3d.nc" bdy_3d.nc
-#	   echo "done linking bdy files"
+           echo "linking bdy_2d.nc and bdy_3d.nc"
+	   rm bdy_*d.nc
+           echo "Year: $yy"
+           echo "Month: $mm"
+	   echo "/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_"$yy"_"$mm".2d.nc"	
+	   ln -sf "/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_"$yy"_"$mm".2d.nc" bdy_2d.nc
+	   ln -sf "/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_"$yy"_"$mm".3d.nc" bdy_3d.nc
+	   echo "done linking bdy files"
 
         cp output.yaml output_yaml.tmp
          sed --follow-symlinks -e 's/\(time_start: \).\{7\}/\1'$yy'-'$mm'/' output_yaml.tmp > output.yaml 

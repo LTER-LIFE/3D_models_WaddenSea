@@ -78,7 +78,7 @@ echo "metforcing" $metforcing
 
 export start=$ref_start_time
 export stop=$stop_time
-export GOTMGUIDIR=$HOME/home/GOTM_SOURCES/gotm-git/gui.py
+#export GOTMGUIDIR=$HOME/home/GOTM_SOURCES/gotm-git/gui.py
 
 # getm_git: master, iow_master (and les and ip branches)
 $HOME/tools/bbpy/editscenario/editscenario/editscenario.py -q -e nml . --schemadir=/$HOME/home/getm-git/schemas --targetversion=getm-2.5 $setup.xml

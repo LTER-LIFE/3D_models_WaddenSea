@@ -32,15 +32,15 @@
 			<crit_depth>0.25</crit_depth>
 			<min_depth>0.1</min_depth>
                         <clip_depth>0.1</clip_depth>
-			<kdum>30</kdum>
+			<kdum>10</kdum>
 			<ddu>0.7</ddu>
 			<ddl>0.5</ddl>
 			<d_gamma>10.0</d_gamma>
 			<gamma_surf>True</gamma_surf>
 			<il>1</il>
-			<ih>820</ih>
+			<ih>328</ih>
 			<jl>1</jl>
-			<jh>486</jh>
+			<jh>194</jh>
                         <bottfric_method>2</bottfric_method>
                         <drag>0.0004</drag>
 			<z0_method>0</z0_method>
@@ -111,7 +111,7 @@
                         <bdy2d_sponge_size>4</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
-			<M>15</M>
+			<M>30</M>
 			<cnpar>1.0</cnpar>
 			<cord_relax>0.0</cord_relax>
 			<adv_ver_iterations>500</adv_ver_iterations>
