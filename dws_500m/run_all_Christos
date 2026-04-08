@@ -9,7 +9,7 @@
 ##SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 #SBATCH --time=4-1:00:00
-#SBATCH --output=/export/lv9/user/qzhan/home/run_all.stdout
+#SBATCH --output=/export/lv9/user/cgiannopoulos/home/run_all.stdout
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
@@ -74,8 +74,8 @@ BASE_4=1  # actual run
 #YEAR_START=2019
 #YEAR_STOP=2019
 
-export EPOCH_START="2010-01-01 00:00:00"   # epoch_start should conform with year after base year
-YEAR_BASE=2009
+export EPOCH_START="2014-12-01 00:00:00"   # epoch_start should conform with year after base year
+YEAR_BASE=2013
 YEAR_START=2014
 YEAR_STOP=2014
 echo $YEAR_BASE
