@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=normal --qos=normal
 #SBATCH --nodes=6
-#SBATCH --exclude=no69
+##SBATCH --exclude=no69
 ##SBATCH --nodelist=no63,no64,no65,no66,no70,no72
 ##SBATCH --nodelist=no67,no68,no69,no70,no71,no72
 ##SBATCH --nodelist=no61,no62,no63,no64,no67,no68
@@ -44,8 +44,8 @@ cd $HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/$runid/
 rm *.stderr
 rm *.stdout
 
-export conf=15x10       # Laplace 6 nodes 40 procs per node
-export nprocesses=240   # number of subdomains, for deletion loop in run.getm
+export conf=13x12       # Laplace 6 nodes 40 procs per node
+export nprocesses=239   # number of subdomains, for deletion loop in run.getm
 
 run_type=4              # 4, this is called runtype in the xml file?
 particle_tracking=0     # process fields monthly for particle tracking

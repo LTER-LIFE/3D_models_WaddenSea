@@ -1,1 +1,1 @@
-Configurations/15x10/dws_500m.dim
+Configurations/13x12/dws_500m.dim
