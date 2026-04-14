@@ -44,8 +44,8 @@ cd $HOME/home/3D_models_WaddenSea/GETM_ERSEM_SETUPS/$runid/
 rm *.stderr
 rm *.stdout
 
-export conf=13x12       # Laplace 6 nodes 40 procs per node
-export nprocesses=239   # number of subdomains, for deletion loop in run.getm
+export conf=14x11       # Laplace 6 nodes 40 procs per node
+export nprocesses=238   # number of subdomains, for deletion loop in run.getm
 
 run_type=4              # 4, this is called runtype in the xml file?
 particle_tracking=0     # process fields monthly for particle tracking
