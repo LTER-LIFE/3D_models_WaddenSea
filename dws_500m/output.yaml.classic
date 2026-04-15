@@ -24,7 +24,7 @@
 #           register(used=)
 #           if (used) send_data(data=)
 allow_missing_fields: true
-flex_out_tmp/north_west_european_shelf.2d:
+flex_out/dws_500m.2d:
   use: true
   time_step: 1 
   time_unit: day
@@ -53,7 +53,7 @@ flex_out_tmp/north_west_european_shelf.2d:
     - source: albedo
     - source: taubmax
 
-flex_out_tmp/north_west_european_shelf.3d:
+flex_out/dws_500m.3d:
   use: true
   time_step: 1
   time_unit: day
