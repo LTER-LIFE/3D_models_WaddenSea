@@ -1,1 +1,1 @@
-/export/lv9/user/cgiannopoulos/home/pre-processing/bathymetry_resampling/topos2_dws_500m_new.nc
+/export/lv9/user/cgiannopoulos/home/pre-processing/bathymetry_resampling/topo_dws_500m_smoothed_o6_p100.nc
