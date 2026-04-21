@@ -1,1 +1,1 @@
-/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_2015_12.3d.nc
+/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.3d.nc

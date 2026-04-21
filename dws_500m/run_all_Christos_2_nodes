@@ -63,10 +63,10 @@ else
   export lastnode=$lastnode
 fi
 
-BASE_1=0  # October base year start up, just bdy 2d
+BASE_1=1  # October base year start up, just bdy 2d
 BASE_2=0  # November base year further spin up, bdy 3d+hotstart
 BASE_3=0  # December base year start up, meteo+rivers
-BASE_4=1  # actual run
+BASE_4=0  # actual run
 
 #mkdir -p log/$conf
 
@@ -75,15 +75,15 @@ BASE_4=1  # actual run
 #YEAR_START=2019
 #YEAR_STOP=2019
 
-export EPOCH_START="2010-01-01 00:00:00"   # epoch_start should conform with year after base year
-YEAR_BASE=2009
-YEAR_START=2014
+export EPOCH_START="2015-01-01 00:00:00"   # epoch_start should conform with year after base year
+YEAR_BASE=2014
+YEAR_START=2015
 YEAR_STOP=2015
 echo $YEAR_BASE
 
-#months="01 02 03 04 05 06 07 08 09 10 11 12"
+months="01 02 03 04 05 06 07 08 09 10 11 12"
 #months="02 03 04 05 06 07 08 09 10"
-months="12"
+#months="12"
 days="01"
 
 # for the benefit of adjusting output.yaml; must fit model time step
@@ -113,32 +113,36 @@ if [ $BASE_1 == "1" ]; then
    #export vel_depth_method=1  # 1 in xml file, 0=mean, 1=minimum, 2=mix
 
    #======================
-   # START OF KSCHULZ SETTINGS
+   # START OF CGIANNOP SETTINGS
    #======================
    export metforcing=False
    export river_method=0  # 2 (from file) in xml file, 0 is none
    export bdy2d=True  # True in xml file
-   export bdy3d=False  # True in xml file
+   export bdy3d=True  # True in xml file
    export temp_method=1  # 0 (from hotstart) in xml file, 1=constant, 3=from file
    export temp_const=9.29   # min, average is 13.5
    export salt_method=1  # 0 (from hotstart) in xml file, 1=constant, 3=from file
    export salt_const=35.35  # max, average is 32.5
 
-   export crit_depth=0.9  # 0.9   initial 0.9, nwes 3.0, Ulf 0.26
-   export min_depth=0.3  # 0.3   initial 0.12, nwes 1.0, Ulf 0.1
+   export crit_depth=3.0  # 0.9   initial 0.9, nwes 3.0, Ulf 0.26
+   export min_depth=1.0  # 0.3   initial 0.12, nwes 1.0, Ulf 0.1
    export clip_depth=0.1  # 0.1, initial 0.01, nwes 0.1
 
    export bdy2d_ramp=181440  #181440    # 6000
    export bdy3d_tmrlx=False  
    export ip_ramp=6000 #181440  # 6000  -1
-   export bdy3d_ramp=-1  # 181440 
+   export bdy3d_ramp=-1  # 181440
+
+   export An_method=1
+   export An_const=50.0  # 20.0 horizontal diffusion, xml: 5
+
    #======================
-   # END OF KSCHULZ SETTINGS
+   # END OF CGIANNOP SETTINGS
    #======================
-   export An_const=20.0  # horizontal diffusion, xml: 5
    
-   export step_2d=1 #150 #150 # 150  # xml: 90
-   export step_3d=1 # 450  # xml: 1440
+   
+   export step_2d=8640 #150 #150 # 150  # xml: 90
+   export step_3d=8640 # 450  # xml: 1440
    export save_initial=True
 
    export out_dir=${OUTDIR-"./out"}/base_1
@@ -159,18 +163,20 @@ if [ $BASE_1 == "1" ]; then
    rm $logdir/log.run
    rm $logdir/log.base_1
 
-   # bc starts at 01:00 so start smulatio there too
-   export start="$YEAR_BASE-10-01 01:00:00"
+   # if bc starts at 01:00, start smulatio there too
+   export start="$YEAR_BASE-10-01 00:00:00"
    export stop="$YEAR_BASE-11-01 00:00:00"
-   export ref_start_time="$YEAR_BASE-10-01 01:00:00"
+   export ref_start_time="$YEAR_BASE-10-01 00:00:00"
    echo  "run.getm_qsub  $start   $stop  >& $logdir/log.base_1"
 
    # boundary files are year specific
    echo "linking bdy_2d.nc and bdy_3d.nc"
    rm bdy_*d.nc 
    echo "ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc "
-   ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
-   ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
+   ln -sf "/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.2d.nc" bdy_2d.nc 
+   ln -sf "/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.3d.nc" bdy_3d.nc
+   #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
+   #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
    #ln -sf ../../model_input_files/boundaries/good_2000_10.2d.nc bdy_2d.nc 
    #ln -sf ../../model_input_files/boundaries/good_2000_10.3d.nc bdy_3d.nc
    echo "done linking bdy files"
