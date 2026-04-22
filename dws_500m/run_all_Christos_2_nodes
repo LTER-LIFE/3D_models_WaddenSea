@@ -173,8 +173,8 @@ if [ $BASE_1 == "1" ]; then
    echo "linking bdy_2d.nc and bdy_3d.nc"
    rm bdy_*d.nc 
    echo "ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc "
-   ln -sf "/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.2d.nc" bdy_2d.nc 
-   ln -sf "/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.3d.nc" bdy_3d.nc
+   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.2d.nc" bdy_2d.nc 
+   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_10.3d.nc" bdy_3d.nc
    #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
    #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
    #ln -sf ../../model_input_files/boundaries/good_2000_10.2d.nc bdy_2d.nc 
