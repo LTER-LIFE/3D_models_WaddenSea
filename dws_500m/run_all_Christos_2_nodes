@@ -63,10 +63,10 @@ else
   export lastnode=$lastnode
 fi
 
-BASE_1=1  # October base year start up, just bdy 2d
+BASE_1=0  # October base year start up, just bdy 2d
 BASE_2=0  # November base year further spin up, bdy 3d+hotstart
 BASE_3=0  # December base year start up, meteo+rivers
-BASE_4=0  # actual run
+BASE_4=1  # actual run
 
 #mkdir -p log/$conf
 
@@ -81,8 +81,8 @@ YEAR_START=2015
 YEAR_STOP=2015
 echo $YEAR_BASE
 
-months="01 02 03 04 05 06 07 08 09 10 11 12"
-#months="02 03 04 05 06 07 08 09 10"
+#months="01 02 03 04 05 06 07 08 09 10 11 12"
+months="02"
 #months="12"
 days="01"
 
@@ -194,7 +194,7 @@ fi   # BASE_1
 if [ $BASE_2 == "1" ]; then
    
    #============================
-   # base_2 settings
+   # base_2 CGIANNOP settings
    #============================
    export hotstart=True
    export metforcing=False  # False in base_1
@@ -202,22 +202,25 @@ if [ $BASE_2 == "1" ]; then
    export bdy2d=True  # True in xml 
    export bdy3d=True  # True in xml 
    export temp_method=0  # from hotstart file, base_1 has 3 (from file)
-   export salt_method=0  # from hotstart file, base_1 has 3 (from file) 
+   export salt_method=0  # from hotstart file, base_1 has 3 (from file)
+   export calc_temp=True
+   export calc_salt=True 
 
    export bdy2d_ramp=-1  
    export ip_ramp=-1
    #export bdy3d_tmrlx=True   
    export bdy3d_ramp=6000 # 181440 
    export river_ramp=-1  #6000 # 181440
-   export An_const=20     # horizontal diffusions
+   export An_method=1
+   export An_const=20.0  # 20.0 horizontal diffusion, xml: 5
 
    export crit_depth=0.9 # 1.35  # initial 0.9, Kiki: 0.3
    export min_depth=0.3  # 0.45   # initial 0.3, Kiki: 0.12
    export clip_depth=0.1 # 0.15 # initial 0.1, try 0.05, Kiki: 0.01
    #export salt_check=-1  # >0 is abort if fails, 0 is don't check, <0 warn if fails
-   #============================
-   # end of base_2 settings
-   #============================
+   #=================================
+   # end of base_2 CGIANNOP settings
+   #=================================
 
    export runtype=$run_type
    export use_epoch=False 
@@ -228,8 +231,10 @@ if [ $BASE_2 == "1" ]; then
    rm flex_out
    ln -s $out_dir flex_out
 
-   #export step_2d=8640 #5760 #2880 #240 is hourly for 15 sec time step
-   #export step_3d=43200 #5760 #2880
+	
+   export step_2d=8640 #5760 #2880 #240 is hourly for 15 sec time step
+   export step_3d=8640 #5760 #2880
+   export save_initial=False
 
    mkdir -p $out_dir $hot_dir
    ln -sf no_bio.inp bio.inp
@@ -244,8 +249,10 @@ if [ $BASE_2 == "1" ]; then
    # boundary files are year specific
    echo "linking bdy_2d.nc and bdy_3d.nc"
    rm bdy_*d.nc 
-   ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
-   ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
+   ln -sf "/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_11.2d.nc" bdy_2d.nc 
+   ln -sf "/export/lv2/model_output_jvdm/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_11.3d.nc" bdy_3d.nc
+   #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
+   #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
    #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_Kiki_$YEAR_BASE.3d.nc bdy_3d.nc
 
    echo "done linking bdy files"
@@ -264,7 +271,7 @@ fi  # BASE_2
 if [ $BASE_3 == "1" ]; then
    
    #============================
-   # base_3 settings
+   # base_3 CGIANNOP settings
    #============================
    export hotstart=True
    export bdy2d=True  # True in xml 
@@ -277,9 +284,9 @@ if [ $BASE_3 == "1" ]; then
    export crit_depth=0.9  # initial 0.9, Kiki: 0.3
    export min_depth=0.3   # initial 0.3, Kiki: 0.12
    export clip_depth=0.1 # initial 0.1, Kiki: 0.01, try 0.05
-   #============================
-   # end of base_3 settings
-   #============================
+   #=================================
+   # end of base_3 CGIANNOP settings
+   #=================================
 
    export runtype=$run_type
    export use_epoch=False 
@@ -291,7 +298,7 @@ if [ $BASE_3 == "1" ]; then
    ln -s $out_dir flex_out
 
    export step_2d=8640 #5760 #2880 #240 is hourly for 15 sec time step
-   export step_3d=43200 #5760 #2880
+   export step_3d=8640 #5760 #2880
 
    mkdir -p $out_dir $hot_dir
    ln -sf no_bio.inp bio.inp
@@ -305,9 +312,11 @@ if [ $BASE_3 == "1" ]; then
 
    # boundary files are year specific
    echo "linking bdy_2d.nc and bdy_3d.nc"
-   rm bdy_*d.nc 
-   ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
-   ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
+   rm bdy_*d.nc
+   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_12.2d.nc" bdy_2d.nc
+   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_2014_12.3d.nc" bdy_3d.nc
+   #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.2d.nc bdy_2d.nc 
+   #ln -sf ../../model_input_files/boundaries/bdy_dws_200m_$YEAR_BASE.3d.nc bdy_3d.nc
    echo "done linking bdy files"
    echo  "run.getm_qsub  $start   $stop  >& $logdir/log.base_3"
 
@@ -338,7 +347,9 @@ if [ $BASE_4 == "1" ]; then
   export clip_depth=0.1 #0.1 # 0.05  # Johan: 0.1, Kiki: 0.01, Ulf: 0.1
 
   export save_fluxes=True
-  export An_method=0
+  export An_method=1
+  export An_const=20.0  # 20.0 horizontal diffusion, xml: 5
+  
 
   yy=$YEAR_START
   #for yy in $years ; do
@@ -394,9 +405,9 @@ if [ $BASE_4 == "1" ]; then
 	   rm bdy_*d.nc
            echo "Year: $yy"
            echo "Month: $mm"
-	   echo "/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_"$yy"_"$mm".2d.nc"	
-	   ln -sf "/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_"$yy"_"$mm".2d.nc" bdy_2d.nc
-	   ln -sf "/export/lv9/user/cgiannopoulos/home/pre-processing/bdy/bdy_dws_500m_2_"$yy"_"$mm".3d.nc" bdy_3d.nc
+	   echo "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_"$yy"_"$mm".2d.nc"	
+	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_"$yy"_"$mm".2d.nc" bdy_2d.nc
+	   ln -sf "/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_"$yy"_"$mm".3d.nc" bdy_3d.nc
 	   echo "done linking bdy files"
 
         cp output.yaml output_yaml.tmp
