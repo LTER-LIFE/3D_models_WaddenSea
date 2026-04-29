@@ -52,6 +52,11 @@ run_type=4              # 4, this is called runtype in the xml file?
 particle_tracking=0     # process fields monthly for particle tracking
 export particle_tracking=$particle_tracking
 
+# merging output files or not
+merge_files=1
+export merge_files=$merge_files
+
+
 if [ "$conf" = "1p" ] ; then
   export PDSH=
 else
@@ -81,8 +86,8 @@ YEAR_START=2015
 YEAR_STOP=2015
 echo $YEAR_BASE
 
-#months="01 02 03 04 05 06 07 08 09 10 11 12"
-months="03"
+months="01 02 03 04 05 06 07 08 09 10 11 12"
+#months="09 10 11 12"
 days="01"
 
 # for the benefit of adjusting output.yaml; must fit model time step
