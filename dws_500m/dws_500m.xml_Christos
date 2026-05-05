@@ -111,8 +111,8 @@
                         <bdy2d_sponge_size>4</bdy2d_sponge_size>
 		</m2d>
 		<m3d>
-			<M>30</M>
-			<cnpar>1.0</cnpar>
+			<M>15</M>
+			<cnpar>0.9</cnpar>
 			<cord_relax>0.0</cord_relax>
 			<adv_ver_iterations>500</adv_ver_iterations>
 			<bdy3d>True</bdy3d>
@@ -126,7 +126,7 @@
 			<bdy3d_tmrlx_ucut>0.03</bdy3d_tmrlx_ucut>
 			<vel3d_adv_split>2</vel3d_adv_split>
 			<vel3d_adv_hor>6</vel3d_adv_hor>
-			<vel3d_adv_ver>4</vel3d_adv_ver>
+			<vel3d_adv_ver>5</vel3d_adv_ver>
 			<calc_temp>True</calc_temp>
 			<calc_salt>True</calc_salt>
                         <use_gotm>True</use_gotm>
@@ -150,8 +150,8 @@
 			<temp_name>temp</temp_name>
 			<temp_field_no>1</temp_field_no>
 			<temp_adv_split>2</temp_adv_split>
-			<temp_adv_hor>4</temp_adv_hor>
-			<temp_adv_ver>4</temp_adv_ver>
+			<temp_adv_hor>5</temp_adv_hor>
+			<temp_adv_ver>5</temp_adv_ver>
                         <avmolt>0.0</avmolt>
                         <temp_AH_method>2</temp_AH_method>
                         <temp_AH_const>10.0</temp_AH_const>
@@ -179,8 +179,8 @@
 			<salt_name>salt</salt_name>
 			<salt_field_no>1</salt_field_no>
 			<salt_adv_split>2</salt_adv_split>
-			<salt_adv_hor>4</salt_adv_hor>
-			<salt_adv_ver>4</salt_adv_ver>
+			<salt_adv_hor>5</salt_adv_hor>
+			<salt_adv_ver>5</salt_adv_ver>
 
                         <avmols>1.1e-09</avmols>
                         <salt_AH_method>2</salt_AH_method>
