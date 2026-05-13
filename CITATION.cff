@@ -1,0 +1,34 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: A 3D hydro-biogeochemical model for the western Wadden Sea
+message: >-
+  Setup for the western Wadden Sea at 500 m horizontal
+  resolution with 10 vertical layers.
+type: software
+authors:
+  - given-names: Qing
+    family-names: Zhan
+    email: qing.zhan@nioz.nl
+    affiliation: Royal Netherlands Institute for Sea Research
+    orcid: 'https://orcid.org/0000-0002-1339-3646'
+  - given-names: Christos
+    family-names: Giannopoulos
+    email: christos.giannopoulos@nioz.nl
+    affiliation: Royal Netherlands Institute for Sea Research
+    orcid: 'https://orcid.org/0000-0003-0973-1275'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20159509
+repository-code: 'https://github.com/LTER-LIFE/GETM_ERSEM_SETUPS'
+abstract: >-
+  A stable version of couped hydro-biogeochemical model
+  (GETM-ERSEM-BFM) for the western Wadden Sea, at 500m
+  horizontal resolution with 10 vertical layers.
+keywords:
+  - Ecosystem model
+  - Hydro-biogeochemical model
+  - Digital Twin
+  - Dutch Wadden Sea
+license: MIT
