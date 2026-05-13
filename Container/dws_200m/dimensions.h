@@ -1,1 +1,0 @@
-Configurations/32x32/dws_200m.dim

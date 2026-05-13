@@ -1,1 +1,0 @@
-../../model_input_files/initial/initial_dws_200m.2008.nc
