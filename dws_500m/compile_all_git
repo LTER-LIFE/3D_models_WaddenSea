@@ -25,7 +25,7 @@ setupdir=`pwd`
 
 setup=dws_500m
 #configurations="1p 24x24 48x24 48x48 96x48 96x96"
-configurations="26x20"
+configurations="16x16"
 
 # clean up: make sure that we're re-compiling!!!
 #rm /home/jvandermolen/tools/getm/build/ifort/getm
