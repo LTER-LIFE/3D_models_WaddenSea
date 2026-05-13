@@ -16,24 +16,18 @@ This repository document the setup of 3D GETM-BFM models for the Wadden Sea
 </a>
 
 ## Update target branch using resource from other branches
-<<<<<<< HEAD
 ### new git version
-=======
->>>>>>> bab1502503df8debea098910380173001838b4b8
 - git fetch origin
 - git switch target_brach_name
 - git restore --source origin/source_branch_name --staged --worktree ./dws_500m/
 - git commit -m "Bring dws_500m from source_branch_name"
 
-<<<<<<< HEAD
 ### Cluster git version (1.8.3.1)
 - git fetch origin
 - git checkout target_brach_name
 - git checkout origin/source_branch_name ./dws_500m/
 - git commit -m "Bring dws_500m from source_branch_name"
 
-=======
->>>>>>> bab1502503df8debea098910380173001838b4b8
 ## Merging branches into main
 - git checkout main 
 - git pull origin main 
@@ -46,9 +40,5 @@ This repository document the setup of 3D GETM-BFM models for the Wadden Sea
 - Disk size: for exploratory runs: 1–5 TB; for serious simulations: 5–10 TB
 
 ## Model input/output processing:
-https://github.com/LTER-LIFE/dws_3d_input_output_processing.git 
-<<<<<<< HEAD
 - still private repository, pls contact Qing Zhan (qing.zhan@nioz.nl)
-=======
-- still private repository, pls contact Qing Zhan (qing.zhan@nioz.nl)
->>>>>>> bab1502503df8debea098910380173001838b4b8
+
