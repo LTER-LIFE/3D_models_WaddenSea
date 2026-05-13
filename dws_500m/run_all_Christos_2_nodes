@@ -354,7 +354,7 @@ if [ $BASE_4 == "1" ]; then
   export save_fluxes=True
   export An_method=0
   export An_const=0.0
-  export Am_method=
+  export Am_method=0
   export Am_const=0.0
   export bdy2d_sponge_size=3
   
