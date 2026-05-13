@@ -3,7 +3,7 @@
 #  time_unit:      (MANDATORY) [ dt | second | hour | day | month | year ]
 #  time_method:    (optional)  [ 0 (time independent) | 1 (instantanuous; DEFAULT) | 2 (mean) | 3 (integrated) ]
 #  time_reference: (optional)  [string; DEFAULT: first output time]
-#  time_start: 2015-12tional)  [string; DEFAULT: start of simulation]
+#  time_start: 2015-06tional)  [string; DEFAULT: start of simulation]
 #  time_stop:      (optional)  [string; DEFAULT: end of simulation]
 #  [i|j|k]_[start|stop|stride]: (optional) [global integers]
 #  format:         (optional)  [ netcdf (DEFAULT) | text ]
@@ -29,7 +29,7 @@ flex_out/dws_500m.2d:
   time_step: 1 
   time_unit: day
   time_reference: 1981-01-01 00:00:00
-  time_start: 2015-12-01 00:00:00
+  time_start: 2015-06-01 00:00:00
   variables: 
     - source: level
     - source: lonc
@@ -58,7 +58,7 @@ flex_out/dws_500m.3d:
   time_step: 1
   time_unit: day
   time_reference: 1981-01-01 00:00:00
-  time_start: 2015-12-01 00:00:00
+  time_start: 2015-06-01 00:00:00
   variables: 
     - source: level
     - source: lonc
