@@ -1,12 +1,7 @@
 #!/bin/bash
 
 restart_dir=/export/lv9/user/qzhan/home/pre-processing/hotstart
-
-#restart_dir=/export/lv9/user/cgiannopoulos/home/pre-processing/hotstart
-#restart_file=restart_199501_from200201.in
-#restart_dir=/export/lv1/user/jvandermolen/model_output/active_runs/boundaries/dws_200m_nwes/
-#restart_file=restart_dws_500m_201412_hydro_10_layers.nc
-restart_file=restart_dws500m_2015_01.in
+restart_file=restart_201501_spinup_01.in
 
 outdir=$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/26x20/2015/01/
 
