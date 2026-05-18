@@ -1,1 +1,1 @@
-/export/lv9/user/cgiannopoulos/home/GETM_ERSEM_SETUPS/dws_500m/Configurations/16x16/dws_500m.dim
+Configurations/21x15/dws_500m.dim
