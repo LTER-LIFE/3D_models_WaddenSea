@@ -1,1 +1,1 @@
-/export/lv9/user/qzhan/home/pre-processing/rivers/rivers_bfm_20200323_WaddenSea_all_Qing.nc
+/export/lv9/user/cgiannopoulos/home/pre-processing/rivers/rivers_bfm_20260518_WaddenSea_all_Christos.nc

@@ -1,1 +1,1 @@
-/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_2015_06.3d.nc
+/export/lv9/ERSEM_runs/boundaries/dws_500m_nwes/bdy_dws_500m_2_2015_05.3d.nc

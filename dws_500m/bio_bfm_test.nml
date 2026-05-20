@@ -223,49 +223,62 @@ var_save= 'O2o',
           'D1m',
           'D2m',
           'O3c',
-          'pCO2'
-          'CO2'
-          'HCO3'
-          'CO3'
-          'pH'
-          'Ac'
-          'G3h'
-          'G13h'
-          'G23h'
-          'G3c'
-          'G13c'
-          'G23c'
-          'G14n'
-          'Acae'
-          'Acan'
-          'DICae'
-          'DICan'
-          'pHae'
-          'pHan'
-          'pCO2ae'
-          'pCO2an'
-          'G3h'
-          'G13h'
-          'BP1c'
+          'pCO2',
+          'CO2',
+          'HCO3',
+          'CO3',
+          'pH',
+          'Ac',
+          'G3h',
+          'G13h',
+          'G23h',
+          'G3c',
+          'G13c',
+          'G23c',
+          'G14n',
+          'Acae',
+          'Acan',
+          'DICae',
+          'DICan',
+          'pHae',
+          'pHan',
+          'pCO2ae',
+          'pCO2an',
+          'G3h',
+          'G13h',
+          'BP1c',
           'ETW',
           'irrenh',
           'turenh',          
-ave_save=  'dry_z'
-          'EIR'
-          'sediR2'
-          'EUWIND'
-          'EVWIND'
-          'SdTdzTh'
-          'BMLd'
-          'TMLd'
-          'Output2d_1'
-          'Output2d_2'
-          'Output2d_3'
-          'Output2d_4'
+ave_save=  'dry_z',
+          'EIR',
+          'sediR2',
+          'EUWIND',
+          'EVWIND',
+          'SdTdzTh',
+          'BMLd',
+          'TMLd',
+          'Output2d_1',
+          'Output2d_2',
+          'Output2d_3',
+          'Output2d_4',
           'turenh',
-          'irrenh'
+          'irrenh',
+	  'netPP',
           'netPPm2',
-	  'ESS'
+	  'jnetPTc',
+          'grsPPm2',
+          'exPPm2',
+          'resPPm2',
+          'jspaY3c',
+          'jnetBPTc',
+          'jnetMeZc',
+          'jnetMiZc',
+          'jnetB1c',
+          'jnetY3c',
+          'jnetYy3c',
+	  'ruPTc',
+	  'ESS',
           'xEPS',
           'Hs_out',
           'Tz_out',

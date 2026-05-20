@@ -60,7 +60,7 @@
    timefmt = 2,
    nlast = -1,
    start = '2015-01-01 00:00:00',
-   stop = '2015-07-01 00:00:00',
+   stop = '2015-06-01 00:00:00',
 /
 
 !-------------------------------------------------------------------------------
@@ -1270,7 +1270,7 @@
    hotin_fmt = 2,
    hotout_fmt = 2,
    in_dir = '.',
-   out_dir = '/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/26x20/2015/06/',
+   out_dir = '/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/26x20/2015/05/',
    save_metrics = .false.,
    save_masks = .false.,
    save_2d = .true.,
