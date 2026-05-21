@@ -1,7 +1,7 @@
 # 3D_models_WaddenSea
 This repository document the setup of 3D GETM-BFM models for the Wadden Sea
 
-## Model schemma
+## Model schema
 <img src="./Graphs/schema_DWS.png" alt="Model schema" width="700">
 
 ## Model 3d example outputs
