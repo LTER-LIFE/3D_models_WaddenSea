@@ -10,11 +10,11 @@
 ##SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 #SBATCH --time=4-1:00:00
-#SBATCH --output=/export/lv9/user/cgiannopoulos/home/run_all.stdout
+#SBATCH --output=/export/lv9/user/qzhan/home/run_all.stdout
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=christos.giannopoulos@nioz.nl
+#SBATCH --mail-user=qing.zhan@nioz.nl
 
 module load clustershell/1.8
 
@@ -87,8 +87,8 @@ YEAR_STOP=2015
 echo $YEAR_BASE
 
 months="01 02 03 04 05 06 07 08 09 10 11 12"
-#months="03 04 05 06 07 08 09 10 11 12"
-#months="01"
+months="06 07 08 09 10 11 12"
+
 days="01"
 
 # for the benefit of adjusting output.yaml; must fit model time step
@@ -97,8 +97,8 @@ export timestep=10  # 4  (Kiki), also in xml file as 4
 OUTDIR=`pwd`/out/$runid/$conf
 
 # For flexible output, disable classical output
-export save_2d=False
-export save_3d=False
+export save_2d=True
+export save_3d=True
 export FABM=False
 
 
@@ -397,7 +397,7 @@ if [ $BASE_4 == "1" ]; then
            fi
 	   export start="$yy-$mm-$dd 00:00:00"
 	   export stop="$hot_yy-$hot_mm-$dd 00:00:00"
-  	   #export stop="$hot_yy-01-01 02:00:00"
+  	   #export stop="$hot_yy-01-02 02:00:00"
 
            export logdir=log/$runid/$conf/$yy$mm$dd
            export year=$yy

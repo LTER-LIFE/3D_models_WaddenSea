@@ -34,13 +34,13 @@ echo "SSH authentication OK."
 cleanup_repos() {
     echo "Cleaning existing repositories and build directories..."
     rm -rf "$HOME/home/BFM_SOURCES"
-    #rm -rf "$HOME/home/GOTM_SOURCES"
-    #rm -rf "$HOME/home/GETM_SOURCES"
+    rm -rf "$HOME/home/GOTM_SOURCES"
+    rm -rf "$HOME/home/GETM_SOURCES"
     rm -rf "$HOME/home/fabm-git"
     rm -rf "$HOME/home/build"
     rm -rf "$HOME/tools"
     rm -rf "$HOME/local"
-    #rm -rf "$HOME/home/bfm-git" "$HOME/home/gotm-git" "$HOME/home/getm-git"
+    rm -rf "$HOME/home/bfm-git" "$HOME/home/gotm-git" "$HOME/home/getm-git"
 }
 
 ###############################################################################
@@ -51,8 +51,8 @@ clone_repos() {
 # --- DIRECTORY SETUP ---
     echo "Creating directory structure..."
     mkdir -p "$HOME/home/BFM_SOURCES"
-    #mkdir -p "$HOME/home/GOTM_SOURCES"
-    #mkdir -p "$HOME/home/GETM_SOURCES"
+    mkdir -p "$HOME/home/GOTM_SOURCES"
+    mkdir -p "$HOME/home/GETM_SOURCES"
     mkdir -p "$HOME/home/fabm-git"
 
     # --- BFM ---
@@ -64,21 +64,22 @@ clone_repos() {
 
 
     # --- GOTM ---
-    #echo "Cloning GOTM..."
-    #cd "$HOME/home/GOTM_SOURCES" || exit 1
-    #git clone "git@github.com:jvdmolen/gotm_coupled_bfm_2016.git"
-    #cd gotm_coupled_bfm_2016 || exit 1
-    #git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126
-    #git submodule update --init --recursive
+    echo "Cloning GOTM..."
+    cd "$HOME/home/GOTM_SOURCES" || exit 1
+    git clone "git@github.com:jvdmolen/gotm_coupled_bfm_2016.git"
+    cd gotm_coupled_bfm_2016 || exit 1
+    git checkout -b master_20210107_couplingGETM_bfm2016_20241126 remotes/origin/master_20210107_couplingGETM_bfm2016_20241126
+    git submodule update --init --recursive
 
     # --- GETM ---
-    #echo "Cloning GETM..."
-    #cd "$HOME/home/GETM_SOURCES" || exit 1
-    #git clone "git@github.com:jvdmolen/getm_coupled_bfm_2016.git"
-    #cd getm_coupled_bfm_2016 || exit 1
+    echo "Cloning GETM..."
+    cd "$HOME/home/GETM_SOURCES" || exit 1
+    git clone "git@github.com:jvdmolen/getm_coupled_bfm_2016.git"
+    cd getm_coupled_bfm_2016 || exit 1
+    # checkout the latest version:
     # git checkout -b iow_20200609_bfm2016_20250116 remotes/origin/iow_20200609_bfm2016_20250116
     # checkout specific commit:
-    #git checkout -b iow_20200609_bfm2016_20250116 969dceb73ca9d801c03eb7f218da1d45d5748db3
+    git checkout -b iow_20200609_bfm2016_20250116 969dceb73ca9d801c03eb7f218da1d45d5748db3
 
     # --- FABM ---
     echo "Cloning FABM..."
@@ -90,8 +91,11 @@ clone_repos() {
 
     # --- symbolic links ---
     ln -s "$HOME/home/BFM_SOURCES/bfm_2016" "$HOME/home/BFM_SOURCES/bfm-git"
-    #ln -s "$HOME/home/GOTM_SOURCES/gotm_coupled_bfm_2016" "$HOME/home/gotm-git"
-    #ln -s "$HOME/home/GETM_SOURCES/getm_coupled_bfm_2016" "$HOME/home/getm-git"
+    ln -s "$HOME/home/GOTM_SOURCES/gotm_coupled_bfm_2016" "$HOME/home/gotm-git"
+    ln -s "$HOME/home/GETM_SOURCES/getm_coupled_bfm_2016" "$HOME/home/getm-git"
+    
+    # Replace read_restart_ncdf.F90 in BFM for the coupled model:
+    rsync -av --force "$HOME/home/GETM_ERSEM_SETUPS/Container_dependency/read_restart_ncdf.F90" "$HOME/home/BFM_SOURCES/bfm-git/src/getm/read_restart_ncdf.F90"
 
     echo "==========================================="
     echo " Cloning completed successfully"
@@ -129,13 +133,22 @@ compile_models(){
 
     mkdir -p "$HOME/tools/getm/build"
     cd "$HOME/tools/getm/build" || exit 1
-    cp "$HOME/home/GETM_ERSEM_SETUPS/Container/getm_configure.sh" .
+    cp "$HOME/home/GETM_ERSEM_SETUPS/Container_dependency/getm_configure.sh" .
     chmod +x getm_configure.sh
     ./getm_configure.sh
 
     cd "$HOME/home/GETM_ERSEM_SETUPS/dws_500m" || exit 1
-    ./link_restartfiles
-    ./compile_all_git
+    # --- symbolic links ---
+    rm out
+    ln -s "$HOME/model_output/active_runs/dws_500m" "$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out"
+    
+    # --- copy ecological nml files (optional) ---
+    # rsync -av /export/lv9/user/qzhan/home/BFM_SOURCES/bfm-git/bfm_nml/ .
+    ## To select biological variables output: 'bio_bfm.nml'
+
+    # link hotstart files (may need manually change the user-specific paths)
+    #./link_restartfiles
+    #./compile_all_git
 
     echo "==========================================="
     echo " Compilation completed successfully"
