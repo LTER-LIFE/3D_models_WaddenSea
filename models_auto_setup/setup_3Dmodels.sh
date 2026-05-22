@@ -147,8 +147,8 @@ compile_models(){
     ## To select biological variables output: 'bio_bfm.nml'
 
     # link hotstart files (may need manually change the user-specific paths)
-    ./link_restartfiles
-    ./compile_all_git
+    #./link_restartfiles
+    #./compile_all_git
 
     echo "==========================================="
     echo " Compilation completed successfully"

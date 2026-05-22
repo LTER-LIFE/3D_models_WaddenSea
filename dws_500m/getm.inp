@@ -60,7 +60,7 @@
    timefmt = 2,
    nlast = -1,
    start = '2015-01-01 00:00:00',
-   stop = '2015-07-01 00:00:00',
+   stop = '2015-09-01 00:00:00',
 /
 
 !-------------------------------------------------------------------------------
@@ -327,7 +327,7 @@
    met_method = 2,
    interpolate_meteo = .false.,
    exchange_method = 1,
-   fwf_method = 3,
+   fwf_method = 4,
    meteo_ramp = -1,
    metfmt = 2,
    meteo_file = 'meteofiles.dat',
@@ -739,10 +739,10 @@
    bdy3d = .true.,
    bdyfmt_3d = 2,
    bdy3d_vel = .false.,
-   bdy3d_ramp = -1,
+   bdy3d_ramp = 6000,
    bdyfile_3d = 'bdy_3d.nc',
    bdy3d_sponge_size = 3,
-   bdy3d_tmrlx = .true.,
+   bdy3d_tmrlx = .false.,
    bdy3d_tmrlx_min = 0.0,
    bdy3d_tmrlx_max = 0.25,
    bdy3d_tmrlx_ucut = 0.03,
@@ -905,7 +905,7 @@
 
 &temp
    temp_method = 0,
-   temp_const = 20.0,
+   temp_const = 9.29,
    temp_format = 2,
    temp_file = 'initial.nc',
    temp_name = 'temp',
@@ -1035,7 +1035,7 @@
 
 &salt
    salt_method = 0,
-   salt_const = 35.0,
+   salt_const = 35.35,
    salt_format = 2,
    salt_file = 'initial.nc',
    salt_name = 'salt',
@@ -1270,7 +1270,7 @@
    hotin_fmt = 2,
    hotout_fmt = 2,
    in_dir = '.',
-   out_dir = '/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/26x20/2015/06/',
+   out_dir = '/export/lv9/user/qzhan/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/21x15/2015/08/',
    save_metrics = .false.,
    save_masks = .false.,
    save_2d = .true.,

@@ -4,6 +4,9 @@ This repository document the setup of 3D GETM-BFM models for the Wadden Sea
 ## Model schema
 <img src="./Graphs/schema_DWS.png" alt="Model schema" width="700">
 
+- Meta data for biogeochemical variables
+Please refer to file ./Container_dependency/GlobalDefsBFM.model.orig
+
 ## Model 3d example outputs
 - Top view:
 <a href="./Graphs/transect_temp_surface_domain.gif">

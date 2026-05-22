@@ -1,9 +1,9 @@
 #!/bin/bash
 
 restart_dir=/export/lv9/user/qzhan/home/pre-processing/hotstart
-restart_file=restart_201501_spinup_01.in
+restart_file=restart_201506_spinup_02.in
 
-outdir=$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/26x20/2015/01/
+outdir=$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/21x15/2015/06/
 
 
 rm -f $outdir/restart.????.in
@@ -12,8 +12,11 @@ for i in `seq 0 9`;
 do
   ln -s $restart_dir/$restart_file $outdir/restart.000$i.in
 done
-for i in `seq 10 75`;
+for i in `seq 10 99`;
 do
   ln -s  $restart_dir/$restart_file $outdir/restart.00$i.in
 done
-
+for i in `seq 100 119`;
+do
+  ln -s  $restart_dir/$restart_file $outdir/restart.0$i.in
+done
