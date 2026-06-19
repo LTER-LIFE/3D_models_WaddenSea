@@ -10,12 +10,12 @@ Please refer to file ./Container_dependency/GlobalDefsBFM.model.orig
 ## Model 3d example outputs
 - Top view:
 <a href="./Graphs/transect_temp_surface_domain.gif">
-  <img src="./Graphs/transect_temp_surface_domain.gif" alt="Top view water temperature" width="700">
+  <img src="./Graphs/pelagic_diatom_top.gif" alt="Top view pelagic diatom" width="700">
 </a>
 
 - Transect view:
 <a href="./Graphs/transect_elevation_PO4.gif">
-  <img src="./Graphs/transect_elevation_PO4.gif" alt="Transect elevation PO4 visualization" width="700">
+  <img src="./Graphs/pelagic_diatom_transect.gif" alt="Transect pelagic diatom" width="700">
 </a>
 
 ## Update target branch using resource from other branches
