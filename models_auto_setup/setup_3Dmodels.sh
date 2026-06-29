@@ -97,6 +97,10 @@ clone_repos() {
     # Replace read_restart_ncdf.F90 in BFM for the coupled model:
     rsync -av --force "$HOME/home/GETM_ERSEM_SETUPS/Container_dependency/read_restart_ncdf.F90" "$HOME/home/BFM_SOURCES/bfm-git/src/getm/read_restart_ncdf.F90"
 
+    # Replace bio.F90 in BFM for the coupled model:
+    rsync -av --force "$HOME/home/GETM_ERSEM_SETUPS/Container_dependency/bio.F90" "$HOME/home/BFM_SOURCES/bfm_2016/src/gotm/bio.F90"
+
+
     echo "==========================================="
     echo " Cloning completed successfully"
     echo "==========================================="
