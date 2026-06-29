@@ -163,41 +163,66 @@
 !         'ptK21p',
 &bfm_save_nml
 nco_style_vars=.true.
-var_save= 
+var_save= 'O2o',
           'N1p',
           'N3n',
           'N4n',
           'N5s',
           'N6r',
+          'Nun',
           'B1c',
+          'B1n',
           'Bac',
           'P1c',
+          'P1n',
+          'P2n',
+          'P3n',
+          'P4n',
+          'P5n',
+          'P6n',
           'P2c',
           'P3c',
           'P4c',
           'P5c',
           'P6c',
-	  'P1l',
+          'P1l',
           'P2l',
           'P3l',
           'P4l',
           'P5l',
           'P6l',
+          'Pcc',
           'Z2c',
           'Z3c',
           'Z4c',
           'Z5c',
           'Z6c',
           'R1c',
+          'R1p',
+          'R1n',
+          'R1c',
+          'R1s',
           'R2c',
           'R3c',
           'R6c',
+          'R6s',
+          'R6p',
+          'R6n',
           'RZc',
           'Q1c',
+          'Q1n',
+          'Q1p',
           'Q11c',
+          'Q11n',
+          'Q11p',
           'Q6c',
+          'Q6s',
+          'Q6n',
+          'Q6p',
+          'Chla',
           'H1c',
           'H2c',
+          'H3c',
           'HNc',
           'Hac',
           'Y1c',
@@ -206,7 +231,6 @@ var_save=
           'Y4c',
           'Y5c',
           'Yy3c',
-          'Ys3c',
           'K6r',
           'K16r',
           'K26r',
@@ -222,47 +246,113 @@ var_save=
           'K21p',
           'D1m',
           'D2m',
+          'D6m',
+          'D7m',
+          'D8m',
+          'D9m',
+          'Dcm',
+          'Dfm',
           'O3c',
-          'pCO2',
-          'CO2',
-          'HCO3',
-          'CO3',
-          'pH',
-          'Ac',
-          'G3h',
-          'G13h',
-          'G23h',
-          'G3c',
-          'G13c',
-          'G23c',
-          'G14n',
-          'Acae',
-          'Acan',
-          'DICae',
-          'DICan',
-          'pHae',
-          'pHan',
-          'pCO2ae',
-          'pCO2an',
-          'G3h',
-          'G13h',
-          'BP1c',
+          'DIC'
+          'pCO2'
+          'CO2'
+          'HCO3'
+          'CO3'
+          'pH'
+          'Ac'
+          'G3h'
+          'G13h'
+          'G23h'
+          'G3c'
+          'G13c'
+          'G23c'
+          'G14n'
+          'Acae'
+          'Acan'
+          'DICae'
+          'DICan'
+          'pHae'
+          'pHan'
+          'pCO2ae'
+          'pCO2an'
+          'PrM1p'
+          'PrM3n'
+          'PrM4n'
+          'PrM6r'
+          'PrM5s'
+          'PrQ1c'
+          'PrDIC'
+          'PrAc'
+          'PrpH'
+          'G3h'
+          'G13h'
+          'BP1c'
+          'totPELn'
+          'totPELp'
+          'totPELs'
+	  'totPELc',
+          'totBENn'
+          'totBENp'
+          'totBENs'
+          'totBENc',
+          'totSYSn',
+          'totSYSp',
+          'totSYSs',
+          'totSYSc',
+          'ETW',
           'irrenh',
-          'turenh',          
-          'dry_z',
-          'EIR',
-          'sediR2',
-          'EUWIND',
-          'EVWIND',
-          'SdTdzTh',
-          'BMLd',
-          'TMLd',
-          'Output2d_1',
-          'Output2d_2',
-          'Output2d_3',
-          'Output2d_4',
           'turenh',
-          'irrenh',
+          'R2n',
+          'PON',
+ave_save=  'dry_z'
+          'jK25K15s'
+          'jK31K21p'
+          'jK34K24n'
+          'jK36K26r'
+          'jK13K3n'
+          'jG33G23h'
+          'jG33G23c'
+           'sK4K3'
+          'jK4K3n'
+          'jK3G4n'
+          'jG2K7o'
+          'qqrivR6p'
+          'qqrivNtn'
+          'qqrivNtp'
+          'jbotO2o'
+          'jbotN4n'
+          'jbotN3n'
+          'jbotN1p'
+          'jbotN5s'
+          'jbotR6c'
+          'jbotR6n'
+          'jbotR6p'
+          'jbotR6s'
+          'jRIY3p',
+          'jbotZ2c'
+          'jbotP1c',
+	  'jbotP2c',
+          'jbotP3c',
+          'jbotP4c',
+          'jbotP5c',
+          'jbotP6c',
+	  'jbotZ3c',
+          'jbotZ4c',
+          'jbotZ5c',
+          'jbotZ6c',
+	  'jbotB1c',
+          'jbotQ6c',
+          'jbotQ6n',
+          'jbotQ6p',
+          'jbotQ6s',
+          'jbott_ESS',
+          'jrESS',
+          'rrBTo',
+          'rrATo',
+          'jnetPTc',
+          'grsPPm2',
+          'exPPm2',
+          'resPPm2',
           'jspaY3c',
           'jnetBPTc',
           'jnetMeZc',
@@ -270,8 +360,71 @@ var_save=
           'jnetB1c',
           'jnetY3c',
           'jnetYy3c',
-	  'ruPTc',
-	  'ESS',
+          'EIR'
+          'sediR2'
+          'jbotO3c'
+          'jbotO3h'
+          'jsurO3c'
+          'reBTp'
+          'reBTn'
+          'reATn'
+          'reATp'
+          'J1_PTc',
+          'J1_R6c',
+          'J1_R2c',
+          'jPelFishInput'
+          'jBenFishInput'
+	  'fPZc',
+	  'fBZc',
+	  'fBO3c',
+	  'fZO3c',
+	  'fZRc',
+	  'fRBc',
+	  'fYG3c',
+	  'fYQ1c',
+	  'fQ1Yc',
+	  'fQ6Hc',
+	  'fHQ6c',
+	  'fHYc',
+	  'fHG3c',
+          'pMIupZ4',
+          'EUWIND'
+          'EVWIND'
+          'SdTdzTh'
+          'BMLd'
+          'TMLd'
+          'efilP6Y3'
+          'Output2d_1'
+          'Output2d_2'
+          'Output2d_3'
+          'Output2d_4'
+          'jZ5Z2c'
+          'jP1Z2c'
+          'jP1ZIc'
+          'jP6ZIc'
+          'jPIY3n'
+          'jPIY3p'
+          'jZIY3c'
+	  'jRIY3c',
+	  'jRIQIc',
+          'fldiPIn',
+          'flN3PIn',
+          'ruZTc',
+	  'eO2mO2',
+	  'XO2o',
+          'lim_rumn4'
+          'lim_rumn3'
+          'lim_rump1'
+          'ruPTc'
+          'jtotbenpelc',
+          'jtotbenpeln',
+          'jtotbenpelp',
+          'jtotbenpels',
+          'netPP',
+          'turenh',
+          'irrenh'
+          'netPPm2',
+	  'ESS'
           'xEPS',
           'Hs_out',
           'Tz_out',
@@ -281,15 +434,20 @@ var_save=
           'TauS',
           'ws_out',
           'eta_out',
-ave_save= 'O2o',
-          'ETW',
-	  'netPP',
-          'netPPm2',
-	  'jnetPTc',
-          'grsPPm2',
-          'exPPm2',
-          'resPPm2',
-          'Chla',
+          'sdMs_iiMs_',
+          'sunMI_iiMs_',
+          'sugMI_iiMs_',
+          'fr_lim_Ma_n_iiMca_',
+          'fr_lim_Ma_p_iiMca_',
+          'Mcac',
+          'Mcan',
+          'Mcap',
+          'Mcal',
+          'Msc',
+          'psur_iiMs_',
+          'farm_surface_iiMs_',
+          'surface',
+          'rnetPTc',
 
 
 /

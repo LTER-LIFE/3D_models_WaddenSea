@@ -14,7 +14,7 @@
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=christos.giannopoulos@nioz.nl,qzhan@nioz.nl
+#SBATCH --mail-user=christos.giannopoulos@nioz.nl,qing.zhan@nioz.nl
 
 module load clustershell/1.8
 
@@ -68,9 +68,9 @@ else
   export lastnode=$lastnode
 fi
 
-BASE_1=1  # October base year start up, just bdy 2d
-BASE_2=1  # November base year further spin up, bdy 3d+hotstart
-BASE_3=1  # December base year start up, meteo+rivers
+BASE_1=0  # October base year start up, just bdy 2d
+BASE_2=0  # November base year further spin up, bdy 3d+hotstart
+BASE_3=0  # December base year start up, meteo+rivers
 BASE_4=1  # actual run
 
 #mkdir -p log/$conf
@@ -87,7 +87,6 @@ YEAR_STOP=2015
 echo $YEAR_BASE
 
 months="01 02 03 04 05 06 07 08 09 10 11 12"
-#months="06 07 08 09 10 11 12"
 #months="01"
 days="01"
 
@@ -97,8 +96,8 @@ export timestep=10  # 4  (Kiki), also in xml file as 4
 OUTDIR=`pwd`/out/$runid/$conf
 
 # For flexible output, disable classical output
-export save_2d=False
-export save_3d=False
+export save_2d=True
+export save_3d=True
 export FABM=False
 
 
@@ -341,15 +340,15 @@ fi  # BASE_3
 ##################################################################
 if [ $BASE_4 == "1" ]; then
 
-  export step_2d=8640 #daily #900 #150 # 150  # xml: 90
-  export step_3d=8640 #daily #900   # xml: 1440
+  export step_2d=8640 #360 hourly; 8640 daily
+  export step_3d=8640 #360 hourly; 8640 daily
   export save_initial=True
   
   export use_epoch=True 
 
   export crit_depth=0.2 #0.9  # 0.25  # Johan: 0.9, Kiki: 0.3, Ulf: 0.25
   export min_depth=0.05  #0.3 # 0.1  # Johan: 0.3, Kiki: 0.12, Ulf: 0.1
-  export clip_depth=0.1 #0.1 # 0.05  # Johan: 0.1, Kiki: 0.01, Ulf: 0.1
+  export clip_depth=0.10 #0.1 # 0.05  # Johan: 0.1, Kiki: 0.01, Ulf: 0.1
 
   export save_fluxes=True
   export An_method=0
@@ -397,7 +396,7 @@ if [ $BASE_4 == "1" ]; then
            fi
 	   export start="$yy-$mm-$dd 00:00:00"
 	   export stop="$hot_yy-$hot_mm-$dd 00:00:00"
-  	   #export stop="$hot_yy-01-01 02:00:00"
+  	   #export stop="$hot_yy-01-04 00:00:00"
 
            export logdir=log/$runid/$conf/$yy$mm$dd
            export year=$yy
