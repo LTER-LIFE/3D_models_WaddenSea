@@ -148,7 +148,7 @@ compile_models(){
 
     # link hotstart files (may need manually change the user-specific paths)
     #./link_restartfiles
-    #./compile_all_git
+    ./compile_all_git
 
     echo "==========================================="
     echo " Compilation completed successfully"
