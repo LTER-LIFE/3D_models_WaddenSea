@@ -3,7 +3,7 @@
 restart_dir=/export/lv9/projects/dws/model_input/hotstart
 restart_file=restart_201501_spinup_08.in
 
-outdir=$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out/dws_500m/16x15/2015/01/
+outdir=/export/lv9/projects/dws/model_output/active_runs/dws_500m/dws_500m/16x15/2015/01/
 
 
 rm -f $outdir/restart.????.in
