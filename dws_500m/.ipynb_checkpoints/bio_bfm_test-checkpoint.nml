@@ -271,8 +271,6 @@ var_save=
           'jnetY3c',
           'jnetYy3c',
 	  'ruPTc',
-	  'ESS',
-          'xEPS',
           'Hs_out',
           'Tz_out',
           'u_orb_out',
@@ -290,6 +288,8 @@ ave_save= 'O2o',
           'exPPm2',
           'resPPm2',
           'Chla',
+	  'ESS',
+          'xEPS',
 
 /
 !         'Output2d_1'
