@@ -103,6 +103,8 @@ clone_repos() {
     # Replace BenOrganism.nml in BFM for the coupled model:
     rsync -av --force "$HOME/home/GETM_ERSEM_SETUPS/Container_dependency/BenOrganism.nml" "$HOME/home/BFM_SOURCES/bfm_2016/bfm_nml/BenOrganism.nml"
 
+ # Replace BenOrganism.nml in BFM for the coupled model:
+    rsync -av --force "$HOME/home/GETM_ERSEM_SETUPS/Container_dependency/GlobalDefsBFM.model.orig" "$HOME/home/BFM_SOURCES/bfm_2016/src/BFM/General/GlobalDefsBFM.model.orig"
 
     echo "==========================================="
     echo " Cloning completed successfully"
