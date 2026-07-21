@@ -144,7 +144,7 @@ compile_models(){
     cd "$HOME/home/GETM_ERSEM_SETUPS/dws_500m" || exit 1
     # --- symbolic links ---
     rm out
-    ln -s "$HOME/model_output/active_runs/dws_500m" "$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out"
+    ln -s "/export/lv9/projects/dws/model_output/active_runs/dws_500m" "$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out"
     
     # --- copy ecological nml files (optional) ---
     # rsync -av /export/lv9/user/qzhan/home/BFM_SOURCES/bfm-git/bfm_nml/ .
