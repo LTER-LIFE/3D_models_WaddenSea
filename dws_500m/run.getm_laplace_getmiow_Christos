@@ -29,7 +29,7 @@ elif [ $MPI == OPENMPI ]; then
    # make sure that output to .stderr is unbuffered
    export GFORTRAN_UNBUFFERED_ALL=y
    export GFORTRAN_UNBUFFERED_PRECONNECTED=y 
-   mpi_args="-x LD_LIBRARY_PATH -x GFORTRAN_UNBUFFERED_ALL -x GFORTRAN_UNBUFFERED_PRECONNECTED --bind-to core --hostfile machinefile"
+   mpi_args="-x LD_LIBRARY_PATH -x GFORTRAN_UNBUFFERED_ALL -x GFORTRAN_UNBUFFERED_PRECONNECTED --bind-to core --hostfile machinefile -mca rmaps seq"
 fi
 
 

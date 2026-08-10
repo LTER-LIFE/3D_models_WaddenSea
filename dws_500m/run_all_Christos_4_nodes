@@ -14,7 +14,7 @@
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=christos.giannopoulos@nioz.nl,qzhan@nioz.nl
+#SBATCH --mail-user=christos.giannopoulos@nioz.nl,qing.zhan@nioz.nl
 
 module load clustershell/1.8
 
@@ -68,9 +68,9 @@ else
   export lastnode=$lastnode
 fi
 
-BASE_1=1  # October base year start up, just bdy 2d
-BASE_2=1  # November base year further spin up, bdy 3d+hotstart
-BASE_3=1  # December base year start up, meteo+rivers
+BASE_1=0  # October base year start up, just bdy 2d
+BASE_2=0  # November base year further spin up, bdy 3d+hotstart
+BASE_3=0  # December base year start up, meteo+rivers
 BASE_4=1  # actual run
 
 #mkdir -p log/$conf

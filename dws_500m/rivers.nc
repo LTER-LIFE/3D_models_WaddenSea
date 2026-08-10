@@ -1,1 +1,1 @@
-/export/lv1/user/svanleeuwen/home/model_input_files/rivers/20200323/rivers_bfm_20200323_WaddenSea_all.nc
+/export/lv9/projects/dws/model_input/rivers/rivers_bfm_20260518_WaddenSea_all_Christos.nc

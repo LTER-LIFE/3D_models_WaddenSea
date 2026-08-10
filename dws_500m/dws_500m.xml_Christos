@@ -224,24 +224,24 @@
 			<save_metrics>False</save_metrics>
 			<save_masks>False</save_masks>
 			<save_2d>True</save_2d>
-			<save_meteo>True</save_meteo>
+			<save_meteo>False</save_meteo>
 			<save_3d>True</save_3d>
-			<save_vel>True</save_vel>
-			<save_fluxes>True</save_fluxes>
+			<save_vel>False</save_vel>
+			<save_fluxes>False</save_fluxes>
 			<destag>False</destag>
-			<save_strho>True</save_strho>
+			<save_strho>False</save_strho>
 			<save_s>True</save_s>
 			<save_t>True</save_t>
-			<save_rho>True</save_rho>
-			<save_rad>True</save_rad>
-			<save_turb>True</save_turb>
-			<save_tke>True</save_tke>
-			<save_eps>True</save_eps>
-			<save_num>True</save_num>
-			<save_nuh>True</save_nuh>
-			<save_ss_nn>True</save_ss_nn>
-			<save_taub>True</save_taub>
-			<save_numerical_analyses>True</save_numerical_analyses>
+			<save_rho>False</save_rho>
+			<save_rad>False</save_rad>
+			<save_turb>False</save_turb>
+			<save_tke>False</save_tke>
+			<save_eps>False</save_eps>
+			<save_num>False</save_num>
+			<save_nuh>False</save_nuh>
+			<save_ss_nn>False</save_ss_nn>
+			<save_taub>False</save_taub>
+			<save_numerical_analyses>False</save_numerical_analyses>
 			<first_2d>0</first_2d>
 			<step_2d>150</step_2d>
 			<sync_2d>144</sync_2d>
@@ -253,7 +253,7 @@
 				<e/>
 				<e/>
 			</hotout>
-			<meanout>-1</meanout>
+			<meanout>360</meanout>
 		</io_spec>
 	</getm>
 	<adaptcoord>

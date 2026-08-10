@@ -138,8 +138,8 @@ compile_models(){
 
     cd "$HOME/home/GETM_ERSEM_SETUPS/dws_500m" || exit 1
     # --- symbolic links ---
-    rm out
-    ln -s "$HOME/model_output/active_runs/dws_500m" "$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out"
+    #rm out
+    #ln -s "$HOME/model_output/active_runs/dws_500m" "$HOME/home/GETM_ERSEM_SETUPS/dws_500m/out"
 
     cd "$HOME/home/GETM_ERSEM_SETUPS/dws_500m" || exit 1
     #./link_restartfiles
