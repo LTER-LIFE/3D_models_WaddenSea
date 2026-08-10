@@ -10,7 +10,7 @@
 ##SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 #SBATCH --time=4-1:00:00
-#SBATCH --output=/export/lv9/projects/dws/model_output/active_runs/run_all.stdout
+#SBATCH --output=/export/lv9/user/cgiannopoulos/model_output/active_runs/run_all.stdout
 #SBATCH --job-name="run_all"
 
 #SBATCH --mail-type=END,FAIL
