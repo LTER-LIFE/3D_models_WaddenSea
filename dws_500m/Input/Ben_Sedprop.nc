@@ -1,1 +1,1 @@
-/export/lv9/projects/dws/model_input/porosity/Wu_adjusted/Ben_Sedprop.nc
+/export/lv9/projects/dws/model_input/porosity/spinup/Ben_Sedprop.nc

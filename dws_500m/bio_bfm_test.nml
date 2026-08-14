@@ -163,7 +163,8 @@
 !         'ptK21p',
 &bfm_save_nml
 nco_style_vars=.true.
-var_save= 
+var_save=
+ave_save= 
           'N1p',
           'N3n',
           'N4n',
@@ -279,7 +280,7 @@ var_save=
           'TauS',
           'ws_out',
           'eta_out',
-ave_save= 'O2o',
+          'O2o',
           'ETW',
 	  'netPP',
           'netPPm2',
