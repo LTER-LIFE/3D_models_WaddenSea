@@ -87,7 +87,7 @@ YEAR_STOP=2015
 echo $YEAR_BASE
 
 months="01 02 03 04 05 06 07 08 09 10 11 12"
-#months="01"
+months="03"
 days="01"
 
 # for the benefit of adjusting output.yaml; must fit model time step
@@ -340,8 +340,8 @@ fi  # BASE_3
 ##################################################################
 if [ $BASE_4 == "1" ]; then
 
-  export step_2d=8640 #360 hourly; 8640 daily
-  export step_3d=8640 #360 hourly; 8640 daily
+  export step_2d=360 #360 hourly; 8640 daily
+  export step_3d=360 #360 hourly; 8640 daily
   export save_initial=True
   
   export use_epoch=True 
